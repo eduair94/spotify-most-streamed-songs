@@ -1,0 +1,1019 @@
+# Songs tracked by the daily update, one per line.
+#
+# Write each song as a 22-character Spotify track id, a spotify:track:<id> URI or an
+# https://open.spotify.com/track/<id> link. Everything after "#" is a comment: the names
+# below are only there to make the list easier to read.
+#
+# One API request covers up to 50 songs, so these 1,000 take 20 requests a day (about 620 a
+# month, plus the odd retry). The free RapidAPI plan allows 1,000 requests a month.
+# Run `python -m tracker check` after editing to validate the list.
+#
+# How this list was made, on 2026-11-01: the candidates were the 4,139 songs of 31 weekly
+# Spotify Top 200 charts dated 2026-10-29 (global and 30 countries) and the 4,405 top tracks
+# of the 500 artists of https://github.com/eduair94/spotify-monthly-listeners. Play counts
+# were read through the API for every chart song and for the top tracks of the 155 artists
+# with the most monthly listeners (29.3 million or more); the top tracks of the other 345
+# artists count only when they chart. The 1,000 songs with the most plays were kept (577.6
+# million and up). A song listed under several track ids (same title and artists) counts
+# once, with the id that has the most plays.
+
+0daEJMXc3b4ZMTnvtHpuTt  # .Feast - Nina
+2OQJKTtrH482waGFmOfJni  # 2 Chainz, Wiz Khalifa - We Own It (Fast & Furious)
+6ZOBP3NvffbU4SZcrnt1k6  # 3 Doors Down - Kryptonite
+2FTeQQ5Rg9tBpgpTF5mnhE  # A Boogie Wit da Hoodie - Still Think About You
+04aigH9HRGebQZu1JAN6X1  # a-ha - Take on Me - 2015 Remaster
+08mG3Y1vljYA6bvDt4Wqkj  # AC/DC - Back In Black
+69QHm3pustz01CJRwdo20z  # AC/DC - Hells Bells
+2zYzyRzz6pRmhPzyfMEC8s  # AC/DC - Highway to Hell
+0C80GCp0mMuBzLf3EAXqxv  # AC/DC - Shoot to Thrill
+7LRMbd3LEoV5wZJvXT1Lwb  # AC/DC - T.N.T.
+57bgtoPSgt236HzfBOd8kj  # AC/DC - Thunderstruck
+2SiXAy7TuUkycRVbbWDEpo  # AC/DC - You Shook Me All Night Long
+0eLtIxPRNJfsmehITZ1qaJ  # Aditya Rikhari - Sahiba
+5HCGrYR7g9u2X9Ju83yQLm  # Adolescent's Orquesta - Virgen
+7KhHA3mzt7A3LFlOJEAKpI  # Alan Walker, Sabrina Carpenter, Farruko - On My Way
+2JPctdUgvkQSpnUdfROxvY  # Alemán, Neton Vega - Te Quería Ver
+6RRnUWV7wemVRFZjPRQo66  # Alex Rose, Rauw Alejandro, Lenny Tavárez, Lyanno, Cazzu - Toda - Remix
+1wOp7yTVyH176bW1z9WAiv  # Alex Warren - Carry You Home
+2RkZ5LkEzeHGRsmDqKwmaJ  # Alex Warren - Ordinary
+179TZwPk0txEvjkraVTVKo  # Alfredo Olivas - El Precio De La Soledad
+0KQx6HOpJueiSkztcS0r7D  # Alicia Keys - Fallin'
+77xMtm3bTqLVN6FiJurLFv  # Alicia Keys - Girl on Fire
+3XVBdLihbNbxUwZosxcGuJ  # Alicia Keys - If I Ain't Got You
+0mZ5GyrHG908lqrHaTw4hi  # Alicia Keys - No One
+6kYoY0PhBelP64UMnhsEZx  # Alka Yagnik, Arijit Singh - Agar Tum Saath Ho (From "Tamasha")
+2dd3G3ZqEcG2cNS1tp3oEk  # Alleh, Yorghaki - capaz (merengueton)
+09gysnJpfQ3ublBmJDfcEC  # Amaarae, Kali Uchis, MOLIY - SAD GIRLZ LUV MONEY Remix (feat. Kali Uchis and Moliy)
+0iAzEJWNn7ZLAldDEYLECV  # America, George Martin - A Horse with No Name
+2UgCs0i0rNHUH2jKE5NZHE  # Andra & The Backbone - Sempurna
+1p7m9H4H8s0Y7SgRm7j3ED  # Andrés Calamaro - Flaca
+0Y0xIGcTjb5EFHHYrJIGIk  # Anggi Marito - Tak Segampang Itu
+3Ga6eKrUFf12ouh9Yw3v2D  # Anitta, J Balvin - Downtown
+1LiN0Z98FkR1t0m8KmLcAH  # Anuel AA, Haze - Amanece
+0KkIkfsLEJbrcIhYsCL7L5  # Anuel AA, Daddy Yankee, KAROL G, Ozuna, J Balvin - China
+06s3QtMJVXw1AJX3UfvZG1  # Anuel AA, Bad Bunny - Hasta Que Dios Diga
+5q2JbCNi4FcnglgPfxcV65  # Anuel AA, Daddy Yankee, Zion & Lennox, Farruko, Wisin - Sola (Remix)
+0eCajpR75pDW0r64U6hP2x  # Anuv Jain - Jo Tum Mere Ho
+58ge6dfP91o9oXMzq3XkIS  # Arctic Monkeys - 505
+5FVd6KXrgO9B3JPmC8OPst  # Arctic Monkeys - Do I Wanna Know?
+7e8utCy2JlSB8dRHKi49xM  # Arctic Monkeys - Fluorescent Adolescent
+5XeFesFbtLpXzIVDNQP22n  # Arctic Monkeys - I Wanna Be Yours
+5TTGoX70AFrTvuEtqHK37S  # Arctic Monkeys - No. 1 Party Anthem
+2AT8iROs4FQueDv2c8q2KE  # Arctic Monkeys - R U Mine?
+0NdTUS4UiNYCNn5FgVqKQY  # Arctic Monkeys - Snap Out Of It
+086myS9r57YsLbJpU0TgK9  # Arctic Monkeys - Why'd You Only Call Me When You're High?
+2mnXxnrX5vCGolNkaFvVeM  # Arcángel, Bad Bunny - La Jumpa
+1pLCpA1RN8avJxSD3ZCwhj  # Arcángel - Pa' Que La Pases Bien
+6NSMQFKgjpQb0KkjMDYIK0  # Arcángel, Bad Bunny, Mambo Kingz, DJ Luian - Tu No Vive Asi (feat. Mambo Kingz & DJ Luian)
+6ocbgoVGwYJhOv1GgI9NsF  # Ariana Grande - 7 rings
+3nef5W8jTkXrOKgCu4kmq7  # Ariana Grande - Dangerous Woman
+3iy2QuCtCzpWnR6tia39AB  # Ariana Grande - hate that i made you love me
+76FZM38RC8XaAjJ77CVTNe  # Ariana Grande - Into You
+5J4ZkQpzMUFojo1CtAZYpn  # Ariana Grande, The Weeknd - Love Me Harder
+7xoUc6faLbCqZO6fQEYprd  # Ariana Grande - One Last Time
+44ONERBHALxftQNWq6dmyd  # Ariana Grande, Nicki Minaj - Side To Side
+51ZQ1vr10ffzbwIjDCwqm4  # Ariana Grande - we can't be friends (wait for your love)
+2Fv2injs4qAm8mJBGaxVKU  # Arijit Singh, Mithoon - Tujhe Kitna Chahne Lage (From "Kabir Singh")
+7LfIX3DCzl3AtGJWlCKOKK  # Arijit Singh - Tum Hi Ho (From "Aashiqui 2)
+0zSxpn1s0nk6VMpBMNqNFa  # Ashe - Moral of the Story
+1v1oIWf2Xgh54kIWuKsDf6  # AURORA - Runaway
+2Bhmj4XK33InfhqKPxcJ1v  # Aventura - Dile al Amor
+27ze5t5tIDPlVits0KRbxT  # Aventura - El Perdedor
+6G4U9avyBNEfP0fAIduev3  # Aventura, Don Omar - Ella Y Yo - Featuring Don Omar
+3B0irDyS69y5eAz15xV2Ee  # Avicii - Wake Me Up
+59dLtGBS26x7kc0rHbaPrq  # B.o.B, Bruno Mars - Nothin' on You (feat. Bruno Mars)
+35o9a4iAfLl5jRmqMX9c1D  # Backstreet Boys - Shape of My Heart
+2lTm559tuIvatlT1u0JYG2  # Bad Bunny - BAILE INoLVIDABLE
+6C1RD7YQVvt3YQj0CmuTeu  # Bad Bunny, Ozuna, Farruko, Arcángel, Ñengo Flow, DJ Luian, Mambo Kingz - Diles
+3sK8wGT43QFpWrvNQsrQya  # Bad Bunny - DtMF
+6J5kc12BW5HuP3d7C3vvx8  # Bad Bunny - EoO
+4MUrUT38U98olfnyzMBCzm  # Bad Bunny - KLOuFRENS
+69vlMrzHwATKzupwNcUPyK  # Bad Bunny, Daddy Yankee - La Santa
+6Xom58OOXk2SoU711L2IXO  # Bad Bunny - Moscow Mule
+5TFD2bmFKGhoCRbX61nXY5  # Bad Bunny - NUEVAYoL
+3k3NWokhRRkEPhCzPmV8TW  # Bad Bunny, Bomba Estéreo - Ojitos Lindos
+0E0DRHf5PfMeor0ZCwB3oT  # Bad Bunny, The Marías - Otro Atardecer
+7iQXYTyuG13aoeHxGG28Nh  # Bad Bunny, Feid - PERRO NEGRO
+1IHWl5LamUGEuP4ozKQSXZ  # Bad Bunny - Tití Me Preguntó
+7d6yK8v8J484SWH5prIQiE  # Bad Bunny, Omar Courtz, Dei V - VeLDÁ
+59D4DOkspUbWyMmbAPQkxZ  # Bad Bunny - VOY A LLeVARTE PA PR
+6N3O7WIEHSHssbw5HVh5nx  # Batas Senja - Nanti Kita Seperti Ini
+6Z0ybnsUBhbZ9ZjPW64eoF  # Belanova - Rosa Pastel
+7FGq80cy8juXBCD2nrqdWU  # benny blanco, Halsey, Khalid - Eastside (with Halsey & Khalid)
+3xkHsmpQCBMytMJNiDf3Ii  # Benson Boone - Beautiful Things
+6HuHyXviAdpmnQu73JHfBz  # Benson Boone - Ghost Town
+315aBOUD3xtj7sUMXtRgMV  # Benson Boone - In The Stars
+2ipIPsgrgd0j2beDf4Ki70  # Benson Boone - Mystical Magical
+51eSHglvG1RJXtL3qI5trr  # Benson Boone - Slow It Down
+4zhk2RS2EZODmBW6il55Qj  # Beéle, Ovy On The Drums - mi refe
+1HEwEN64NjgTaHmo7LfkX8  # Beéle - no tiene sentido
+2Fxmhks0bxGSBdJ92vM42m  # Billie Eilish - bad guy
+6dOtVTDdiauQNBQEDOtlAB  # Billie Eilish - BIRDS OF A FEATHER
+7BRD7x5pt8Lqa1eGYC4dzj  # Billie Eilish - CHIHIRO
+3ZCTVFBt2Brf31RLEnCkWJ  # Billie Eilish - everything i wanted
+4RVwu0g32PAqgUiJoXsdF8  # Billie Eilish - Happier Than Ever
+0u2P5u6lvoDfwTYjAADbn4  # Billie Eilish, Khalid - lovely (with Khalid)
+2uIX8YMNjGMD7441kqyyNU  # Billie Eilish - ocean eyes
+6wf7Yu7cxBSPrRlWeSeK0Q  # Billie Eilish - What Was I Made For? [From The Motion Picture "Barbie"]
+43zdsphuZLzwA9k4DJhU0I  # Billie Eilish - when the party's over
+3QaPy1KgI7nu9FJEQUgn6h  # Billie Eilish - WILDFLOWER
+70C4NyhjD5OZUMzvWZ3njJ  # Billy Joel - Piano Man
+2tTmW7RDtMQtBk7m2rYeSw  # Bizarrap, Quevedo - Quevedo: Bzrp Music Sessions, Vol. 52/66
+2vBET2pmrQqafaS6zIaYta  # Black Eyed Peas, Shakira - GIRL LIKE ME
+4kLLWz7srcuLKA7Et40PQR  # Black Eyed Peas - I Gotta Feeling
+3JA9Jsuxr4xgHXEawAdCp4  # Black Eyed Peas - Just Can’t Get Enough
+3F9ByoUqu31xU0I3G5xfVg  # Black Eyed Peas - Meet Me Halfway
+20jYtEun4dUdYZ9foaOC48  # Black Eyed Peas - My Humps
+2ygMBIctKIAfbEBcT9065L  # Black Eyed Peas - Pump It
+2WQ09wqQBIOor7Q0VpIDBK  # Black Eyed Peas - Rock That Body
+0xmjwnQ3FNE6HuWCt2nHdZ  # Black Eyed Peas - Where Is The Love?
+2btNsI4OvcVl7SAHQQDHFB  # Blessd, Ovy On The Drums - Mírame
+2JJSGhPpATm8lXeYjD95fw  # Bobby Pulido - Desvelado
+0ee1DiZF94NSqqpG0XHUzH  # Bon Jovi - Livin' On A Prayer
+3VvA1wSxukMLsvXoXtlwWx  # Boza - Hecha Pa' Mi
+5vmRQ3zELMLUQPo2FLQ76x  # Bronski Beat - Smalltown Boy
+2M38X60UJnupGPbFTkVPNQ  # Brooks & Dunn - Neon Moon
+7FwBtcecmlpc1sLySPXeGE  # Bruce Springsteen - Dancing In the Dark
+3PzsbWSQdLCKDLxn7YZfkM  # Bruce Springsteen - I'm On Fire
+6f68Ac5tt5BQOpwr0BV9oN  # Bruno Mars - I Just Might
+4rMNgxEwGWoPHIUcvB5BrB  # Bruno Mars - It Will Rain
+7BqBn9nzAq8spo5e7cZ0dJ  # Bruno Mars - Just the Way You Are
+5g7sDjBhZ4I3gcFIpkrLuI  # Bruno Mars - Locked out of Heaven
+5y2ijHECwFYWqcAHKTZgzD  # Bruno Mars - Risk It All
+161DnLWsx1i3u1JT05lzqU  # Bruno Mars - Talking to the Moon
+0KKkJNfGyhkQ5aFogxQAPU  # Bruno Mars - That's What I Like
+0kN8xEmgMW9mh7UmDYHlJP  # Bruno Mars - Versace on the Floor
+0B7wvvmu9EISAwZnOpjhNI  # Bruno Mars - When I Was Your Man
+3pXF1nA74528Edde4of9CC  # Bryson Tiller - Don't
+4a9tbd947vo9K8Vti9JwcI  # BTS, Halsey - Boy With Luv (feat. Halsey)
+68lbSrXDORS51pmyjZv712  # BTS - SWIM
+57DarSfRMIVRCeDBGW0l5S  # Burna Boy - Last Last
+42qNWdLKCI41S4uzfamhFM  # bôa - Duvet
+61vlMpyFxXmxvahvA7Bi3z  # Calle 24, Chino Pacas, Fuerza Regida - QUE ONDA
+07nH4ifBxUB4lZcsf44Brn  # Calvin Harris, John Newman - Blame (feat. John Newman)
+1gihuPhrLraKYrJMAEONyc  # Calvin Harris - Feel So Close - Radio Edit
+4slBllHFZYlpg3IjeX5CBl  # Calvin Harris, Disciples - How Deep Is Your Love
+05SBRd4fXgn8FX7bf8BCAE  # Calvin Harris, Ellie Goulding - I Need Your Love (feat. Ellie Goulding)
+76dIZzTdrNO15mGBrU3MHi  # Calvin Harris, Dua Lipa - One Kiss (with Dua Lipa)
+7MmG8p0F9N3C4AXdK6o6Eb  # Calvin Harris, Ellie Goulding - Outside (feat. Ellie Goulding)
+6YUTL4dYpB9xZO5qExPf05  # Calvin Harris - Summer
+24LS4lQShWyixJ0ZrJXfJ5  # Calvin Harris, Florence Welch - Sweet Nothing (feat. Florence Welch)
+2vlDrKpOC0eSTqTDRcbYyw  # Calvin Harris, Rihanna - This Is What You Came For
+4ZplewvZRLFcfBa5uyBbhd  # Cardenales De Nuevo León - Belleza De Cantina
+58q2HKrzhC3ozto2nDdN4z  # Cardi B, Bad Bunny, J Balvin - I Like It
+20I6sIOMTCkB6w7ryavxtO  # Carly Rae Jepsen - Call Me Maybe
+59NraMJsLaMCVtwXTSia8i  # cassö, RAYE, D-Block Europe - Prada
+3WSOUb3U7tqURbBSgZTrZX  # Chappell Roan - Casual
+0WbMK4wrZ1wFSty9F7FCgu  # Chappell Roan - Good Luck, Babe!
+3j6CeoBBlm40Msn1JE1SPD  # Chappell Roan - HOT TO GO!
+6393yGahSJ9slVdOwSxOVR  # Chappell Roan - Pink Pony Club
+7FOgcfdz9Nx5V9lCNXdBYv  # Chappell Roan - Red Wine Supernova
+5cF0dROlMOK5uNZtivgu50  # Charlie Puth - Attention
+6wmAHw1szh5RCKSRjiXhPe  # Charlie Puth - How Long
+5Odq8ohlgIbQKMZivbWkEo  # Charlie Puth, Jung Kook, BTS - Left and Right (Feat. Jung Kook of BTS)
+1jEBSDN5vYViJQr78W7jr2  # Charlie Puth - Light Switch
+6TjWrm6BZytIjHnZcX2TGk  # Charlie Puth, Meghan Trainor - Marvin Gaye (feat. Meghan Trainor)
+5MwIGPDKeDb7SpblcaQP6O  # Charlie Puth - One Call Away
+54PbBpquVfhfrwRwvjSXbI  # Charlie Puth, Selena Gomez - We Don't Talk Anymore (feat. Selena Gomez)
+2X6b7zLdIxCejd6GqVcQ9M  # Childish Gambino - 3005
+5AGQSF0ytihJyt96K5vW9d  # Childish Gambino - Heartbeat
+7ghKr0pCYyPPyp7t1FH8k4  # Childish Gambino - Les
+0NkkbKSzQ50mAoSUbQpgLw  # Childish Gambino - Me and Your Mama
+3vQ4T78TTMOjQXGfXVKQJo  # Childish Gambino - Redbone
+23WI5V2eD4EyGKxSl7Pyeq  # Chino & Nacho, Daddy Yankee - Andas En Mi Cabeza
+2y42xAsl6dfMeVXQgOYsUw  # Chris Isaak - Wicked Game
+5lhcHMDQpNwhM62lSOrvLf  # Chris Jedi, J Balvin, Ozuna, Arcángel - Ahora Dice
+3fqwjXwUGN6vbzIwvyFMhx  # Chris Stapleton - Tennessee Whiskey
+2UikqkwBv7aIvlixeVXHWt  # Chris Stapleton - You Should Probably Leave
+0PSZ9G584Ve27GK6ThlY6P  # Christina Aguilera, Lil' Kim, Mýa, P!nk - Lady Marmalade - Single Edit
+2FAZskT9yRjp2Oow9szJD8  # Chrystal, NOTION - The Days - NOTION Remix
+1oAwsWBovWRIp7qLMGPIet  # Cigarettes After Sex - Apocalypse
+3p4hRhMcb6ch8OLtATMaLw  # Cigarettes After Sex - Cry
+70YTBH8vOGJNMhy6186yFm  # Cigarettes After Sex - Heavenly
+2xGjfbXZnI8uQDhukoQURQ  # Cigarettes After Sex - K.
+3W7KHojYGgYaoX9ogKO9hU  # Cigarettes After Sex - Nothing's Gonna Hurt You Baby
+0yuAWlxq59xT3agQ965OxE  # Cigarettes After Sex - Sunsetz
+2KhrPRV0V1FS2l4eQMJUWt  # Cigarettes After Sex - Sweet
+72gv4zhNvRVdQA0eOenCal  # Clean Bandit, Zara Larsson - Symphony (feat. Zara Larsson)
+0FDzzruyVECATHXKHFs9eJ  # Coldplay - A Sky Full of Stars
+69uxyAqqPIsUyTO8txoP2M  # Coldplay - Adventure of a Lifetime
+0BCPKOYdS2jbQ8iyB56Zns  # Coldplay - Clocks
+7LVHVU3tWfcxj5aiPFEW4Q  # Coldplay - Fix You
+3RiPr603aXAoi4GHyXx0uy  # Coldplay - Hymn for the Weekend
+7D0RhFcb3CrfPuTJ0obrod  # Coldplay - Sparks
+75JFxkI2RXiU7L9VXzMkle  # Coldplay - The Scientist
+1mea3bSkSGXuIRvnydlB5b  # Coldplay - Viva La Vida
+3AJwUDP919kvQ9QcozQPxg  # Coldplay - Yellow
+1DIXPcTDzTj8ZMHt3PDt8p  # Coolio, L.V. - Gangsta's Paradise
+20OFwXhEXf12DzwXmaV7fj  # Creedence Clearwater Revival - Bad Moon Rising
+4BP3uh0hFLFRb5cjsgLqDh  # Creedence Clearwater Revival - Fortunate Son
+2LawezPeJhN4AWuSB0GtAU  # Creedence Clearwater Revival - Have You Ever Seen The Rain
+7G7tgVYORlDuVprcYHuFJh  # Crowded House - Don't Dream It's Over
+5tlb0AxuzsMWL2GtEppXGX  # Cup of Joe - Multo
+0dS2u2UFd88TIzDDaZDLvS  # d4vd - Here With Me
+5w9c2J52mkdntKOmRLeM2m  # Daddy Yankee, Snow - Con Calma
+5YoITs1m0q8UOQ4AW7N5ga  # Daddy Yankee - Gasolina
+40a82F3K2UTbeoLlXXXZBd  # Daddy Yankee - Lo Que Pasó, Pasó
+17I27VXKtqXJHL6ReaG0eS  # Dalex, Lenny Tavárez, Chencho Corleone, Juhn, Dímelo Flow - Hola - Remix
+2LlOeW5rVcvl3QcPNPcDus  # Daniel Caesar - Always
+1Q7EgiMOuwDcB0PJC6AzON  # Daniel Caesar, H.E.R. - Best Part (feat. H.E.R.)
+2uP6t2J5MEwhr9rDkAAzwh  # Daniel Caesar, Kali Uchis - Get You (feat. Kali Uchis)
+4s76r7AbquJcTccqJiqdVu  # Daniel Caesar - Hold Me Down
+7IVukH71OXfAu3KudrrizN  # Daniel Caesar - Japanese Denim
+736PP5LTtREkDgktNmX3Gu  # Daniel Caesar - Superpowers
+7ns16ylM6sbxo9ZWIwyE5d  # Danny Ocean, Kapo - Imagínate
+6ifUES3keWjwXgae8pXI3o  # Danny Ocean - Me Rehúso
+6KFWubocLBhrLs31RpEdR9  # Dave, Burna Boy - Location (feat. Burna Boy)
+3oTuTpF1F3A7rEC6RKsMRz  # Dave, Tems - Raindance (feat. Tems)
+6NYbDTmstd7JSUWl2hVBqR  # Dave, Central Cee - Sprinter
+331l3xABO0HMr1Kkyh2LZq  # David Guetta, OneRepublic - I Don't Wanna Wait
+4wqIXeDppYSMXaWsnTzpzT  # David Guetta, Bebe Rexha, J Balvin - Say My Name
+0lHAMNU8RGiIObScrsRgmP  # David Guetta, Sia - Titanium (feat. Sia)
+1V6gIisPpYqgFeWbMLI0bA  # Demi Lovato - Heart Attack
+0yp3TvJNlG50Q4tAHWNCRm  # Depeche Mode - Enjoy the Silence
+0QzuaeCEEOV40Pn7IvKEny  # Dhruv - double take
+37Tmv4NnfQeb0ZgUC4fOJj  # Dire Straits - Sultans Of Swing
+3cZajhyr8LmtPfHZ9296tj  # Disco Lines, Tinashe - No Broke Boys
+0lYBSQXN6rCTvUZvg9S0lU  # DJ Snake, Justin Bieber - Let Me Love You
+6osaMSJh9NguagEDQcZaKx  # DJ Snake, J Balvin, Tyga - Loco Contigo (feat. J. Balvin & Tyga)
+0g5EKLgdKvNlln7TNqBByK  # DJ Snake, Bipolar Sunshine - Middle
+0KoiMHhqKLoL4xM54rcWYY  # DJ Snake, Selena Gomez, Ozuna, Cardi B - Taki Taki (feat. Selena Gomez, Ozuna & Cardi B)
+67awxiNHNyjMXhVgsHuIrs  # DJ Snake, Lil Jon - Turn Down for What
+57kR5SniQIbsbVoIjjOUDa  # DJ Snake, AlunaGeorge - You Know You Like It
+3qhlB30KknSejmIvZZLjOD  # Djo - End of Beginning
+3DarAbFujv6eYNliUTyqtz  # Doja Cat, SZA - Kiss Me More (feat. SZA)
+5fdhThPDe6jQQDqCyWrdAn  # Dolly Parton - Jolene
+0uI7yAKUf52Cn7y3sYyjiX  # Dominic Fike - 3 Nights
+7yNf9YjeO5JXUE3JEBgnYc  # Dominic Fike - Babydoll
+2a1o6ZejUi8U3wzzOtCOYw  # Don Omar, Lucenzo - Danza Kuduro
+69Ej1xrGjOcHvIMtMKxK0G  # Don Omar - Dile
+79zvVrn65ksbiGQxrtV4I5  # Don Omar - Guaya Guaya
+4f49sFQko7jHLEFd3tCf5p  # Don Omar - Ojitos Chiquitos
+48NXpYRuvv9izul4oXhqS9  # Don Omar - Salió El Sol
+5nJaS3PEpyPfaWiLxIGtRX  # Don Omar - Virtual Diva
+2c7z5oRcPBbqRaBY2mLWcf  # Don Toliver - NEW DROP
+7AzlLxHn24DxjgQX73F9fU  # Don Toliver - No Idea
+0eaVIYo2zeOaGJeqZ5TwYz  # Don Toliver - No Pole
+6DCZcSspjsKoFjzjrWoCdn  # Drake - God's Plan
+6LxSe8YmdPxy095Ux6znaQ  # Drake - Headlines
+6jdOi5U5LBzQrc4c1VT983  # Drake, Majid Jordan - Hold On, We're Going Home
+0wwPcA6wtMf6HUMpIRdeP7  # Drake - Hotline Bling
+047fCsbO4NdmwCBn8pcUXl  # Drake - Marvins Room
+1zi7xx7UVEFkmKfv06H8x0  # Drake, Wizkid, Kyla - One Dance
+5mCPDVBb16L4XQwDdbRUpz  # Drake - Passionfruit
+3BgK59BTBUs8iQtnegfMfz  # Dream Supplier - Clean Baby Sleep White Noise (Loopable no fade)
+4yVBarJHjhhzP1q7fU4p0W  # Dream Supplier - Clean Baby Sleep White Noise (Loopable)
+017PF4Q3l4DBUiWoXk4OWT  # Dua Lipa - Break My Heart
+3PfIrDoz19wz7qK7tYeu62  # Dua Lipa - Don't Start Now
+6D8y7Bck8h11byRY88Pt2z  # Dua Lipa - Houdini
+39LLxExYz6ewLAcYrzQQyP  # Dua Lipa - Levitating
+5nujrmhLynf4yMoMtj8AQF  # Dua Lipa, DaBaby - Levitating (feat. DaBaby)
+5fVcK4ibJpRsjvG5aIYTb7  # Dua Lipa - New Rules
+5b5cPscqVEMChvDqscVw26  # Dua Lipa - Training Season
+3UIENhLRdFIOuRan92cAQu  # Duncan Dhu - En algún lugar
+6ex1Pz3pntgy4NPtxHXN2V  # Ed Sheeran - Bad Habits
+70eFcWOvlMObDhURTqT4Fv  # Ed Sheeran, Khalid - Beautiful People (feat. Khalid)
+6PCUP3dWmTjcTtXY02oFdT  # Ed Sheeran - Castle on the Hill
+0afhq8XCExXpqazXczTSve  # Ed Sheeran - Galway Girl
+6hvRoJ0BTZywxu8UCPBkzx  # Ed Sheeran, Justin Bieber - I Don't Care
+5ubHAQtKuFfiG4FXfLP804  # Ed Sheeran - Lego House
+0tgVpDi06FyKpA1z0VMD4v  # Ed Sheeran - Perfect
+6fxVffaTuwjgEk5h9QyRjy  # Ed Sheeran - Photograph
+7qiZfU4dY1lWllzX7mPBI3  # Ed Sheeran - Shape of You
+3xWGA8pa0IKFI7IMPri4P0  # Ed Sheeran - Shivers
+1Slwb6dOYkBlWal1PGtnNg  # Ed Sheeran - Thinking out Loud
+1WkYhJMWhofw1XgVWfdMWE  # El Bogueto, Yung Beef - Cuando No Era Cantante
+7scFxt9VhL4FJwuPSfRlfN  # Ella Langley - Choosin' Texas
+5lF0pHbsJ0QqyIrLweHJPW  # Ellie Goulding - Burn
+2GjMaJ7DacMIkgoe8oMXGg  # Ellie Goulding, Diplo, Swae Lee - Close To Me
+15og0pCEcTFWEXOFKdcJlU  # Ellie Goulding, Juice WRLD - Hate Me
+0Cy7wt6IlRfBPHXXjmZbcP  # Ellie Goulding - Love Me Like You Do
+3zHq9ouUJQFQRf3cm1rRLu  # Ellie Goulding - Love Me Like You Do - From "Fifty Shades Of Grey"
+5a7NdkF09AfD0H607eiOkX  # Ellie Goulding - On My Mind
+6JIC3hbC28JZKZ8AlAqX8h  # Elton John, Dua Lipa, PNAU - Cold Heart - PNAU Remix
+7FIWs0pqAYbP91WWM0vlTQ  # Eminem, Juice WRLD - Godzilla (feat. Juice WRLD)
+1v7L65Lzy0j0vdpRjJewt1  # Eminem - Lose Yourself
+15JINEqzVMv3SvJTAXAKED  # Eminem, Rihanna - Love The Way You Lie
+561jH07mF1jHuk7KlaeF0s  # Eminem - Mockingbird
+3UmaczJpikHgJFyBTAJVoz  # Eminem, Dido - Stan
+4woTEX1wYOTGDqNXuavlRC  # Eminem, Dina Rae - Superman
+3aUp8U4MNWctRXlY5MPysv  # Eminem, Rihanna - The Monster
+3yfqSUWxFvZELEM4PmlwIR  # Eminem - The Real Slim Shady
+4xkOaSrkexMciUUogZKVTS  # Eminem, Nate Dogg - Till I Collapse
+7lQ8MOhq6IN2w8EYcFNSUk  # Eminem - Without Me
+6r6IPuFvUX72kQGc9b46rk  # Emmanuel Cortes - Amor
+5r5cp9IpziiIsR6b93vcnQ  # Empire Of The Sun - Walking On A Dream
+3zEN0ii6s4DHHBpnTp3RP7  # Empire Of The Sun - We Are The People
+3qQbCzHBycnDpGskqOWY0E  # Eslabon Armado, Peso Pluma - Ella Baila Sola
+0COqiPhxzoWICwFCS4eZcp  # Evanescence - Bring Me To Life
+3UygY7qW2cvG9Llkay6i1i  # Evanescence - Going Under
+4UzVcXufOhGUwF56HT7b8M  # Evanescence - My Immortal
+1hlbywc8Jhl1FFqJxAMabE  # Faheem Abdullah, Rauhan Malik, Amir Ameer - Ishq
+2B4GHvToeLTOBB4QLzW3Ni  # Farruko - Pepas
+6Hii26x3qDErVitnGW8QtO  # Feby Putri, Fiersa Besari - Runtuh
+1hZsWUnLbqRw09jLAMQSsb  # Feid, Young Miko - CLASSY 101
+2CeKVsFFXG4QzA415QygGb  # Feid - Feliz Cumpleaños Ferxxo
+7bywjHOc0wSjGGbj04XbVi  # Feid, ATL Jacob - LUNA
+0T2pB7P1VdXPhLdQZ488uH  # Feid - Normal
+2d8JP84HNLKhmd6IYOoupQ  # Fetty Wap - Trap Queen
+0E916WgoG1dEwIiIMkfHm1  # Fleetwood Mac - Don't Stop - 2001 Remaster
+53qkszfgztIvkFyF31GfdQ  # Fleetwood Mac - Dreams - 2001 Remaster
+38iKuyifRL4mQ36F2hIxmF  # Fleetwood Mac - Everywhere
+34F6qT8udksbeKO7CVDBqF  # Fleetwood Mac - Go Your Own Way - 2001 Remaster
+5ihS6UUlyQAfmp48eSkxuQ  # Fleetwood Mac - Landslide
+6EMKNpgXkzanwRbUgTZKed  # Fleetwood Mac - Little Lies
+05oETzWbd4SI33qK2gbJfR  # Fleetwood Mac - Rhiannon
+2MRjYBbIbH1VTToIrO1mdi  # Fleetwood Mac - The Chain - 2001 Remaster
+1NpW5kyvO4XrNJ3rnfcNy3  # Flo Rida, Sia - Wild Ones (feat. Sia)
+456WNXWhDwYOSf5SpTuqxd  # Florence + The Machine - Dog Days Are Over
+476j7IDRIDRvv1Xu71EVc8  # Flume, kai - Never Be Like You
+5UWwZ5lm5PKu6eKsHAGxOk  # Foo Fighters - Everlong
+0PtJbtW50jcvvswNPn3QGd  # For Revenge - Serana
+4e6TmHCC4PRUj75knNplNP  # Fourtwnty, Charita Utami - Mangu
+4osgfFTICMkcGbbigdsa53  # Frank Ocean - Novacane
+7DfFc7a6Rwfi3YQMRbDMau  # Frank Ocean - Thinkin Bout You
+6cHHrFD3fmBG9MR3k8kvep  # Frankie Ruiz - Tu Con El
+20I8RduZC2PWMWTDCZuuAN  # Franz Ferdinand - Take Me Out
+3B54sVLJ402zGa6Xm4YGNe  # French Montana, Swae Lee - Unforgettable
+1PREzVLuDT6PSE9sej4wnV  # Fuerza Regida, Grupo Frontera - COQUETA
+6UtWwuheJr5LLDeVypPNx7  # Fuerza Regida - EXCESOS
+3hpm0fTeSqlhJbnqAgaLZs  # Fuerza Regida - Marlboro Rojo
+3D24ErT1MMmUfXWotSj2A2  # Fuerza Regida, Grupo Frontera - ME JALO
+77pDO4WZPIdkwFve0iHWnb  # Fuerza Regida - Por Esos Ojos
+6eLQXa6uk2EW8drsiKbABZ  # Fuerza Regida - TU SANCHO
+1K5KBOgreBi5fkEHvg5ap3  # Future, Drake - Life Is Good (feat. Drake)
+2tudvzsrR56uom6smgOcSf  # Future, Metro Boomin, Kendrick Lamar - Like That
+7EiZI6JVHllARrX9PUvAdX  # Future, The Weeknd - Low Life (feat. The Weeknd)
+0VgkVdmE4gld66l8iyGjgx  # Future - Mask Off
+4lH6nENd1y81jp7Yt9lTBX  # Future - Solo
+28drn6tQo95MRvO0jQEo5C  # Future, Metro Boomin, Travis Scott, Playboi Carti - Type Shit
+59nOXPmaKlBfGMDeOVGrIK  # Future, Drake, Tems - WAIT FOR U (feat. Drake & Tems)
+5k38wzpLb15YgncyWdTZE4  # G-Eazy, Halsey - Him & I (with Halsey)
+0mwAlZqPUWpZJIut93y40W  # Gajendra Verma - Mann Mera
+3UgduSS2bCMmatRox69u3g  # Gianluca Grignani - Mi Historia Entre Tus Dedos - Remastered 2020
+21IYMdzTrzSe191Cy5eMap  # Gigi Perez - Sailor Song
+6IPwKM3fUUzlElbvKw2sKl  # girl in red - we fell in love in october
+7yMiX7n9SBvadzox8T5jzT  # Gorillaz, Del The Funky Homosapien - Clint Eastwood
+4Hff1IjRbLGeLgFgxvHflk  # Gorillaz, Shaun Ryder, Roses Gabor - DARE (feat. Shaun Ryder & Roses Gabor)
+0d28khcov6AiegSCpG5TuT  # Gorillaz, De La Soul - Feel Good Inc.
+4ercRiJZl8kBm8vfPaNjrl  # Gorillaz - On Melancholy Hill
+5lCqi1duvzahzMzW7RfLDI  # Gorillaz - Rhinestone Eyes
+5wbg8kepMFoMzHOEuxiI0q  # Gracie Abrams - Close To You
+51rfRCiUSvxXlCSCfIztBy  # Gracie Abrams - I Love You, I'm Sorry
+4nyF5lmSziBAt7ESAUjpbx  # Gracie Abrams - I miss you, I’m sorry
+7ne4VBA60CxGM75vw0EYad  # Gracie Abrams - That’s So True
+5cbTCQ14BC974Zsx6OlXF8  # Green Day - Boulevard of Broken Dreams
+34vXRJ2bCSFiZKQzVUYVOb  # Grupo Frontera, Grupo Firme - EL AMOR DE SU VIDA
+1zgXPTS9D3SXZIIf6Zzvs5  # Grupo Frontera - NO SE VA - En Vivo
+44vHtuBiZz2phwEwv1Rabu  # Grupo Frontera, Carín León - QUE VUELVAS
+51Awtxah1bdEZCnUP3i70E  # Grupo Frontera, Bad Bunny - un x100to
+1lEIT08AUU67qef6MkKAKx  # Gucci Mane, Mariah Carey - Obsessed (feat. Mariah Carey)
+2N2yrmodOnVF10mKvItC9P  # Guns N' Roses - Don't Cry (Original)
+4JiEyzf0Md7KEFFGWDDdCr  # Guns N' Roses - Knockin' On Heaven's Door
+3YRCqOhFifThpSRFJ1VWFM  # Guns N' Roses - November Rain
+6eN1f9KNmiWEhpE2RhQqB5  # Guns N' Roses - Paradise City
+7snQQk1zcKl8gZ92AnueZW  # Guns N' Roses - Sweet Child O' Mine
+0G21yYKMZoHa30cYVi1iA8  # Guns N' Roses - Welcome To The Jungle
+3OzCF9i6Ey7EkkAYJztmKp  # Halsey - Bad At Love
+6FZDfxM3a3UCqtzo5pxSLZ  # Halsey - Without Me
+3jjujdWJ72nww5eGnfs2E7  # Harry Styles - Adore You
+4Dvkj6JhhA12EX05fT7y2e  # Harry Styles - As It Was
+1ZMiCix7XSAbfAJlEZWMCp  # Harry Styles - Falling
+6VzcQuzTNTMFnJ6rBSaLH9  # Harry Styles - Fine Line
+6uvh0In7u1Xn4HgxOfAn8O  # Harry Styles - Matilda
+5Ohxk2dO5COHF1krpoPigN  # Harry Styles - Sign of the Times
+6UelLqGlWMcVH1E5c4H7lY  # Harry Styles - Watermelon Sugar
+2dIBMHByUGcNPzmYBJ6OAj  # Hindia - Evaluasi
+2wAiFWjRupWmnDkQcu91MF  # Hindia - Rumah Ke Rumah
+1Wrzhfa5bNlqvsnCztz190  # Hombres G - Devuélveme a mi chica
+5B5eTk7DF8KVp1zpQoY1XY  # Hoobastank - The Reason
+5Apvsk0suoivI1H8CmBglv  # Hozier - Almost (Sweet Music)
+57V4uc2b2diZ4RPHXWecb9  # Hozier - Like Real People Do
+2DNXgvkyv35vTWvdgjs7qn  # Hozier - Someone New
+3dYD57lRAUcMHufyqn9GcI  # Hozier - Take Me To Church
+19XpFsce28aByvCC4g89tJ  # Hozier - Too Sweet
+5TgEJ62DOzBpGxZ7WRsrqb  # Hozier - Work Song
+5nPbKG04fhLkIAjcPFaZq7  # HUGEL, Topic, Arash, Daecolm - I Adore You (feat. Daecolm)
+1CPZ5BxNNd0n0nF4Orb9JS  # HUNTR/X, EJAE, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast - Golden
+614NVFo5csQqRnryl4jXs2  # Héctor "El Father", Wisin & Yandel - El Teléfono
+1aKvZDoLGkNMxoRYgkckZG  # ILLIT - Magnetic
+7mPwkbaoiQ5bf8FPbRJzUr  # J Balvin, Farruko - 6 AM
+6Ges5C2IE738iJh4HyQizQ  # J Balvin - Ay Vamos
+0fea68AdmYNygeTGI4RC18  # J Balvin, Bad Bunny - LA CANCIÓN
+7COfe3P7KgfwDwIRB8LIDw  # J Balvin, Willy William - Mi Gente
+25ZAibhr3bdlMCLmubZDVt  # J Balvin, Bad Bunny - QUE PRETENDES
+2e3Ea0o24lReQFR4FA7yXH  # J. Cole - Love Yourz
+2JvzF1RMd7lE3KmFlsyZD8  # J. Cole - MIDDLE CHILD
+68Dni7IE4VyPkTOH9mRWHr  # J. Cole - No Role Modelz
+2uwnP6tZVVmTovzX5ELooy  # J. Cole, Miguel - Power Trip (feat. Miguel)
+0Fs9cdPDhptWEDJmiCbkEW  # J. Cole, Cults, Amber Coffman - She Knows (feat. Amber Coffman & Cults)
+4tqcoej1zPvwePZCzuAjJd  # J. Cole - Wet Dreamz
+2wAJTrFhCnQyNSD3oUgTZO  # J. Cole - Work Out
+58w5J5yNWeGZ7a4cM1rO7Y  # Jason Derulo, Nicki Minaj, Ty Dolla $ign - Swalla (feat. Nicki Minaj & Ty Dolla $ign)
+3at4D3FZnJnYR0Mfcn6JSN  # Jason Derulo - Take You Dancing
+5l3CML2OnzfNs5RfVgbcLt  # Jason Derulo, 2 Chainz - Talk Dirty (feat. 2 Chainz)
+6jizk5lOUnfpaZXYMdfeC6  # Jason Derulo - Trumpets
+6zKrj4SomgfbvsfuTAuElE  # Jason Derulo - Want to Want Me
+7xkQdy0cy5ymoWT7nedvLz  # Jason Derulo - Whatcha Say
+4DJORZgsbqnEJ4f4B9TBGV  # Jax Jones, RAYE - You Don't Know Me (feat. RAYE)
+4HYDUMY0xSpeBr0AMY9cUz  # Jay Wheeler, DJ Nelson, Myke Towers - La Curiosidad
+2igwFfvr1OAGX9SKDCPBwO  # JAŸ-Z, Alicia Keys - Empire State Of Mind
+1auxYwYrFRqZP7t3s7w4um  # JAŸ-Z, Kanye West - Ni**as In Paris
+7r6PigmGzlB3YPB7wvBBbi  # JAŸ-Z, Kanye West, Frank Ocean, THE-DREAM - No Church In The Wild
+5sNESr6pQfIhL3krM8CtZn  # JAŸ-Z, Linkin Park - Numb / Encore
+7LR85XLWw2yXqKBSI5brbG  # JAŸ-Z, Rihanna, Kanye West - Run This Town
+6Jv7kjGkhY2fT4yuBF3aTz  # Jeff Buckley - Lover, You Should've Come Over
+0fK7ie6XwGxQTIkpFoWkd1  # JENNIE - like JENNIE
+1kUyOJb3fzUo8r0OCz5SQk  # JENNIE - Mantra
+6kQz6t5z1FK4uohPh8Kd73  # Jennifer Lopez - Let's Get Loud
+3C0nOe05EIt1390bVABLyN  # Jennifer Lopez, Pitbull - On The Floor
+0Oe49j06Bjrxs8PltuVeaW  # Jennifer Lopez, Pitbull - On The Floor - Radio Edit
+0puf9yIluy9W0vpMEUoAnN  # Jessie J, Ariana Grande, Nicki Minaj - Bang Bang
+2beS6dD5rovBxSA1zYoSHR  # JHAYCO, J Balvin, Bad Bunny - No Me Conoce - Remix
+7tI8dRuH2Yc6RuoTjxo4dU  # Jimin - Who
+27xkOIER6uDLKALIelHylZ  # Jin - Don’t Say You Love Me
+3U4isOIWM3VvDubwSI3y7a  # John Legend - All of Me
+5hKjEpYrJIJs6uPl7zw6Y6  # Jory Boy, Bad Bunny - No Te Hagas
+5RKQ5NdjSh2QzD4MaunT91  # Journey - Don't Stop Believin' (2022 Remaster)
+3b1IQflSLrgzYQPGFzI9cl  # Juanes - Es Por Ti
+1ZPVEo8RfmrEz8YAD5n6rW  # Juicy Luicy - Lantas
+29vIEdxgMT9H1fnBMecWjA  # Julión Álvarez y su Norteño Banda - Lo Tienes Todo
+51qYdMBxt9mFbtZBzq1Yfi  # Julión Álvarez y su Norteño Banda - Regalo De Dios
+01qFKNWq73UfEslI0GvumE  # Jung Kook, Jack Harlow - 3D (feat. Jack Harlow)
+2HRgqmZQC0MC7GeNuDIXHN  # Jung Kook, Latto - Seven (feat. Latto) (Explicit Ver.)
+2KslE17cAJNHTsI2MI0jb2  # Jung Kook - Standing Next to You
+0tKl8ZVM6xJkhznvJAS3Nq  # Junior H - Ella
+24teIhDYO2RocTA2v5dY0r  # Junior H - Extssy Model
+4e76Ss3ji7HQZ4qwcPNkNA  # Junior H - MIENTRAS DUERMES
+4ZOkfHC38nxSeSqzGE5HFr  # Junior H - PIÉNSALO
+6RcAHyC5sAUIbPTkhOQwd8  # Junior H - Y LLORO
+6epn3r7S14KUqlReYr77hA  # Justin Bieber, Ludacris - Baby
+6QFCMUUq1T2Vf5sFUXcuQ7  # Justin Bieber, Nicki Minaj - Beauty And A Beat
+6czM6UMQD9qE5GAUp68oud  # Justin Bieber, Chance the Rapper - Confident - Single Version
+5BZsQlgw21vDOAjoqkNgKb  # Justin Bieber - DAISIES
+6I3mqTwhRpn34SLVafSH7G  # Justin Bieber - Ghost
+50kpGaPAhYJ3sGmk6vplg0  # Justin Bieber - Love Yourself
+4iJyoBOLtHqaGxP12qzhQI  # Justin Bieber, Daniel Caesar, GIVĒON - Peaches (feat. Daniel Caesar & Giveon)
+09CtPGIpYB4BrO8qb1RGsF  # Justin Bieber - Sorry
+0aPZbnkMoWJaJ5CNVLCj8S  # Justin Bieber - That Should Be Me
+6aommJFM8i3iT4inKuDSXh  # Jósean Log - Chachachá
+1otG6j1WHNvl9WgXLWkHTo  # Kali Uchis, Tyler, The Creator, Bootsy Collins - After The Storm (feat. Tyler, The Creator & Bootsy Collins)
+6LOZws7T3jqZz78unPgFF9  # Kali Uchis - Dead To Me
+6lnqe1urLVOV4tn0YgmnIw  # Kali Uchis - Melting
+0JmnkIqdlnUzPaf8sqBRs3  # Kali Uchis - Moonlight
+6tDDoYIxWvMLTdKpjFkc1B  # Kali Uchis - telepatía
+5SkRLpaGtvYPhw02vZhQQ9  # Kanye West, Syleena Johnson - All Falls Down
+0mEdbdeRFQwBhN4xfyIeUM  # Kanye West - Can't Tell Me Nothing
+5TRPicyLGbAF2LGBFbHGvO  # Kanye West, Dwele - Flashing Lights
+4EWCNWgDS8707fNSZ1oaA5  # Kanye West - Heartless
+4iz9lGMjU1lXS51oPmUmTe  # Kanye West, Chris Martin - Homecoming
+7rbECVPkY5UODxoOUVKZnA  # Kanye West - I Wonder
+3DK6m7It6Pw857FcQftMds  # Kanye West, Pusha T - Runaway
+0j2T0R9dR9qdJYsB7ciXhf  # Kanye West - Stronger
+482PEx8hfMHSsuGtHd960A  # Kapo - OHNANA
+0fMjldiEpgjbWQ4bBQwVzH  # Kapo - UWAIE
+505v13epFXodT9fVAJ6h8k  # KAROL G - AMARGURA
+3HqcNJdZ2seoGxhn0wVNDK  # KAROL G - PROVENZA
+5RqSsdzTNPX1uzkmlHCFvK  # KAROL G, Peso Pluma - QLONA
+73scB4Q4fcOmnsBVZPmk32  # KAROL G - Si Antes Te Hubiera Conocido
+0DWdj2oZMBFSzRsi2Cvfzf  # KAROL G, Shakira - TQG
+0dKg2vGC1hFqcK5LGTaKzX  # KAROL G, Nicki Minaj - Tusa
+1xOqGUkyxGQRdCvGpvWKmL  # KATSEYE - Gabriela
+1j15Ar0qGDzIR0v3CQv3JL  # KATSEYE - Gnarly
+6aJn7Cst74cj4lNIiPRgav  # KATSEYE - Touch
+6KOEK6SeCEZOQkLj5M1PxH  # Katy Perry, Snoop Dogg - California Gurls
+4jbmgIyjGoXjY01XxatOx6  # Katy Perry, Juicy J - Dark Horse
+4r6eNCsrZnQWJzzvFh4nlg  # Katy Perry - Firework
+3B4etxytImrRKQgV3XHjnR  # Katy Perry - Harleys In Hawaii
+1ulXmqjktxSdrdT1bzc69H  # Katy Perry - Hot N Cold
+25ZttbpeUKDOm3aghD2oBJ  # Katy Perry - I Kissed A Girl
+3avYqdwHKEq8beXbeWCKqJ  # Katy Perry - Last Friday Night (T.G.I.F.)
+27tNWlhdAryQY04Gb2ZhUI  # Katy Perry - Roar
+2009X8GyWTqyxIdzAEYW6N  # Katy Perry - The One That Got Away
+0ll8uFnc0nANY35E0Lfxvg  # Keane - Somewhere Only We Know
+6sTlzpJaFGkFQ4BNccmbW9  # Kehlani - Folded
+6ZRuF2n1CQxyxxAAWsKJOy  # Kehlani, Ty Dolla $ign - Nights Like This (feat. Ty Dolla $ign)
+3GCdLUSnKSMJhs4Tj6CV3s  # Kendrick Lamar, SZA - All The Stars (with SZA) - From "Black Panther: The Album"
+7KXjTSCq5nL1LoYtL7XAwS  # Kendrick Lamar - HUMBLE.
+6PGoSes0D9eUDeeAafB2As  # Kendrick Lamar, Zacari - LOVE. FEAT. ZACARI.
+2CGNAOSuO1MEFCbBRgUzjd  # Kendrick Lamar, SZA - luther (with sza)
+2HbKqm4o0w5wEeEFXm2sD4  # Kendrick Lamar, Jay Rock - Money Trees
+6AI3ezQ4o3HUoP6Dhudph3  # Kendrick Lamar - Not Like Us
+6REbwUNlppTfcnV4d4ZoZi  # Kendrick Lamar - Swimming Pools (Drank)
+0aB0v4027ukVziUGwVGYpG  # Kendrick Lamar, Lefty Gunplay - tv off (feat. lefty gunplay)
+0HPD5WQqrq7wPWR7P7Dw1i  # Kesha - TiK ToK
+2Mmid8aKghvsPgaQIFMrPJ  # Keyshia Cole - Love
+5bgwqaRSS3M8WHWruHgSL5  # Khalid - 8TEEN
+2OpBganfGk2GVdSlRdxzaX  # Khalid - Better
+152lZdxL1OR0ZMW6KquMif  # Khalid - Location
+45Egmo7icyopuzJN0oMEdk  # Khalid, Normani - Love Lies
+6Hgh47WXVKtXN5zGOu0hjI  # Khalid, 6LACK, Ty Dolla $ign - OTW
+5Z3GHaZ6ec9bsiI5BenrbY  # Khalid - Young Dumb & Broke
+0ntQJM78wzOLVeCUAW7Y45  # Kings of Leon - Sex on Fire
+5VGlqQANWDKJFl0MBG3sg2  # Kings of Leon - Use Somebody
+3eR23VReFzcdmS7TYCrhCe  # Kygo, Selena Gomez - It Ain't Me (with Selena Gomez)
+31REg67eoHJSvMLUcEmGNj  # La Arrolladora Banda El Limón De Rene Camacho - El Final De Nuestra Historia
+6yLqoieklk9gwabLaUDJ4s  # La Factoria, Eddy Lover - Perdóname
+19CmuECYssqkPWANF4nLWM  # La Mosca - Para No Verte Más
+4waqcUQWdj0yH26STWl2Rq  # La Oreja de Van Gogh - Rosas
+2hConpLOB6gmyM8vDkVOof  # La Unión - Lobo-hombre en París
+2LHNTC9QZxsL3nWpt8iaSR  # Lady Gaga - Abracadabra
+2rbDhOo9Fh61Bbu23T2qCk  # Lady Gaga - Always Remember Us This Way
+0SiywuOBRcynK0uKGWdCnn  # Lady Gaga - Bad Romance
+7so0lgd0zP2Sbgs2d7a1SZ  # Lady Gaga, Bruno Mars - Die With A Smile
+0QkWikH5Z3U0f79T9iuF6c  # Lady Gaga - Judas
+1dzQoRqT5ucxXVaAhTcT0J  # Lady Gaga, Colby O'Donis - Just Dance
+02XnQdf7sipaKBBHixz3Zp  # Lady Gaga - Paparazzi
+1QV6tiMFM6fSOKOGLMHYYg  # Lady Gaga - Poker Face
+2VxeLyX666F8uXCJ0dZF8B  # Lady Gaga, Bradley Cooper - Shallow
+6nCDnzErqalOaIY3EJM8NK  # Lady Gaga, Beyoncé - Telephone
+36RLpWj2hzT7SFUMQSZfst  # Lana Del Rey - Born To Die
+1NZs6n6hl8UuMaX0UC0YTz  # Lana Del Rey - Brooklyn Baby
+2mdEsXPu8ZmkHRRtAdC09e  # Lana Del Rey - Cinnamon Girl
+6GGtHZgBycCgGBUhZo81xe  # Lana Del Rey - Say Yes To Heaven
+1FEiijYPJtyswChfcpv3p0  # Lana Del Rey - Summertime Sadness
+1y3r6RXiJZNBV1EI0NggpS  # Lana Del Rey - Ultraviolence
+33HucJaMg7OBQLqmaVx58p  # Lana Del Rey - Video Games
+5Y6nVaayzitvsD5F7nr3DV  # Lana Del Rey - West Coast
+2nMeu6UenVvwUktBCpLMK9  # Lana Del Rey - Young And Beautiful
+3rXS2AEXNADrIFyuY3F6RJ  # Last Child - Duka
+4MagTPnkPiDuIa4P8GtW1b  # Lauv - I Like Me Better
+7wZUrN8oemZfsEd1CGkbXE  # Leona Lewis - Bleeding Love
+2XHzzp1j4IfTNp1FTn7YFg  # Lil Wayne, Drake, Future - Love Me
+78O33U6jbQtNiNfbkZudpd  # Lil Wayne, Drake - She Will
+4dASQiO1Eoo3RJvt74FtXB  # Lil Wayne, Wiz Khalifa, Imagine Dragons, X Ambassadors, Logic, Ty Dolla $ign - Sucker for Pain (with Wiz Khalifa, Imagine Dragons, Logic & Ty Dolla $ign feat. X Ambassadors)
+3qmvK8QARSPkFTuKeIXSbs  # Linkin Park - Bleed It Out
+57BrRMwf9LrcmuOsyGilwr  # Linkin Park - Crawling
+4Yf5bqU3NK4kNOypcrLYwU  # Linkin Park - Faint
+2Sru5y6R0mYhV9nEHMDWJ7  # Linkin Park - Given Up
+60a0Rd6pjrkxjPbaKzXjfq  # Linkin Park - In the End
+2nLtzopw4rPReszdYBJU6h  # Linkin Park - Numb
+3K4HG9evC7dg3N0R9cYqk4  # Linkin Park - One Step Closer
+3fjmSxt0PskST13CSdBUFx  # Linkin Park - Somewhere I Belong
+1EDPVGbyPKJPeGqATwXZvN  # Linkin Park - The Emptiness Machine
+4kfm1uI9QGaoN9qm6CkAMn  # Linkin Park - What I've Done
+65ZihkVQO3KqPj7ZKxmcev  # LISA - Rockstar
+1x0gAzMSpHsS5e6NqKI9eV  # Lloyd, Lil Wayne - You
+35ISBknsCeZQtq66xABI9g  # Lola Young - Messy
+5yJaXWIErrrsjQ3J0eR5aK  # Lord Huron - The Night We Met
+7Mj6R7TjsPxeLYu0Xdvl73  # Los Abuelos De La Nada - Mil Horas
+6Pur3hWy6Nzc27ilmsp5HA  # Los Enanitos Verdes - Lamento Boliviano
+6habFhsOp2NvshLv26DqMb  # Luis Fonsi, Daddy Yankee - Despacito
+1uKjQoh8JZj9ryuYRhpd7E  # Luis Miguel - Ahora Te Puedes Marchar
+1Lo0QY9cvc8sUB2vnIOxDT  # Luke Combs - Fast Car
+4t9a07PAghtQMRAIP9FQ7Z  # Lunay, Daddy Yankee, Bad Bunny - Soltera (Remix)
+3FwQ3RYYEekzjEeL3jdpUZ  # Lyodra - Pesan Terakhir
+2lpygKqzPFtItQ4ss3cgfb  # Mac Miller, Ty Dolla $ign - Cinderella (feat. Ty Dolla $ign)
+1OubIZ0ARYCUq5kceYUQiO  # Mac Miller, Bilal - Congratulations (feat. Bilal)
+5bJ1DrEM4hNCafcDd1oxHx  # Mac Miller - Self Care
+3iEUDvanZwQhLCIqUmCR7N  # Mac Miller, Empire Of The Sun - The Spins
+6GnhWMhgJb7uyiiPEiEkDA  # Mac Miller, Miguel - Weekend (feat. Miguel)
+22skzmqfdWrjJylampe0kt  # Macklemore, Ryan Lewis, Macklemore & Ryan Lewis, Ray Dalton - Can't Hold Us (feat. Ray Dalton)
+0CokSRCu5hZgPxcZBaEzVE  # Macklemore, Skylar Grey - Glorious (feat. Skylar Grey)
+6CjtS2JZH9RkDz5UVInsa9  # Macklemore & Ryan Lewis, Macklemore, Ryan Lewis, Wanz - Thrift Shop (feat. Wanz)
+2v7ywbUzCgcVohHaKUcacV  # Madonna - Like a Prayer
+7zsXy7vlHdItvUSH8EwQss  # Major Lazer, Justin Bieber, MØ - Cold Water
+4WxU1gDVmoH6gstgR0MT78  # Major Lazer, DJ Snake, MØ - Lean On
+0eAuGrXyGFYwur9ARUe7LJ  # Malcolm Todd - Earrings
+7KbF6AdprOXEEHlsq11Z6d  # Maluma - 11 PM
+6DUdDIRgLqCGq1DwkNWQTN  # Maluma - Borro Cassette
+15AlCAcyTVSqibPxZbTwRg  # Maluma, Trap Capos, Noriel, Bryant Myers, Juhn - Cuatro Babys (feat. Trap Capos, Noriel, Bryant Myers & Juhn)
+1iEwyiSLAunPR6uouANE0O  # Maluma - El Perdedor
+1RouRzlg8OKFeqc6LvdxmB  # Maluma - Felices los 4
+1yoMvmasuxZfqHEipJhRbp  # Maluma - Hawái
+4bw8mcDUSRWfQo63ZTYRnU  # Maluma, Carín León - Según Quién
+3tt9i3Hhzq84dPS8H7iSiJ  # Manuel Turizo - La Bachata
+5jf0PmPCHefQ78uAzqIqbj  # Manuel Turizo - Una Lady Como Tú
+5EJ2THuhAapEIeQOtXUQ0x  # Maná - Oye Mi Amor
+4OwhwvKESFtuu06dTgct7i  # Marc Seguí, Rauw Alejandro, Pol Granch - Tiroteo - Remix
+0bYg9bo50gSsH3LtXe2SQn  # Mariah Carey - All I Want for Christmas Is You
+6xkryXuiZU360Lngd4sx13  # Mariah Carey - Fantasy
+4EI8VuxUuIHKfafU72emqz  # Mariah Carey - We Belong Together
+7GaFYUqP2WdR4KTPk7cXoP  # Mario - Let Me Love You
+32OlwWuMpZ6b0aN2RZOeMS  # Mark Ronson, Bruno Mars - Uptown Funk (feat. Bruno Mars)
+6kopmMZiyLmw7h66uXcXR7  # Mark Ronson, Amy Winehouse - Valerie (feat. Amy Winehouse) - Version Revisited
+2bL2gyO6kBdLkNSkxXNh6x  # Maroon 5 - Animals
+4gbVRS8gloEluzf0GzDOFc  # Maroon 5 - Maps
+4cktbXiXOapiLBMprHFErI  # Maroon 5 - Memories
+7pYfyrMNPn3wtoCyqcTVoI  # Maroon 5, Christina Aguilera - Moves Like Jagger - Studio Recording From "The Voice" Performance
+6cpk00i5TxCqSeqNi2HuIe  # Maroon 5 - One More Night
+1XGmzt0PVuFgQYYnV2It7A  # Maroon 5, Wiz Khalifa - Payphone
+4llK75pXNWZz6KAho2Gp16  # Maroon 5 - She Will Be Loved - Radio Mix
+2iuZJX9X9P0GKaE93xcPjk  # Maroon 5 - Sugar
+5qII2n90lVdPDcgXEEVHNy  # Maroon 5 - Sunday Morning
+6ECp64rv50XVz93WvxXMGF  # Maroon 5 - This Love
+37wMw58jtlDmjKQ20bhsVf  # Marshmello, Halsey - Be Kind
+5KbBVSj6AJZ5662fO8EYFh  # Marshmello, Manuel Turizo - El Merengue
+7vGuf3Y35N4wmASOKLUVVU  # Marshmello, Khalid - Silence
+7Feaw9WAEREY0DUOSXJLOM  # Martin Garrix, Macklemore, Fall Out Boy - Summer Days (feat. Macklemore & Patrick Stump of Fall Out Boy)
+7tqhbajSfrz2F7E1Z75ASX  # Marvin Gaye, Tammi Terrell - Ain't No Mountain High Enough
+1LzNfuep1bnAUR9skqdHCK  # Mazzy Star - Fade Into You
+5pSvjjfsh34sLrkYSNGCl4  # Men At Work - Down Under
+3DwQ7AH3xGD9h65ezslm6q  # Metallica - Enter Sandman - Remastered 2021
+6QAsrXPnMSXIbV0yEJHlEX  # Metallica - Nothing Else Matters - Remastered 2021
+2Hh3ETdQKrmSI3QS0hme7g  # Metro Boomin, Future, Don Toliver - Too Many Nights (feat. Don Toliver & with Future)
+5NXQPIl8LBpeaVQJUj2DE0  # MGMT - Kids
+2gSNBigeWMVtY3QBIvPAEc  # Michael Jackson - Bad - 2012 Remaster
+3BovdzfaX4jb5KFQwoPfAw  # Michael Jackson - Beat It
+7J1uxwnxfQLu4APicE5Rnj  # Michael Jackson - Billie Jean
+5BKKy9fIJL5uM9fz1SnqyP  # Michael Jackson - Chicago
+0AcgKF7kbSoCkh3n7vlHwK  # Michael Jackson - Dirty Diana - 2012 Remaster
+46eu3SBuFCXWsPT39Yg3tJ  # Michael Jackson - Don't Stop 'Til You Get Enough
+4cgjA7B4fJBHyB9Ya2bu0t  # Michael Jackson - Human Nature
+5T7ywazdGIydr6JCW6t02j  # Michael Jackson - Smooth Criminal - 2012 Remaster
+3wuCCNCnBhJlwkIJTBZFiv  # Michael Jackson - They Don't Care About Us
+2LlQb7Uoj1kKyGhlkBf9aC  # Michael Jackson - Thriller
+5hJFhO9dvhJoDvUZZ9iWSw  # Miguel - Adorn
+1eUGmzzvahJjOSWgDHuRlv  # Miguel - Girl With The Tattoo Enter.lewd
+5WoaF1B5XIEnWfmb5NZikf  # Miguel, Travis Scott - Sky Walker (feat. Travis Scott)
+0JXXNGljqupsJaZsgSbMZV  # Miguel - Sure Thing
+7MVIfkyzuUmQ716j8U7yGR  # Milo j, Taiu - Rara Vez
+3EK4tGkSiO5xvvB5sM4tln  # Mon Laferte, Juanes - Amárrame
+28UP90XhjCovLtieduYr9P  # Mon Laferte, Bunbury - Mi Buen Amor
+4skuEIloXWuxxgekKupkEH  # Mon Laferte - Tu Falta De Querer
+5jt25aFjW2kNoBqaEVaz5W  # Mora, Feid - LA INOCENTE
+583dMdiUquLMenarTp7PQm  # Morgan Wallen - Last Night
+57TEkZN3f84tFJFHFrD4pO  # Morgan Wallen - Whiskey Glasses
+0eeX8L0DWvGth1F6xVkvv7  # Myke Towers, Bad Bunny - ADIVINO
+7iUtQNMRB8ZkKC4AmEuCJC  # Myke Towers - LA FALDA
+7ABLbnD53cQK00mhcaOUVG  # Myke Towers - LALA
+6K5BsR04ijf3FHNzjbaagD  # Myke Towers, Farruko, Arcángel, Sech, Zion - Si Se Da - Remix
+7hk9hVBgdKCbkQOnjxl8bC  # Myles Smith - Stargazing
+6i9Ci0IN1q1GcnhdbKU7kZ  # Nadhif Basalamah - penjaga hati
+630DpnzdfjdVqv2yLfPbAX  # Nadin Amizah - Bertaut
+5LhI8m7n8xlQmNe3b7Rwis  # Natanael Cano, Oscar Maydon - Madonna
+1uigwk5hNV84zRd5YQQRTk  # Natasha Bedingfield - Pocketful of Sunshine
+3U5JVgI2x4rDyHGObzJfNf  # Natasha Bedingfield - Unwritten
+4nt5qwSYkN4d3v57v4bB72  # NATTI NATASHA, Ozuna - Criminal
+6CFPFnS9EcLs2I0nWqtWci  # Ne-Yo - Because Of You
+1yJ5fyqBusR7Verj8JGsKV  # Ne-Yo - Miss Independent
+6brl7bwOHmGFkNw3MBqssT  # Ne-Yo - So Sick
+4wH4dJgrsxONID6KS2tDQM  # Nelly Furtado - Maneater
+2gam98EZKrF9XuOkU13ApN  # Nelly Furtado, Timbaland - Promiscuous
+2aI21FnmY7TJVKeMaoQZ0t  # Nelly Furtado - Say It Right
+4eLDmhsJW3JoZTXCAozHor  # Neton Vega - Loco
+4oB8Xd7gMlUEtWoD8bmCXW  # Neton Vega, Peso Pluma - Morena
+2psRActEWsTlYYd7EDoyVR  # New West - Those Eyes
+3r8RuvgbX9s7ammBn07D3W  # NewJeans - Ditto
+0a4MMyCrzT0En247IhqZbD  # NewJeans - Hype Boy
+6rdkCkjk6D12xRpdMXy0I2  # NewJeans - New Jeans
+65FftemJ1DbbZ45DUfHJXE  # NewJeans - OMG
+1jq28NGw6wdtFKx8MBPy6C  # Nickelback - Burn It to the Ground
+0gmbgwZ8iqyMPmXefof8Yf  # Nickelback - How You Remind Me
+5eqiMMbaeUZ32Q7sS00H35  # Nicki Minaj - Anaconda
+1oHNvJVbFkexQc0BpQp7Y4  # Nicki Minaj - Starships
+3hlksXnvbKogFdPbpO9vel  # Nicki Minaj - Super Bass
+2uHn71ZwsodBen5QUUDqHw  # Nicki Minaj - Super Freaky Girl
+6JjPBQfI2Y8nIjnm65X6Pw  # Nicky Jam, J Balvin, Maluma, Ozuna - X (feat. Maluma & Ozuna) - Remix
+7ipqVwkp2MhZv0Ojzqy1NV  # NIKI - lowkey
+2SHTKB8YYlawTGIuJ2b2ok  # Nirvana - About A Girl
+5AEOqLsRJFAoSS4ay4Jzao  # Nirvana - Come As You Are - Remastered
+11LmqTE2naFULdEP94AUBa  # Nirvana - Heart-Shaped Box
+0kUNGAdU8J4jDvxhBtgDF8  # Nirvana - Lithium - Remastered
+0gucTLf7trAf37Ua1uAyAu  # Nirvana - Smells Like Teen Spirit - Remastered
+2WL6GQzPuK9Nrpy9XwNEbz  # Nirvana - Something In The Way - Remastered
+15VRO9CQwMpbqUYA7e6Hwg  # Nirvana - The Man Who Sold The World - Live
+4O2rRsoSPb5aN7N3tG6Y3v  # Noah Kahan - Northern Attitude
+0mflMxspEfB0VbI1kyLiAv  # Noah Kahan - Stick Season
+4nHJcUtNSUVjXRnjdP29Bk  # Noah Kahan - You’re Gonna Go Far
+5GGTgkmfEzkhAfmG0hxXk9  # Oasis - Champagne Supernova
+0UvCh63URrLFcPkKt99hHd  # Oasis - Don't Look Back in Anger - Remastered
+5YciOakY5dB5dULkiLdCaf  # Oasis - Stop Crying Your Heart Out
+5qqabIl2vWzo9ApSC317sa  # Oasis - Wonderwall - Remastered
+0eu4C55hL6x29mmeAjytzC  # Oliver Tree - Life Goes On
+1qbmS6ep2hbBRaEZFpn7BX  # Olivia Dean - Man I Need
+7gKxCvTDWwV9wBhdeBbr3l  # Olivia Dean - Nice To Each Other
+6sGIMrtIzQjdzNndVxe397  # Olivia Dean - So Easy (To Fall In Love)
+6HU7h9RYOaPRFeh0R3UeAr  # Olivia Rodrigo - deja vu
+5wANPM4fQCJwkGd4rN57mH  # Olivia Rodrigo - drivers license
+3fRCAPMMZ8l8P9YKI6OCzD  # Olivia Rodrigo - drop dead
+5CZ40GBx1sQ9agT82CLQCT  # Olivia Rodrigo - traitor
+2TktkzfozZifbQhXjT6I33  # Omar Apollo - Evergreen (You Didn’t Deserve Me At All)
+0Sr7ssScx54yxdM2ols7nW  # Omar Courtz, De La Rose - Q U E V A S H A C E R H O Y ?
+5O2P9iiztwhomNh8xkR9lJ  # One Direction - Night Changes
+1NrJYpdAi7uosDRPmSYrsG  # OneRepublic - Apologize
+2tpWsVSb9UEmDRxAl1zhX1  # OneRepublic - Counting Stars
+4fYte8ZvTK14NEhAOZocBi  # OneRepublic - I Ain't Worried
+3IQF4xCQUPicbA4hWfTxPo  # OneRepublic - I Lived
+6KL88T4Ma4ABXqzgUoEwkd  # OneRepublic - Run
+0tgnTzjIkj8mVVEh0SNH0t  # OneRepublic - Secrets
+6keF0sk7i4WU3cVnMkTtS3  # OneRepublic - Sunshine
+5mp6OBKCAjN4UYRvhOuUze  # Oscar Maydon, Fuerza Regida - Tu Boda
+5u5MvmVtitax9R1Mxh3reC  # Ozuna - Dile Que Tu Me Quieres
+5EId1m4DNwTf3at31w8bPJ  # Ozuna - El Farsante
+1m69ELEgE6k5ZWsap40ozt  # Ozuna - Se Preparó
+1mKXFLRA179hdOWQBwUk9e  # P!nk, Nate Ruess - Just Give Me a Reason (feat. Nate Ruess)
+1gv4xPanImH17bKZ9rOveR  # P!nk - Raise Your Glass
+0JiY190vktuhSGN6aqJdrt  # P!nk - So What
+1jF7IL57ayN4Ity3jQqGu0  # P!nk - Try
+0Qh38w01QRXK6KHIv0e3hb  # P!nk - What About Us
+1zu5ZpnrSArdoaT6Qq3yo9  # Pamungkas - Monolog
+5pvlSx0s2w3nKuyfrFnYBZ  # Pamungkas - To the Bone
+1Bv3h7Vc4AaYA2BcSM3rVd  # Paramore - All I Wanted
+1yjY7rpaAQvKwpdUliHx0d  # Paramore - Still into You
+7JIuqL4ZqkpfGKQhYlrirs  # Paramore - The Only Exception
+132ALUzVLmqYB4UsBj5qD6  # Paulo Londra - Adan y Eva
+77dMSg2VHi2wwXjXNrmcrZ  # Paulo Londra, Lenny Tavárez - Nena Maldición
+5jW3rF4URMdK7tO2xjS5EI  # Paulo Londra - Tal Vez
+4U0JLGFHJpEnDS5w8F7ngE  # Pedro Capó, Farruko - Calma - Remix
+5GTBdEjZe7zEDp1N0eCZE4  # Peso Pluma, Estevan Plazola - HOLLYWOOD
+3HOKxuTDmNVmIlCIpBiD8m  # Peso Pluma, Jasiel Nuñez - LAGUNAS
+5CCr8msaN3MhgqBoa9yWhH  # PinkPantheress, Ice Spice - Boy's a liar Pt. 2
+4S4QJfBGGrC8jRIjJHf1Ka  # PinkPantheress - Pain
+1DwscornXpj8fmOmYVlqZt  # PinkPantheress, Zara Larsson - Stateside + Zara Larsson
+1j6xOGusnyXq3l6IryKF3G  # Piso 21, Manuel Turizo - Déjala Que Vuelva
+059bcIhyc2SBwm6sw2AZzd  # Piso 21, Micro TDH - Te Vi
+0Hf4aIJpsN4Os2f0y0VqWl  # Pitbull, Christina Aguilera - Feel This Moment (feat. Christina Aguilera)
+4Y7XAxTANhu3lmnLAzhWJW  # Pitbull, John Ryan - Fireball (feat. John Ryan)
+4QNpBfC0zvjKqPJcyqBy9W  # Pitbull, AFROJACK, Ne-Yo, Nayer - Give Me Everything (feat. Nayer)
+6Rb0ptOEjBjPPQUlQtQGbL  # Pitbull - Hotel Room Service
+5RzFJd6W40SDTyZkX6xx45  # Pitbull - I Know You Want Me (Calle Ocho)
+62zFEHfAYl5kdHYOivj4BC  # Pitbull, Chris Brown - International Love (feat. Chris Brown)
+3cHyrEgdyYRjgJKSOiOtcS  # Pitbull, Kesha - Timber
+2bJvI42r8EF3wxjOuDav4r  # Pitbull, Ne-Yo - Time of Our Lives
+2cRtuTadVm0JzoW4NNTIqI  # Plan B - Candy
+3KZCP2StVGdWkOKyRZNWA4  # Plan B - Es un Secreto
+1DrDfpOx4P4LMxFhtOmeyD  # Plan B - Fanatica Sensual
+6URNgz911jj10KXTFtevcS  # Plan B - Por Que Te Demoras?
+6NdKkfo7o6IH1Op0jsBDjN  # Plan B - Si No Le Contesto
+3yk7PJnryiJ8mAPqsrujzf  # Playboi Carti - Location
+1e1JKLEDKP7hEQzJfNAgPl  # Playboi Carti - Magnolia
+2BJSMvOGABRxokHKB0OI8i  # Playboi Carti, Lil Uzi Vert - Shoota (feat. Lil Uzi Vert)
+29TPjc8wxfz4XMn21O7VsZ  # Playboi Carti - Sky
+7dt6x5M1jzdTEt8oCbisTK  # Post Malone - Better Now
+21jGcNKet2qwijlDFuPiPb  # Post Malone - Circles
+3a1lNhkSLSkpJE4MSHpDu9  # Post Malone, Quavo - Congratulations
+5IZXB5IKAD2qlvTPJYDCFB  # Post Malone, Morgan Wallen - I Had Some Help (Feat. Morgan Wallen)
+3swc6WTsr7rl9DqQKQA55C  # Post Malone, Ty Dolla $ign - Psycho (feat. Ty Dolla $ign)
+0e7ipj03S05BNilyu5bRzt  # Post Malone, 21 Savage - rockstar (feat. 21 Savage)
+0RiRZpuVRbi7oqRdSMwhQY  # Post Malone, Swae Lee - Sunflower - Spider-Man: Into the Spider-Verse
+6eT7xZZlB2mwyzJ2sUKG6w  # Post Malone - White Iverson
+7xQAfvXzm3AkraOtGPWIZg  # Post Malone - Wow.
+1uvyZBs4IZYRebHIB1747m  # Prince - Purple Rain
+7eQl3Yqv35ioqUfveKHitE  # Pritam, Mohit Chauhan, Irshad Kamil - Tum Se Hi
+6XbtvPmIpyCbjuT0e8cQtp  # Quevedo - Columbia
+5q86iSKkBtOoNkdgEDY5WV  # Quevedo - VISTA AL MAR
+31AOj9sFz2gM0O3hMARRBx  # R.E.M. - Losing My Religion
+70LcF31zb1H0PyJoS1Sx1r  # Radiohead - Creep
+73CKjW3vsUXRpy3NnX4H7F  # Radiohead - Fake Plastic Trees
+2a1iMaoWQ5MnvLFBDv4qkf  # Radiohead - High and Dry
+63OQupATfueTdZMWTxW03A  # Radiohead - Karma Police
+2fuYa3Lx06QQJAm0MjztKr  # Radiohead - Let Down
+10nyNJ6zNy2YVYLrcwLccB  # Radiohead - No Surprises
+3blvSatB9XD5i705K4j2yP  # Raim Laode - Komang
+6mmPpaltUZK7xjNlBPQQ0p  # Rauw Alejandro, Chencho Corleone - Desesperados
+4SJHHpKhcuXwDsCsPqshXj  # Rauw Alejandro, Chencho Corleone - El Efecto
+6mAN61JH0dzyZpWslS11jy  # Rauw Alejandro, Farruko - Fantasias
+1YYfyJ2yCvGFCxwjsIqEK9  # Rauw Alejandro, Romeo Santos - Khé?
+1aUq8rjW1EwkAkMri4VfJy  # Rauw Alejandro, Lyanno, Brray - LOKERA
+0l0vcZMU7AOeQmUIREoI2U  # Rauw Alejandro, Bad Bunny - Qué Pasaría...
+3rdAz1fbUfZxYgaCviYhRo  # Rauw Alejandro - Todo De Ti
+4WFgvKVfEhb3IUAFGrutTR  # Ravyn Lenae - Love Me Not
+5mHdCZtVyb4DcJw8799hZp  # RAYE, 070 Shake - Escapism.
+7eYzn1CuiJK6VvUhf8zA6k  # RAYE - WHERE IS MY HUSBAND!
+06mxQBvMOlIYn4RF6OOm93  # Red Hot Chili Peppers - By the Way - 2014 Remaster
+5umTOX1YQ2WXyxO6AI3nEY  # Red Hot Chili Peppers - Californication - 2014 Remaster
+6ojiTSzyv2qPMWqyhUKAqz  # Red Hot Chili Peppers - Can't Stop - 2014 Remaster
+10Nmj3JCNoMeBQ87uw5j8k  # Red Hot Chili Peppers - Dani California
+2oaK4JLVnmRGIO9ytBE1bt  # Red Hot Chili Peppers - Dark Necessities
+0xjd0LsI1x4EkdhCWEiA8d  # Red Hot Chili Peppers - Otherside - 2014 Remaster
+32sx78QsGg6pKXn42XvF9L  # Red Hot Chili Peppers - Scar Tissue - 2014 Remaster
+2aibwv5hGXSgw7Yru8IYTO  # Red Hot Chili Peppers - Snow (Hey Oh)
+3d9DChrdc6BOeFsbrZ3Is0  # Red Hot Chili Peppers - Under the Bridge
+7MmrcXVA7A5zZ2CbDuGHNa  # Rels B - A Mí
+6uiQ0DqbXTBc8tl0AUKZkR  # Rels B - TU VAS SIN (fav)
+1s7oOCT8vauUh01PbJD6ps  # Rema, Selena Gomez - Calm Down (with Selena Gomez)
+5EcG8eMMlwkHRVa4aTR1qd  # Rihanna - Breakin' Dishes
+30VrBsh1STRBoIrhQOAwzK  # Rihanna - Disturbia
+1Jo0Zg7XlrA6z0mFTZVdkn  # Rihanna - Don't Stop The Music
+0UHB9METy4VCXNgkcGqHqS  # Rihanna - Kiss It Better
+5oO3drDxtziYU2H1X23ZIp  # Rihanna - Love On The Brain
+2ENexcMEMsYk0rVJigVD3i  # Rihanna - Only Girl (In The World)
+7ySUcLPVX7KudhnmNcgY2D  # Rihanna - S&M
+789CxjEOtO76BVD1A9yJQH  # Rihanna, Mikky Ekko - Stay
+2yPoXCs7BSIUrucMdK5PzV  # Rihanna, JAŸ-Z - Umbrella
+1zv3WFUbZ5vPxFq9I2jAU1  # Rihanna, Calvin Harris - We Found Love
+1uN0f4NqMDcReSwXO6PLuG  # Rihanna - Where Have You Been
+6I86RF3odBlcuZA9Vfjzeq  # Romeo Santos - Eres Mía
+6r46lnXFbE9fr2d3KNaGbe  # Romeo Santos - Imitadora
+3DKWF8is9hzp84aSxnhlag  # Romeo Santos, Carlos Santana - Necio (feat. Carlos Santana)
+1iLv1ieT9BZ3qsti9yTCnG  # Romeo Santos, Drake - Odio (feat. Drake)
+5PycBIeabfvX3n9ILG7Vrv  # Romeo Santos - Propuesta Indecente
+4wJ5Qq0jBN4ajy7ouZIV1c  # ROSÉ, Bruno Mars - APT.
+20ZP3Om9DvDazXrNUC7WM2  # Rudimental, Jess Glynne, Macklemore, Dan Caplen - These Days (feat. Jess Glynne, Macklemore & Dan Caplen)
+2eAvDnpXP5W0cVtiI0PUxV  # Ruth B. - Dandelions
+6a9Z1jUms915w4O7N1PxjY  # Rvssian, Rauw Alejandro, Ayra Starr - Santa
+0zNMdrDEs5N0JPQ7RYQZln  # Ryan Castro, Peso Pluma, SOG - QUEMA
+2HRqTpkrJO5ggZyyK6NPWz  # Sabrina Carpenter - Espresso
+21B4gaTWnTkuSh77iWEXdS  # Sabrina Carpenter - Juno
+2BwO5K8Q7EPAJSGze3AAh9  # Sabrina Carpenter - Manchild
+6dgUya35uo964z7GZXM07g  # Sabrina Carpenter - Nonsense
+2tHwzyyOLoWSFqYNjeVMzj  # Sabrina Carpenter - Please Please Please
+5G2f63n7IPVPPjfNIGih7Q  # Sabrina Carpenter - Taste
+1hA697u7e1jX2XM8sWA6Uy  # Sachin-Jigar, Arijit Singh, Amitabh Bhattacharya - Apna Bana Le
+4vVTI94F9uJ8lHNDWKv0i2  # Sean Kingston, Justin Bieber - Eenie Meenie
+5nEdwtSv0qqeE0l4o1lR4q  # Sean Paul, Keyshia Cole - (When You Gonna) Give It Up to Me - Radio Version
+6bK9BH9Ts8Gj5JFvnQkzak  # Sean Paul - Get Busy
+48QmG1dfvMuYLxMPt7KSRA  # Sean Paul, Dua Lipa - No Lie
+1zZIGnXIcDKU8QIUkR20nK  # Sean Paul - She Doesn't Mind
+0k2GOhqsrxDTAbFFSdNJjT  # Sean Paul - Temperature
+655JkvIwu2rDCaD1hPf04g  # Sebastian Yatra, Myke Towers - Pareja Del Año
+68nZjz3bLH1MM0cURT1YVH  # Sebastian Yatra, Manuel Turizo, Beéle - Vagabundo
+4hQ6UGyWQIGJmHSo0J88JW  # Selena Gomez - Back To You - From 13 Reasons Why – Season 2 Soundtrack
+4lnAN2S1fcI0SjxEbksZVr  # Selena Gomez, Gucci Mane - Fetish (feat. Gucci Mane)
+5xdVqHtFS0eLuNp4Z8Wbpa  # Selena Gomez, A$AP Rocky - Good For You
+4l0Mvzj72xxOpRrp6h8nHi  # Selena Gomez - Lose You To Love Me
+6ZANrVuAMp2rpjhfbOuJly  # Selena Gomez - Same Old Love
+6wJwkMo278iWVlWl1XQ4WA  # Selena Gomez - The Heart Wants What It Wants
+0tBbt8CrmxbjRP0pueQkyU  # Selena Gomez, Marshmello - Wolves
+5fZJQrFKWQLb7FpJXZ1g7K  # Shaboozey - A Bar Song (Tipsy)
+7o1Pm9jpH0wFpN5g793Lnq  # Shakira, Rihanna - Can't Remember to Forget You (feat. Rihanna)
+6mICuAdrwEjh6Y6lroV2Kg  # Shakira, Maluma - Chantaje (feat. Maluma)
+3d0WouFnFmr0K3kjeza3fF  # Shakira, Wyclef Jean - Hips Don't Lie (feat. Wyclef Jean)
+53AafWSzYsiJKnAtJTUB5f  # Shakira, Alejandro Sanz - La Tortura (feat. Alejandro Sanz)
+3XyCSaEvFQeflTqlF8FAjL  # Shakira, Freshlyground - Waka Waka (This Time for Africa) [The Official 2010 FIFA World Cup (TM) Song] (feat. Freshlyground)
+0RJWhctsc1G1Hg3Ov2th7x  # Shakira - Whenever, Wherever
+2GyA33q5rti5IxkMQemRDH  # Shawn Mendes, Camila Cabello - I Know What You Did Last Summer
+2bT1PH7Cw3J9p3t7nlXCdh  # Shawn Mendes - If I Can't Have You
+2QZ7WLBE8h2y1Y5Fb8RYbH  # Shawn Mendes - In My Blood
+0AS63m1wHv9n4VVRizK6Hc  # Shawn Mendes - Mercy
+1HbA4N1MiOsPthALesGFR1  # Shawn Mendes, Justin Bieber - Monster (Shawn Mendes & Justin Bieber)
+6v3KW9xbzN5yKLt9YKDYA2  # Shawn Mendes, Camila Cabello - Señorita
+5jsw9uXEGuKyJzs0boZ1bT  # Shawn Mendes - Stitches
+7JJmb5XwzOO8jgpou264Ml  # Shawn Mendes - There's Nothing Holdin' Me Back
+3QGsuHI8jO1Rx4JWLUh9jd  # Shawn Mendes - Treat You Better
+4VrWlk8IQxevMvERoX08iC  # Sia - Chandelier
+27SdWb2rFzO6GWiYDBTD9j  # Sia - Cheap Thrills
+378iszndTZAR4dH8kwsLC6  # Sia, Sean Paul - Cheap Thrills (feat. Sean Paul)
+6kwAbEjseqBob48jCus7Sz  # Sia - Elastic Heart
+7uoFMmxln0GPXQ0AcCBXRq  # Sia - Snowman
+6bLopGnirdrilrpdVB6Um1  # Sia - The Greatest
+2J2Z1SkXYghSajLibnQHOa  # Sia - Unstoppable
+7gkZNvBHfI30qG7hA0eopT  # SIENNA SPIRO - Die On This Hill
+754kgU5rWscRTfvlsuEwFp  # Sixpence None The Richer - Kiss Me
+6YbhspuOar1D9WSSnfe7ds  # Snoop Dogg, Wiz Khalifa, Bruno Mars - Young, Wild & Free (feat. Bruno Mars)
+5hnyJvgoWiQUYZttV4wXy6  # Snow Patrol - Chasing Cars
+2WD9ggmpZE7Wodh3qVVCgg  # Soda Stereo - De Música Ligera
+05od2qm2MTSKCHxy1GBp5W  # sombr - 12 to 12
+7qjZnBKE73H4Oxkopwulqe  # sombr - back to friends
+0TFTAtCYhp2tQ9KcJIZb55  # sombr - undressed
+4xdHI4eFNst0vTZuuKrWjr  # Soundgarden - Black Hole Sun
+25CMmGsl22APKhfuj4Tp7j  # Staind - It's Been Awhile
+4k6Uh1HXdhtusDW5y8Gbvy  # Steve Lacy - Bad Habit
+6FBzhcfgGacfXF3AmtfEaX  # Steve Lacy - C U Girl
+3EaJDYHA0KnX88JvDhL9oa  # Steve Lacy - Dark Red
+0f8eRy9A0n6zXpKSHSCAEp  # Steve Lacy - Infrunami
+4riDfclV7kPDT9D58FpmHd  # Steve Lacy - Some
+2GYHyAoLWpkxLVa4oYTVko  # Stromae - Alors on danse - Radio Edit
+5tALkmrC4bRfrSDLimAzuq  # Swedish House Mafia, John Martin - Don't You Worry Child (feat. John Martin) - Radio Edit
+0VO8gYVDSwM1Qdd2GsMoYK  # Swedish House Mafia, The Weeknd - Moth To A Flame (with The Weeknd)
+4PMqSO5qyjpvzhlLI5GnID  # SZA - Good Days
+1Qrg8KqiBpW07V7PNxwwwL  # SZA - Kill Bill
+5Y35SjAfXjjG0sFQ3KOxmm  # SZA - Nobody Gets Me
+6koKhrBBcExADvWuOgceNZ  # SZA, Travis Scott - Open Arms (feat. Travis Scott)
+040I32EKLxQrkuxQu1pqvT  # SZA - Saturn
+4iZ4pt7kvcaH6Yo8UoZ4s2  # SZA - Snooze
+4bJygwUKrRgq1stlNXcgMg  # t.A.T.u. - All The Things She Said
+3jbT1Y5MoPwEIpZndDDwVq  # Tainy, Anuel AA, Ozuna - Adicto (with Anuel AA & Ozuna)
+04x1x0L8BYyIv1XlcJxWfi  # Tainy, Bad Bunny, Julieta Venegas - Lo Siento BB:/
+46YjJXVXWHlQ21odKktg5e  # Tainy, Bad Bunny - MOJABI GHOST
+5hM5arv9KDbCHS0k9uqwjr  # Tame Impala - Borderline
+1NXbNEAcPvY5G1xvfN57aA  # Tame Impala - Dracula
+5yvVYFDUpbnjcnRBgjwTzM  # Tame Impala, JENNIE - Dracula (with JENNIE)
+5M4yti0QxgqJieUYaEXcpw  # Tame Impala - Eventually
+0LtOwyZoSNZKJWHqjzADpW  # Tame Impala - Feels Like We Only Go Backwards
+2X485T9Z5Ly0xyaghN73ed  # Tame Impala - Let It Happen
+52ojopYMUzeNcudsoz7O9D  # Tame Impala - New Person, Same Old Mistakes
+6K4t31amVTZDgR3sKmwUJJ  # Tame Impala - The Less I Know The Better
+4E63weMCaNZuGPEFMnuEi8  # Tate McRae - exes
+3rUGC1vUpkDG9CZFHMur1t  # Tate McRae - greedy
+3OfqwyE7RrZrtuxCRixfII  # Tate McRae - It's ok I'm ok
+2yWlGEgEfPot0lv3OAjuG3  # Tate McRae, F1 The Album - Just Keep Watching (From F1® The Movie)
+51hyZpbJlIgZIaX3TtMxmu  # Tate McRae - run for the hills
+5UJbgR4XF4y1DvbkxEqe8S  # Tate McRae - Sports car
+4l0RmWt52FxpVxMNni6i63  # Tate McRae - you broke me first
+1u8c2t2Cy7UBoG4ArRcF5g  # Taylor Swift - Blank Space
+1BxfuPKGuaTgP7aM0Bbdwr  # Taylor Swift - Cruel Summer
+2OzhQlSqBEmt7hmkYxfT6m  # Taylor Swift, Post Malone - Fortnight (feat. Post Malone)
+3yWuTOYDztXjZxdE2cIRUa  # Taylor Swift - Opalite
+0ug5NqcwcFR2xrfTkc7k8e  # Taylor Swift - Style
+53iuhJlwXhSER5J2IYYv1W  # Taylor Swift - The Fate of Ophelia
+2YiCMmONQcoMPX2bV1LxE0  # Tears For Fears - Everybody Wants To Rule The World
+3BntzKsnLf2pc0dsvE3Zav  # Teddy Swims - Bad Dreams
+17phhZDn6oGtzMe56NuWvj  # Teddy Swims - Lose Control
+3dj4wgM3cPeuLwMNHDuBon  # Teddy Swims - The Door
+5YJ4BVvTFmVCxUyhKejHfR  # Tego Calderón - Pa' Que Retozen
+4qW3BbQAwZsrnu8a3ZRdyT  # Temper City - Self Aware
+3hEfpBHxgieRLz4t3kLNEg  # The 1975 - About You
+7BKLCZ1jbUBVqRi2FVlTVw  # The Chainsmokers, Halsey - Closer
+0QsvXIfqM0zZoerQfsI9lm  # The Chainsmokers, Daya - Don't Let Me Down
+72jbDTw1piOOj770jWNeaG  # The Chainsmokers - Paris
+6O6M7pJLABmfBRoGZMu76Y  # The Chainsmokers, ROZES - Roses (feat. ROZES)
+6RUKPb4LETWmmr3iAEQktW  # The Chainsmokers, Coldplay - Something Just Like This
+4NBTZtAt1F13VvlSKe6KTl  # The Chainsmokers, Kelsea Ballerini - This Feeling
+458JkK5eJhh4C4s6nTuz7g  # The Cranberries - Dreams - Remastered 2026
+1WYrTfvKjQYaYfVziGG1ET  # The Cranberries - Linger - Remastered 2026
+3gjHnylel3PTRpjS44ocqr  # The Cranberries - Zombie - 2025 Remastered
+5fVZC9GiM4e8vu99W0Xf6J  # The Fray - How to Save a Life
+2wGSgTmgSF3xjRrHkTc25R  # The Game, 50 Cent - Hate It Or Love It
+6Qyc6fS4DsZjB2mRW9DsQs  # The Goo Goo Dolls - Iris
+3UDpwoxz9SUvVE0e1mnsxx  # The Kid LAROI - NIGHTS LIKE THIS
+567e29TDzLwZwfDuEpGTwo  # The Kid LAROI, Justin Bieber - STAY (with Justin Bieber)
+1KMkcUvF7m3SDChDOa7i5L  # The Kid LAROI - WITHOUT YOU
+1sTsuZTdANkiFd7T34H3nb  # The Killers - Human
+003vvx7Niy0yvhvHt4a68B  # The Killers - Mr. Brightside
+6PwjJ58I4t7Mae9xfZ9l9v  # The Killers - Somebody Told Me
+70wYA8oYHoMzhRRkARoMhU  # The Killers - When You Were Young
+7BHPGtpuuWWsvE7cCaMuEU  # The Kooks - Naive
+3siwsiaEoU4Kuuc9WKMUy5  # The Marías - No One Noticed
+0InIeZW4P6VO7dUGRM4AKH  # The Marías - Sienna
+6y6y7GCq8M4Uy8Tg87dTTJ  # The Neighbourhood - Afraid
+5E30LdtzQTGqRvNd7l6kG5  # The Neighbourhood - Daddy Issues
+2xql0pid3EUwW38AsywxhV  # The Neighbourhood - Reflections
+2K7xn816oNHJZ0aVqdQsha  # The Neighbourhood - Softcore
+0cQVqPuHQP4KEwc7ZUQmj6  # The Neighbourhood - Sweater Weather
+7zwn1eykZtZ5LODrf7c0tS  # The Neighbourhood - You Get Me So High
+0WoFs3EdGOx58yX5BtXvOa  # The Outfield - Your Love
+1JSTJqkT5qHq8MDJnJbRE1  # The Police - Every Breath You Take
+44aTAUBF0g6sMkMNE8I5kd  # The Police - Every Little Thing She Does Is Magic
+1oYYd2gnWZYrt89EBXdFiO  # The Police - Message In A Bottle
+3EYOJ48Et32uATr9ZmLnAo  # The Police - Roxanne
+1HbzxLqpNVPdiBXvpC7Ovb  # The Red Clay Strays - Wondering Why
+285hMzLhJwHVLe9QT9qilk  # The Script - Breakeven
+7wMq5n8mYSKlQIGECKUgTX  # The Script, will.i.am - Hall of Fame (feat. will.i.am)
+37sINbJZcFdHFAsVNsPq1i  # The Script - Superheroes
+3nqqDo8CcCLke3ZoTgiOKf  # The Script - The Man Who Can't Be Moved
+49x8Zp5wDjoquBE1THLLCV  # The Temper Trap - Sweet Disposition
+57iDDD9N9tTWe75x6qhStw  # The Verve - Bitter Sweet Symphony - Remastered 2016
+0VjIjW4GlUZAMYd2vXMi3b  # The Weeknd - Blinding Lights
+2LBqCSwhJGcFQeTHMVGwy3  # The Weeknd - Die For You
+7CyPwkp0oE8Ro9Dd5CUDjW  # The Weeknd, JENNIE, Lily-Rose Depp - One Of The Girls (with JENNIE, Lily Rose Depp)
+6WzRpISELf3YglGAh7TXcG  # The Weeknd, Playboi Carti, Madonna - Popular (with Playboi Carti & Madonna) - From The Idol Vol. 1 (Music from the HBO Original Series)
+5QO79kh1waicV47BqGRL3g  # The Weeknd - Save Your Tears
+1oFAF1hdPOickyHgbuRjyX  # The Weeknd, Ariana Grande - Save Your Tears (Remix) (with Ariana Grande) - Bonus Track
+7MXVkk9YMctZqd1Srtv4MB  # The Weeknd, Daft Punk - Starboy
+7fBv7CLKzipRk6EC6TWHOB  # The Weeknd - The Hills
+0FIDCNYYjNvPVimz5icugS  # The Weeknd, Playboi Carti - Timeless (feat Playboi Carti)
+5eFxwmqKrHpSQDOEIFYlgY  # Three Days Grace - Animal I Have Become
+0M955bMOoilikPXwKLYpoi  # Three Days Grace - I Hate Everything About You
+6q3zC9dDD4lUNk8nfUztXy  # Timbaland, OneRepublic - Apologize
+2bLqfJjuC5syrsgDsZfGmn  # Timbaland, Keri Hilson, D.O.E. - The Way I Are
+5lKFO0PrOC9jmOlPEdjHsL  # Tito Double P, Peso Pluma - DOS DÍAS
+0NUJCxhbKt9l26312PZ3oD  # Tito Double P - NADIE
+1KGi9sZVMeszgZOWivFpxs  # TLC - No Scrubs
+7jtQIBanIiJOMS6RyCx6jZ  # Tom Odell - Another Love
+6OaGIYcVzx5c7aEKkuYS1M  # Tony Dize, Yandel - Permítame
+3CbiuLMBPM6uV4a7HvkOib  # Tony Dize, Plan B - Solos
+3azJifCSqg9fRij2yKIbWz  # Tory Lanez - The Color Violet
+2374M0fQpWi3dLnB54qaLX  # TOTO - Africa
+14OxJlLdcHNpgsm4DRwDOB  # Tove Lo - Habits (Stay High)
+62N2JSA0jHmSH7Va9t7hIf  # Tove Lo, Hippie Sabotage - Habits (Stay High) - Hippie Sabotage Remix
+7cgu4JBW3hq1GwTM1ilkKQ  # Tove Lo - Talking Body
+2hKdd3qO7cWr2Jo0Bcs0MA  # Train - Drops of Jupiter (Tell Me)
+42VsgItocQwOQC3XWZ8JNA  # Travis Scott, Playboi Carti - FE!N (feat. Playboi Carti)
+2hHeGD57S0BcopfVcmehdl  # Tulus - Hati-Hati di Jalan
+4GfK1qOF3uBWidbPlTCQRL  # Tulus - Monokrom
+6dBUzqjtbnIa1TwYbyw5CM  # TV Girl - Lovers Rock
+7t2bFihaDvhIrd2gn2CWJO  # Ty Dolla $ign, The Weeknd, Wiz Khalifa, Mustard - Or Nah (feat. The Weeknd, Wiz Khalifa & DJ Mustard) - Remix
+5TxRUOsGeWeRl3xOML59Ai  # Tyler, The Creator - ARE WE STILL FRIENDS?
+5hVghJ4KaYES3BFUATCYn0  # Tyler, The Creator - EARFQUAKE
+6jbYpRPTEFl1HFKHk1IC0m  # Tyler, The Creator, Lola Young - Like Him (feat. Lola Young)
+0fv2KH6hac06J86hBUTcSf  # Tyler, The Creator - NEW MAGIC WAND
+7KA4W4McWYRpgf0fWsJZWB  # Tyler, The Creator, Kali Uchis - See You Again (feat. Kali Uchis)
+0SA0mMXWh23raZ6xzOCU2V  # Tyler, The Creator, Frank Ocean - She
+6FIEuf1JIzmCtach0gXpeG  # Up Dharma Down - Tadhana
+4356Typ82hUiFAynbLYbPn  # USHER, Pitbull - DJ Got Us Fallin' In Love (feat. Pitbull)
+68vgtRHr7iZHpzGpon6Jlo  # USHER, Alicia Keys - My Boo
+5rb9QrpfcKFHM1EUbSIurX  # USHER, Lil Jon, Ludacris - Yeah! (feat. Lil Jon & Ludacris)
+2uXlHCUbq9OMUwx3hrk06o  # Vance Joy - Riptide
+6j5LtifAnuTjTYvml61yFZ  # Vicente Fernández - Un Millón de Primaveras
+5NmjnghJGJRFg34KGGx8O0  # Vierra - Seandainya
+5iN2kyMTTkIEogE0DvEbZO  # Virgoun, Audy - Selamat (Selamat Tinggal)
+1y1rQTkWmrZdJmjwuK07GC  # Vishal Mishra, Manoj Muntashir - Kaise Hua (From "Kabir Singh")
+6iOndD4OFo7GkaDypWQIou  # W Sound, Beéle, Ovy On The Drums - La Plena - W Sound 05
+03tqyYWC9Um2ZqU0ZN849H  # Waka Flocka Flame, Roscoe Dash, Wale - No Hands (feat. Roscoe Dash & Wale)
+4kbj5MwxO1bq9wjT5g9HaA  # WALK THE MOON - Shut Up and Dance
+25FTMokYEbEWHEdss5JLZS  # Wheatus - Teenage Dirtbag
+5A6OHHy73AR5tLxgTc98zz  # Wiz Khalifa - Black and Yellow
+2JzZzZUQj3Qff7wapcbKjc  # Wiz Khalifa, Charlie Puth - See You Again (feat. Charlie Puth)
+42F7AY5a40owYmUeq0QQTl  # Wiz Khalifa, Empire Of The Sun - The Thrill
+2LskIZrCeLxRvCiGP8gxlh  # XXXTENTACION, Lil Pump, Swae Lee, Maluma - Arms Around You (feat. Maluma & Swae Lee)
+7LABrQFfRYcZUqUwng0Heb  # Yandel - Encantadora
+6MCjmGYlw6mQVWRFVgBRvB  # YOASOBI - 夜に駆ける
+3s4mrPrEFFPF0LmAfutW0n  # Young Thug, J. Cole, Travis Scott - The London (feat. J. Cole & Travis Scott)
+5jfhLCSIFUO4ndzNRh4w4G  # Zach Bryan - Burn, Burn, Burn
+2Dct3GykKZ58hpWRFfe2Qd  # Zach Bryan - Heading South
+4KULAymBBJcPRpk1yO4dOG  # Zach Bryan, Kacey Musgraves - I Remember Everything (feat. Kacey Musgraves)
+0OWhKvvsHptt6vnnNUSM9a  # Zach Bryan - Oklahoma Smokeshow
+4ZJ4vzLQekI0WntDbanNC7  # Zach Bryan - Pink Skies
+3WMj8moIAXJhHsyLaqIIHI  # Zach Bryan - Something in the Orange
+0ADG9OgdVTL7fgREP75BrZ  # Zara Larsson - Ain't My Fault
+1rIKgCH4H52lrvDcz50hS8  # Zara Larsson - Lush Life
+6hmhG1b4LEyNuashVvuIAo  # Zara Larsson, MNEK - Never Forget You
+4nyY8oVjbX2d4qzlpiVM5n  # Zara Larsson - Ruin My Life
+3e7sxremeOE3wTySiOhGiP  # ZAYN, Sia - Dusk Till Dawn (feat. Sia) - Radio Edit
+0Imc5xRXd0eV9Ln55M1kz6  # Zion, Jory Boy, Ken-Y - More
+0VKkyBKCXyR99navhVRqcP  # Zion & Lennox - La player (Bandolera)
+3QwBODjSEzelZyVjxPOHdq  # Zion & Lennox, J Balvin - Otra Vez (feat. J Balvin)
+1nULBrlzWatdcjA2ZctIMv  # Zoé - Labios Rotos - En Vivo Desde México / 2010
+2McT2fkH0VDqPsbiB9HWPq  # ¥$, Kanye West, Ty Dolla $ign - CARNIVAL
