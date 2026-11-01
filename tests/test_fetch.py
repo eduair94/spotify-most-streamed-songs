@@ -57,7 +57,11 @@ def test_parses_a_real_api_response():
         ["Bruno Mars"],
         3584428448,
     )
-    assert result.plays["32OlwWuMpZ6b0aN2RZOeMS"].artists == ["Mark Ronson", "Bruno Mars"]
+    # the count is the answering track's: its id is kept with it
+    assert relinked.answered_id == "5g7sDjBhZ4I3gcFIpkrLuI" and relinked.relinked
+    plain = result.plays["32OlwWuMpZ6b0aN2RZOeMS"]
+    assert plain.artists == ["Mark Ronson", "Bruno Mars"]
+    assert plain.answered_id == "32OlwWuMpZ6b0aN2RZOeMS" and not plain.relinked
     for track in body["tracks"]:
         assert isinstance(track["playcount"], int)
     assert result.missing == [UNKNOWN]  # unknown to Spotify, never retried
@@ -83,7 +87,14 @@ def test_a_relinked_track_is_recorded_under_the_requested_id():
     result = parse_tracks_response(body, [fake_id(1), fake_id(2)])
     assert set(result.plays) == {fake_id(1), fake_id(2)}
     assert result.plays[fake_id(1)].id == fake_id(1) and result.plays[fake_id(1)].playcount == 1234
+    assert result.plays[fake_id(1)].answered_id == answered
     assert result.retry == []
+
+
+def test_a_relinked_track_without_an_id_of_its_own_counts_as_the_requested_one():
+    body = {"tracks": [{**track_object(fake_id(1), "Song", 5), "id": None, "linked_from": {"id": fake_id(1)}}]}
+    plays = parse_tracks_response(body, [fake_id(1)]).plays
+    assert plays[fake_id(1)].answered_id == fake_id(1) and not plays[fake_id(1)].relinked
 
 
 def test_two_requested_ids_answered_by_the_same_track():
@@ -96,6 +107,7 @@ def test_two_requested_ids_answered_by_the_same_track():
     }
     result = parse_tracks_response(body, [fake_id(1), fake_id(2)])
     assert set(result.plays) == {fake_id(1), fake_id(2)}
+    assert {item.answered_id for item in result.plays.values()} == {fake_id(2)}
 
 
 def test_value_rules():
@@ -155,11 +167,14 @@ def test_retries_only_the_tracks_without_a_play_count():
     assert report.requests == 4 and report.failed == [] and report.stopped is None
 
 
-def test_relinked_tracks_need_no_retry():
+def test_relinked_tracks_need_no_retry_and_are_logged():
     ids = [fake_id(i) for i in range(3)]
     api = FakeApi(_universe(3), relinked={ids[1]: fake_id(77)})
-    report = fetch_plays(ids, api, pause=0, log=lambda _: None)
+    logged = []
+    report = fetch_plays(ids, api, pause=0, log=logged.append)
     assert set(report.plays) == set(ids) and len(api.calls) == 1
+    assert report.plays[ids[1]].answered_id == fake_id(77)
+    assert logged == ["Request 1 (3 tracks): play counts for 3, 1 answered by another track id (relinked)"]
 
 
 def test_gives_up_after_the_retry_passes():
@@ -321,6 +336,38 @@ def test_a_refused_batch_is_not_sent_again():
     assert report.requests == 2
 
 
+def test_two_refusals_in_a_row_without_any_play_count_stop_the_run():
+    # A refusal for every request (a wrong address, a parameter the server does not take): two are enough.
+    ids = [fake_id(i) for i in range(1000)]
+    sent = []
+
+    def fetch(batch):
+        sent.append(batch)
+        raise BatchRejected("HTTP 400 INVALID_PARAMETER: include")
+
+    logged = []
+    report = fetch_plays(ids, fetch, pause=0, log=logged.append)
+    assert len(sent) == 2 and report.requests == 2
+    assert report.plays == {} and sorted(report.failed) == sorted(ids)
+    assert report.stopped.startswith("the API refused 2 requests in a row and returned no play count")
+    assert "SPOTIFY_API_BASE" in report.stopped
+    assert logged[-1].startswith("Request 2 (50 tracks): refused (HTTP 400")
+
+
+def test_refusals_after_play_counts_do_not_stop_the_run():
+    ids = [fake_id(i) for i in range(200)]
+    api = FakeApi(_universe(200))
+
+    def fetch(batch):
+        if batch[0] != ids[0]:
+            raise BatchRejected("HTTP 400")
+        return api(batch)
+
+    report = fetch_plays(ids, fetch, pause=0, log=lambda _: None)
+    assert report.requests == 4 and report.stopped is None
+    assert len(report.plays) == 50 and report.failed == ids[50:]
+
+
 def test_pauses_between_requests():
     ids = [fake_id(i) for i in range(120)]
     slept = []
@@ -382,6 +429,7 @@ def test_sdk_request_through_the_direct_api():
         (403, {"message": "You are not subscribed to this API."}, FatalFetchError),
         (401, {"message": "Invalid API key."}, FatalFetchError),
         (429, {"message": "You have exceeded the MONTHLY quota for Requests on your current plan, BASIC."}, FatalFetchError),
+        (404, {"message": "Cannot GET /tracks"}, FatalFetchError),
         (400, {"code": "INVALID_PARAMETER", "message": "ids", "param": "ids"}, BatchRejected),
     ],
 )
@@ -389,6 +437,16 @@ def test_sdk_errors_are_classified(status, body, expected):
     fetch = sdk_fetcher(make_client("k", None, session=FakeSession(status=status, error_body=body), retries=0))
     with pytest.raises(expected):
         fetch([BLINDING_LIGHTS])
+
+
+def test_a_404_points_at_the_address():
+    # GET /tracks reports unknown ids in its body: a 404 means SPOTIFY_API_BASE is wrong.
+    session = FakeSession(status=404, error_body={"message": "Cannot GET /tracks"})
+    fetch = sdk_fetcher(make_client("k", "https://spotify-proxy.checkleaked.cc", session=session, retries=0))
+    with pytest.raises(FatalFetchError) as raised:
+        fetch([BLINDING_LIGHTS])
+    message = str(raised.value)
+    assert "HTTP 404" in message and "Check SPOTIFY_API_BASE" in message and DIRECT_BASE in message
 
 
 def test_a_server_error_is_left_for_the_retry_pass():

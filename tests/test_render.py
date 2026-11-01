@@ -2,7 +2,7 @@ import json
 
 from helpers import BLINDING_LIGHTS, SHAPE_OF_YOU, fake_id
 
-from tracker.history import Entry, Row, entries_for_day
+from tracker.history import IMPLAUSIBLE_JUMP, VERSION_CHANGED, Entry, Relink, Row, entries_for_day
 from tracker.render import (
     README_END,
     README_START,
@@ -125,8 +125,96 @@ def test_daily_table_with_changes_and_notes():
     assert "Streams gained from 2026-10-31 to 2026-11-01, among all 6 tracked songs." in text
     assert "1 song shows 0 daily streams, which usually means Spotify had not refreshed the play count" in text
     assert "1 song has a lower play count than the day before" in text
-    assert "1 song has no daily figure: there is no play count from 2026-10-31" in text
-    assert "1 tracked song has no play count for 2026-11-01" in text
+    assert "1 song has no play count from 2026-10-31 to compare with: added since, or not read that day." in text
+    assert "1 tracked song has no play count for 2026-11-01: the API could not read them in this run." in text
+    assert "Spotify does not know" not in text
+
+
+def test_a_missing_day_is_not_called_the_start_of_tracking():
+    rows = [Row("2026-10-30", BLINDING_LIGHTS, "B", "A", 100), Row(DAY, BLINDING_LIGHTS, "B", "A", 120)]
+    text = render_leaderboard(entries_for_day(rows, DAY), day=DAY, tracked=1, first_day="2026-10-30")
+    assert (
+        "No daily streams for 2026-11-01: data/history.csv has no play counts of these songs from 2026-10-31 "
+        "(no run recorded them that day), and daily streams only compare consecutive days." in text
+    )
+    assert "second day of tracking" not in text and "yet" not in text.split("## Top 50 by daily streams")[1]
+
+
+def test_no_figure_although_the_day_before_was_recorded():
+    rows = [Row("2026-10-31", BLINDING_LIGHTS, "B", "A", 0), Row(DAY, BLINDING_LIGHTS, "B", "A", 1_500)]
+    text = render_leaderboard(entries_for_day(rows, DAY), day=DAY, tracked=1, first_day="2026-10-31")
+    assert "No song has a daily figure for 2026-11-01." in text
+    assert "1 song has a play count of 0 on one of the two days: Spotify shows 0 below 1,000 plays" in text
+    assert "No daily streams" not in text
+
+
+def test_notes_on_another_release_and_on_a_jump():
+    relinks = [Relink(DAY, SHAPE_OF_YOU, fake_id(9))]
+    rows = [
+        Row("2026-10-31", BLINDING_LIGHTS, "Blinding Lights", "The Weeknd", 1_000_000_000),
+        Row(DAY, BLINDING_LIGHTS, "Blinding Lights", "The Weeknd", 1_900_000_000),
+        Row("2026-10-31", SHAPE_OF_YOU, "Shape of You", "Ed Sheeran", 4_000_000_000),
+        Row(DAY, SHAPE_OF_YOU, "Shape of You", "Ed Sheeran", 800_000_000),
+        Row("2026-10-31", fake_id(1), "Steady", "X", 2_000_000_000),
+        Row(DAY, fake_id(1), "Steady", "X", 2_003_000_000),
+    ]
+    entries = entries_for_day(rows, DAY, relinks=relinks)
+    assert [e.no_daily_reason for e in entries] == [IMPLAUSIBLE_JUMP, VERSION_CHANGED, None]
+    text = render_leaderboard(entries, day=DAY, tracked=3)
+    assert table_rows(text, "## Top 1 by daily streams") == [
+        f"| 1 | [Steady](https://open.spotify.com/track/{fake_id(1)}) | X | 3,000,000 | — | 2,003,000,000 |"
+    ]
+    assert (
+        "1 song was answered with another release of the song than on 2026-10-31 (Spotify relinked the track id), "
+        "so the two counts belong to different releases and give no daily figure: "
+        f"[Shape of You](https://open.spotify.com/track/{SHAPE_OF_YOU})." in text
+    )
+    assert (
+        "The play count of 1 song moved by more than 5% (and more than 1,000,000 plays) since 2026-10-31, which "
+        "streams do not explain: Spotify most likely replaced or corrected the count. No daily figure is given for it: "
+        f"[Blinding Lights](https://open.spotify.com/track/{BLINDING_LIGHTS}) (+900,000,000)." in text
+    )
+    # neither shows a daily figure in the total streams table
+    lights = next(line for line in table_rows(text) if "Blinding Lights" in line)
+    assert lights.endswith("| 1,900,000,000 | — | — |")
+    document = build_latest(entries, day=DAY, tracked=3)
+    shape = next(song for song in document["songs"] if song["id"] == SHAPE_OF_YOU)
+    assert (shape["answered_id"], shape["daily_streams"], shape["no_daily_reason"]) == (fake_id(9), None, VERSION_CHANGED)
+    steady = next(song for song in document["songs"] if song["id"] == fake_id(1))
+    assert (steady["answered_id"], steady["daily_streams"], steady["no_daily_reason"]) == (fake_id(1), 3_000_000, None)
+
+
+def test_long_lists_of_songs_are_cut():
+    entries = [
+        Entry(
+            Row(DAY, fake_id(i), f"Song {i}", "A", 1_000 + i),
+            None,
+            None,
+            None,
+            no_daily=VERSION_CHANGED,
+            earlier=Row("2026-10-31", fake_id(i), f"Song {i}", "A", 900),
+        )
+        for i in range(12)
+    ]
+    text = render_leaderboard(entries, day=DAY, tracked=12, first_day="2026-10-01")
+    assert "No song has a daily figure for 2026-11-01." in text
+    note = next(line for line in text.splitlines() if line.startswith("12 songs were answered with another release"))
+    # the 10 with the most streams are named
+    assert "[Song 11](" in note and "[Song 2](" in note and "[Song 1](" not in note and note.endswith(" and 2 more.")
+
+
+def test_unknown_ids_are_reported_apart_from_songs_not_read():
+    text = render_leaderboard(
+        [entry(BLINDING_LIGHTS, "B", 10)], day=DAY, tracked=4, not_updated=1, unknown=[fake_id(5), fake_id(6)]
+    )
+    assert "1 tracked song has no play count for 2026-11-01: the API could not read them in this run." in text
+    assert (
+        f"Spotify does not know 2 track ids in tracks.txt, so they get no play count: `{fake_id(5)}`, `{fake_id(6)}`. "
+        "Remove them from the list." in text
+    )
+    single = render_leaderboard([entry(BLINDING_LIGHTS, "B", 10)], day=DAY, tracked=2, unknown=[fake_id(5)])
+    assert f"Spotify does not know 1 track id in tracks.txt, so it gets no play count: `{fake_id(5)}`. Remove it" in single
+    assert "could not read" not in single
 
 
 def test_no_notes_when_every_song_has_a_positive_figure():
@@ -142,26 +230,45 @@ def test_latest_json():
         entry(BLINDING_LIGHTS, "Blinding Lights", 100, "The Weeknd; Guest"),
     ]
     last = Row("2026-10-30", fake_id(1), "Gone Quiet", "Someone", 5)
-    document = build_latest(entries, day=DAY, tracked=4, not_updated=[(fake_id(1), last), (fake_id(2), None)])
+    document = build_latest(
+        entries, day=DAY, tracked=5, not_updated=[(fake_id(1), last), (fake_id(2), None)], unknown=[fake_id(3)]
+    )
     text = dump_latest(document)
     parsed = json.loads(text)
     assert parsed == document
     assert text.endswith("}\n")
-    assert parsed["date"] == DAY and parsed["tracked_songs"] == 4 and parsed["songs_with_data"] == 2
+    assert parsed["date"] == DAY and parsed["tracked_songs"] == 5 and parsed["songs_with_data"] == 2
     first, second = parsed["songs"]
-    assert (first["position"], first["id"], first["artists"], first["playcount"]) == (
+    assert (first["position"], first["id"], first["answered_id"], first["artists"], first["playcount"]) == (
         1,
+        BLINDING_LIGHTS,
         BLINDING_LIGHTS,
         ["The Weeknd", "Guest"],
         100,
     )
     assert (first["daily_streams"], first["daily_streams_change"], first["streams_7d"]) == (None, None, None)
+    assert first["no_daily_reason"] == "no_earlier_count"
     assert (second["daily_streams"], second["daily_streams_change"], second["daily_streams_change_pct"]) == (5, 2, 66.6667)
-    assert second["streams_7d"] == 30
+    assert second["no_daily_reason"] is None and second["streams_7d"] == 30
     assert second["url"] == f"https://open.spotify.com/track/{SHAPE_OF_YOU}"
     assert parsed["not_updated"] == [
         {"id": fake_id(1), "name": "Gone Quiet", "last_date": "2026-10-30"},
         {"id": fake_id(2), "name": None, "last_date": None},
+    ]
+    assert parsed["unknown_ids"] == [fake_id(3)]
+    assert list(parsed["songs"][0]) == [
+        "position",
+        "id",
+        "answered_id",
+        "name",
+        "artists",
+        "playcount",
+        "daily_streams",
+        "no_daily_reason",
+        "daily_streams_change",
+        "daily_streams_change_pct",
+        "streams_7d",
+        "url",
     ]
     # one song per line, so a day's diff reads song by song
     assert sum(1 for line in text.splitlines() if line.lstrip().startswith('{"position"')) == 2

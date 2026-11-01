@@ -1,20 +1,22 @@
 """Command line: ``python -m tracker [run|render|check]``.
 
-run     fetch today's play counts for tracks.txt, append them to data/history.csv,
-        then write LEADERBOARD.md, data/latest.json and the README excerpt
-render  rewrite those files from data/history.csv without calling the API
+run     fetch today's play counts for tracks.txt, append them to data/history.csv (and the
+        relinked ids to data/relinks.csv), then write LEADERBOARD.md, data/latest.json and
+        the README excerpt
+render  rewrite those files from data/history.csv and data/relinks.csv without calling the API
 check   validate tracks.txt and show how many requests a daily run takes
 """
 
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
 from dataclasses import dataclass
 from datetime import date, datetime, timezone
 from pathlib import Path
-from typing import Any, Callable, List, Mapping, Optional, Sequence
+from typing import Any, Callable, Iterable, List, Mapping, Optional, Sequence, Set
 
 from . import __version__
 from .fetch import (
@@ -22,6 +24,7 @@ from .fetch import (
     FetchBatch,
     FetchReport,
     RequestBudget,
+    TrackPlays,
     fetch_plays,
     make_client,
     requests_needed,
@@ -29,14 +32,24 @@ from .fetch import (
     sdk_fetcher,
 )
 from .history import (
+    IMPLAUSIBLE_JUMP,
+    JUMP_SHARE,
+    VERSION_CHANGED,
+    Entry,
+    Relink,
     Row,
+    days_before,
     entries_for_day,
+    first_day,
     last_rows,
     latest_day,
     read_history,
+    read_relinks,
     rows_for_day,
     upsert,
+    upsert_relinks,
     write_history,
+    write_relinks,
     write_text_if_changed,
 )
 from .render import build_latest, dump_latest, render_excerpt, render_leaderboard, replace_section
@@ -50,11 +63,25 @@ DEFAULT_MAX_REQUESTS = 30
 #: 30 minutes, which leaves room for the last request, the install and the commit.
 DEFAULT_TIME_LIMIT = 20.0
 
+#: Size of data/history.csv from which every run warns. GitHub warns about files over 50 MB
+#: and refuses to take files over 100 MB, so the history must be split by year before then.
+HISTORY_WARN_BYTES = 50_000_000
+
+
+def _print(line: str) -> None:
+    """print(), with the characters the console cannot show replaced instead of ending the run."""
+
+    try:
+        print(line)
+    except UnicodeEncodeError:  # a song title on a console that cannot show it (Windows, output redirected)
+        encoding = getattr(sys.stdout, "encoding", None) or "ascii"
+        print(line.encode(encoding, errors="replace").decode(encoding, errors="replace"))
+
 
 class Console:
     """Log lines; inside GitHub Actions, warnings and errors also become annotations."""
 
-    def __init__(self, write: Callable[[str], None] = print, github: bool = False) -> None:
+    def __init__(self, write: Callable[[str], None] = _print, github: bool = False) -> None:
         self._write = write
         self._github = github
 
@@ -82,6 +109,7 @@ class Console:
 class Paths:
     tracks: Path
     history: Path
+    relinks: Path
     latest: Path
     leaderboard: Path
     readme: Path
@@ -91,6 +119,7 @@ class Paths:
         return cls(
             tracks=tracks or root / "tracks.txt",
             history=root / "data" / "history.csv",
+            relinks=root / "data" / "relinks.csv",
             latest=root / "data" / "latest.json",
             leaderboard=root / "LEADERBOARD.md",
             readme=root / "README.md",
@@ -109,33 +138,59 @@ def load_tracks(paths: Paths, console: Console) -> Optional[TrackList]:
     return tracks
 
 
+def _unknown_in_latest(path: Path, day: str) -> Set[str]:
+    """The ids data/latest.json lists as unknown to Spotify, when it is the file for ``day`` (else none)."""
+
+    try:
+        document = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return set()
+    if not isinstance(document, dict) or document.get("date") != day or not isinstance(document.get("unknown_ids"), list):
+        return set()
+    return {track_id for track_id in document["unknown_ids"] if isinstance(track_id, str)}
+
+
 def render_outputs(
     paths: Paths,
     rows: Sequence[Row],
     track_ids: Sequence[str],
     day: str,
     *,
+    relinks: Iterable[Relink] = (),
+    unknown: Optional[Set[str]] = None,
     top: int = 100,
     daily_top: int = 50,
 ) -> List[str]:
     """Write LEADERBOARD.md and the README excerpt for ``day``. Returns what changed.
 
     data/latest.json is written only when ``day`` is the latest day in the history, so that
-    rendering an earlier day never makes it go back in time.
+    rendering an earlier day never makes it go back in time. ``unknown`` are the ids Spotify
+    does not know; None keeps the ones data/latest.json lists for ``day``.
     """
 
-    entries = entries_for_day(rows, day, track_ids)
+    entries = entries_for_day(rows, day, track_ids, relinks)
     have = {entry.row.track_id for entry in entries}
+    if unknown is None:
+        unknown = _unknown_in_latest(paths.latest, day)
+    unknown_ids = [track_id for track_id in track_ids if track_id in unknown and track_id not in have]
+    skip = have | set(unknown_ids)
     last = last_rows(rows)
-    not_updated = [(track_id, last.get(track_id)) for track_id in track_ids if track_id not in have]
+    not_updated = [(track_id, last.get(track_id)) for track_id in track_ids if track_id not in skip]
     changed = []
     leaderboard = render_leaderboard(
-        entries, day=day, tracked=len(track_ids), top=top, daily_top=daily_top, not_updated=len(not_updated)
+        entries,
+        day=day,
+        tracked=len(track_ids),
+        top=top,
+        daily_top=daily_top,
+        not_updated=len(not_updated),
+        unknown=unknown_ids,
+        first_day=first_day(rows, track_ids),
     )
     if write_text_if_changed(paths.leaderboard, leaderboard):
         changed.append(paths.leaderboard.name)
     if day == latest_day(rows, track_ids):
-        latest = build_latest(entries, day=day, tracked=len(track_ids), not_updated=not_updated)
+        latest = build_latest(entries, day=day, tracked=len(track_ids), not_updated=not_updated, unknown=unknown_ids)
         if write_text_if_changed(paths.latest, dump_latest(latest)):
             changed.append("data/" + paths.latest.name)
     if paths.readme.exists():
@@ -146,6 +201,32 @@ def render_outputs(
     return changed
 
 
+def _warn_about_counts(console: Console, plays: Sequence[TrackPlays], entries: Sequence[Entry], day: str) -> None:
+    """Warn about counts of another release than the listed id, and about counts that give no daily figure."""
+
+    relinked = [item for item in plays if item.relinked]
+    if relinked:
+        console.warning(
+            f"Spotify answered {len(relinked)} listed track id(s) with another release of the song (track relinking): "
+            "the counts recorded under those ids are the other releases' counts: "
+            + ", ".join(f"{item.id} -> {item.answered_id} ({item.name})" for item in relinked)
+        )
+    yesterday = days_before(day, 1)
+    switched = [entry for entry in entries if entry.no_daily_reason == VERSION_CHANGED]
+    if switched:
+        console.warning(
+            f"{len(switched)} song(s) were answered by another track than on {yesterday}, so they get no daily figure "
+            f"for {day}: " + ", ".join(f"{e.row.track_id} ({e.earlier_answered_id} -> {e.answered})" for e in switched)
+        )
+    jumps = [entry for entry in entries if entry.no_daily_reason == IMPLAUSIBLE_JUMP]
+    if jumps:
+        console.warning(
+            f"The play count of {len(jumps)} song(s) moved by more than {JUMP_SHARE:.0%} since {yesterday}, which "
+            f"streams do not explain, so it gives no daily figure for {day}: "
+            + ", ".join(f"{e.row.track_id} ({e.count_change or 0:+,})" for e in jumps)
+        )
+
+
 def record_and_render(
     paths: Paths,
     track_ids: Sequence[str],
@@ -154,6 +235,7 @@ def record_and_render(
     console: Console,
     *,
     history: Sequence[Row],
+    relinks: Iterable[Relink] = (),
     top: int = 100,
     daily_top: int = 50,
 ) -> int:
@@ -172,21 +254,35 @@ def record_and_render(
     if not report.plays:
         console.error(f"No play counts were fetched with {report.requests} request(s), so nothing was written.")
         return 1
-    new_rows = rows_for_day(day, (report.plays[i] for i in track_ids if i in report.plays))
-    rows = upsert(history, new_rows)
+    plays = [report.plays[track_id] for track_id in track_ids if track_id in report.plays]
+    rows = upsert(history, rows_for_day(day, plays))
+    relinks = upsert_relinks(relinks, day, plays)
     changed = ["data/history.csv"] if write_history(paths.history, rows) else []
+    if write_relinks(paths.relinks, relinks):
+        changed.append("data/" + paths.relinks.name)
     shown = latest_day(rows, track_ids) or day
-    changed += render_outputs(paths, rows, track_ids, shown, top=top, daily_top=daily_top)
-    unknown = set(report.missing)
-    failed = [track_id for track_id in report.failed if track_id not in unknown]
+    unknown: Optional[Set[str]] = None
+    if shown == day:
+        # An id that an earlier run of the same day found unknown stays so, unless this run read it.
+        unknown = set(report.missing) | (_unknown_in_latest(paths.latest, day) - set(report.plays))
+    changed += render_outputs(paths, rows, track_ids, shown, relinks=relinks, unknown=unknown, top=top, daily_top=daily_top)
+    missing = set(report.missing)
+    failed = [track_id for track_id in report.failed if track_id not in missing]
     console.info(
-        f"Recorded {len(new_rows)} of {len(track_ids)} tracks for {day} with {report.requests} request(s). "
+        f"Recorded {len(plays)} of {len(track_ids)} tracks for {day} with {report.requests} request(s). "
         + (f"The files show {shown}, the latest day in data/history.csv. " if shown != day else "")
         + (f"Updated: {', '.join(changed)}." if changed else "No file changed.")
     )
+    _warn_about_counts(console, plays, entries_for_day(rows, day, [item.id for item in plays], relinks), day)
     if failed:
         listed = ", ".join(failed[:20]) + (" ..." if len(failed) > 20 else "")
         console.warning(f"{len(failed)} track(s) got no play count this run; the next run will try again: {listed}")
+    size = paths.history.stat().st_size
+    if size > HISTORY_WARN_BYTES:
+        console.warning(
+            f"data/history.csv is {size / 1_000_000:.0f} MB. GitHub refuses files over 100 MB, so split the history "
+            "into one file per year before it gets there (see README.md)."
+        )
     return 0
 
 
@@ -198,6 +294,7 @@ def run_tracker(
     console: Console,
     *,
     history: Sequence[Row],
+    relinks: Iterable[Relink] = (),
     budget: Optional[RequestBudget] = None,
     retry_passes: int = 2,
     time_limit: Optional[float] = None,
@@ -207,9 +304,9 @@ def run_tracker(
 ) -> int:
     """Fetch, record and render with any ``fetch_batch`` (the SDK one in ``run``).
 
-    ``history`` is data/history.csv as read before fetching, so that a broken file stops the
-    run before it spends any request. ``budget`` caps the requests and ``time_limit``
-    (seconds) the time spent fetching.
+    ``history`` and ``relinks`` are data/history.csv and data/relinks.csv as read before
+    fetching, so that a broken file stops the run before it spends any request. ``budget``
+    caps the requests and ``time_limit`` (seconds) the time spent fetching.
     """
 
     report = fetch_plays(
@@ -221,7 +318,9 @@ def run_tracker(
         pause=pause,
         log=console.info,
     )
-    return record_and_render(paths, track_ids, day, report, console, history=history, top=top, daily_top=daily_top)
+    return record_and_render(
+        paths, track_ids, day, report, console, history=history, relinks=relinks, top=top, daily_top=daily_top
+    )
 
 
 def _max_requests(value: Optional[int], env: Mapping[str, str]) -> int:
@@ -285,8 +384,9 @@ def cmd_run(args: argparse.Namespace, env: Mapping[str, str], session: Any, cons
         time_limit = _positive("--time-limit", args.time_limit) * 60
         top = _rows("--top", args.top)
         daily_top = _rows("--daily-top", args.daily_top)
-        # Before the client exists: a broken history file must not cost a single request.
+        # Before the client exists: a broken data file must not cost a single request.
         history = read_history(paths.history)
+        relinks = read_relinks(paths.relinks)
     except ValueError as error:
         console.error(str(error))
         return 1
@@ -313,6 +413,7 @@ def cmd_run(args: argparse.Namespace, env: Mapping[str, str], session: Any, cons
             sdk_fetcher(client),
             console,
             history=history,
+            relinks=relinks,
             budget=budget,
             retry_passes=args.retry_passes,
             time_limit=time_limit,
@@ -333,6 +434,7 @@ def cmd_render(args: argparse.Namespace, console: Console) -> int:
         top = _rows("--top", args.top)
         daily_top = _rows("--daily-top", args.daily_top)
         rows = read_history(paths.history)
+        relinks = read_relinks(paths.relinks)
         latest = latest_day(rows, tracks.ids)
         day = _day(args.date) if args.date else latest
     except ValueError as error:
@@ -344,7 +446,7 @@ def cmd_render(args: argparse.Namespace, console: Console) -> int:
     if not entries_for_day(rows, day, tracks.ids):
         console.error(f"data/history.csv has no rows for {day}.")
         return 1
-    changed = render_outputs(paths, rows, tracks.ids, day, top=top, daily_top=daily_top)
+    changed = render_outputs(paths, rows, tracks.ids, day, relinks=relinks, top=top, daily_top=daily_top)
     console.info(
         f"Rendered {day}. "
         + (f"Updated: {', '.join(changed)}." if changed else "No file changed.")
@@ -421,7 +523,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     run.add_argument("--pause", type=float, default=1.0, help="seconds between requests (default: 1)")
 
-    render = commands.add_parser("render", parents=[common], help="rewrite the generated files from data/history.csv")
+    render = commands.add_parser("render", parents=[common], help="rewrite the generated files from the data files")
     render.add_argument("--date", help="day to render, YYYY-MM-DD (default: the latest in the history)")
 
     commands.add_parser("check", parents=[common], help="validate tracks.txt")
@@ -442,7 +544,7 @@ def main(
         arguments.insert(0, "run")
     args = build_parser().parse_args(arguments)
     env = os.environ if env is None else env
-    console = Console(write or print, github=env.get("GITHUB_ACTIONS") == "true")
+    console = Console(write or _print, github=env.get("GITHUB_ACTIONS") == "true")
     if args.command == "render":
         return cmd_render(args, console)
     if args.command == "check":

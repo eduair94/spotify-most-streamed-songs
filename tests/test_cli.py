@@ -1,10 +1,13 @@
+import io
 import json
+import sys
 
 import pytest
 from helpers import BLINDING_LIGHTS, SHAPE_OF_YOU, FakeApi, FakeSession, fake_id, track_object
 
+from tracker import cli
 from tracker.cli import Console, main
-from tracker.history import read_history
+from tracker.history import Relink, read_history, read_relinks
 from tracker.render import README_END, README_START
 
 KEY = "secret-test-key-0123456789"
@@ -78,14 +81,76 @@ def test_a_run_writes_every_file_and_never_prints_the_key(repo):
     readme = (repo / "README.md").read_text(encoding="utf-8")
     assert "placeholder" not in readme and "| 2 | [Shape of You]" in readme
     assert "Recorded 62 of 62 tracks for 2026-11-01 with 3 request(s)." in output
+    # no track was relinked: the relinks file is just its header
+    assert (repo / "data" / "relinks.csv").read_text(encoding="utf-8") == "date,track_id,answered_id\n"
+    assert "relinking" not in output
 
 
-def test_relinked_songs_are_recorded_under_the_listed_id(repo):
+def test_relinked_songs_are_recorded_under_the_listed_id_with_the_answering_one(repo):
     api = FakeApi(universe(), relinked={SHAPE_OF_YOU: fake_id(999)})
-    code, _ = run(repo, "--date", "2026-11-01", session=FakeSession(api))
+    code, output = run(repo, "--date", "2026-11-01", session=FakeSession(api))
     assert code == 0
     ids = {row.track_id for row in read_history(repo / "data" / "history.csv")}
     assert SHAPE_OF_YOU in ids and fake_id(999) not in ids
+    assert read_relinks(repo / "data" / "relinks.csv") == [Relink("2026-11-01", SHAPE_OF_YOU, fake_id(999))]
+    assert (
+        "warning: Spotify answered 1 listed track id(s) with another release of the song (track relinking): the counts "
+        f"recorded under those ids are the other releases' counts: {SHAPE_OF_YOU} -> {fake_id(999)} (Shape of You)"
+    ) in output
+    latest = json.loads((repo / "data" / "latest.json").read_text(encoding="utf-8"))
+    shape = next(song for song in latest["songs"] if song["id"] == SHAPE_OF_YOU)
+    assert shape["answered_id"] == fake_id(999)
+
+
+def test_another_release_answering_gives_no_daily_figure_that_day(repo):
+    run(repo, "--date", "2026-11-01", session=FakeSession(FakeApi(universe())))
+    relinked = {SHAPE_OF_YOU: fake_id(999)}
+    code, output = run(repo, "--date", "2026-11-02", session=FakeSession(FakeApi(universe(bump=1_000_000), relinked=relinked)))
+    assert code == 0
+    assert (
+        f"warning: 1 song(s) were answered by another track than on 2026-11-01, so they get no daily figure for "
+        f"2026-11-02: {SHAPE_OF_YOU} ({SHAPE_OF_YOU} -> {fake_id(999)})"
+    ) in output
+    latest = json.loads((repo / "data" / "latest.json").read_text(encoding="utf-8"))
+    shape = next(song for song in latest["songs"] if song["id"] == SHAPE_OF_YOU)
+    assert (shape["answered_id"], shape["daily_streams"], shape["no_daily_reason"]) == (fake_id(999), None, "version_changed")
+    leaderboard = (repo / "LEADERBOARD.md").read_text(encoding="utf-8")
+    assert "1 song was answered with another release of the song than on 2026-11-01" in leaderboard
+
+    # The same release answers the next day too: the figure is back.
+    code, output = run(repo, "--date", "2026-11-03", session=FakeSession(FakeApi(universe(bump=2_500_000), relinked=relinked)))
+    assert code == 0 and "were answered by another track" not in output
+    latest = json.loads((repo / "data" / "latest.json").read_text(encoding="utf-8"))
+    shape = next(song for song in latest["songs"] if song["id"] == SHAPE_OF_YOU)
+    assert (shape["daily_streams"], shape["no_daily_reason"]) == (3_000_000, None)
+    assert [r.date for r in read_relinks(repo / "data" / "relinks.csv")] == ["2026-11-02", "2026-11-03"]
+
+
+def test_a_jump_is_left_out_of_the_daily_figures(repo):
+    run(repo, "--date", "2026-11-01", session=FakeSession(FakeApi(universe())))
+    tracks = universe(bump=1_000_000)
+    tracks[0]["playcount"] += 1_000_000_000  # Blinding Lights: +1,001,000,000 in a day
+    code, output = run(repo, "--date", "2026-11-02", session=FakeSession(FakeApi(tracks)))
+    assert code == 0
+    assert (
+        "warning: The play count of 1 song(s) moved by more than 5% since 2026-11-01, which streams do not explain, so "
+        f"it gives no daily figure for 2026-11-02: {BLINDING_LIGHTS} (+1,001,000,000)"
+    ) in output
+    leaderboard = (repo / "LEADERBOARD.md").read_text(encoding="utf-8")
+    daily_table = leaderboard.split("## Top 50 by daily streams")[1]
+    assert "Blinding Lights" not in daily_table.split("\n\n")[2]  # not ranked
+    assert "[Blinding Lights](https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b) (+1,001,000,000)" in daily_table
+    latest = json.loads((repo / "data" / "latest.json").read_text(encoding="utf-8"))
+    assert (latest["songs"][0]["daily_streams"], latest["songs"][0]["no_daily_reason"]) == (None, "implausible_jump")
+
+
+def test_a_missing_day_is_reported_as_such(repo):
+    run(repo, "--date", "2026-11-01", session=FakeSession(FakeApi(universe())))
+    code, _ = run(repo, "--date", "2026-11-03", session=FakeSession(FakeApi(universe(bump=2_000_000))))
+    assert code == 0
+    leaderboard = (repo / "LEADERBOARD.md").read_text(encoding="utf-8")
+    assert "data/history.csv has no play counts of these songs from 2026-11-02 (no run recorded them that day)" in leaderboard
+    assert "second day of tracking" not in leaderboard
 
 
 def test_rerunning_the_same_day_is_idempotent(repo):
@@ -143,12 +208,60 @@ def test_songs_missing_today_are_listed_and_keep_their_history(repo):
     assert "1 tracked song has no play count for 2026-11-02" in (repo / "LEADERBOARD.md").read_text(encoding="utf-8")
 
 
-def test_unknown_tracks_are_reported(repo):
-    api = FakeApi(universe(), missing={fake_id(3)})
+def test_unknown_tracks_are_reported_apart_and_kept_by_render(repo):
+    api = FakeApi(universe(), missing={fake_id(55)})
     code, output = run(repo, "--date", "2026-11-01", session=FakeSession(api))
     assert code == 0
-    assert f"Spotify does not know 1 track id(s); remove them from tracks.txt: {fake_id(3)}" in output
+    assert f"Spotify does not know 1 track id(s); remove them from tracks.txt: {fake_id(55)}" in output
     assert "got no play count" not in output
+    leaderboard = (repo / "LEADERBOARD.md").read_text(encoding="utf-8")
+    assert f"Spotify does not know 1 track id in tracks.txt, so it gets no play count: `{fake_id(55)}`." in leaderboard
+    assert "could not read" not in leaderboard
+    latest = json.loads((repo / "data" / "latest.json").read_text(encoding="utf-8"))
+    assert latest["unknown_ids"] == [fake_id(55)] and latest["not_updated"] == []
+
+    files = ["data/latest.json", "LEADERBOARD.md", "README.md"]
+    before = {name: (repo / name).read_bytes() for name in files}
+    code, output = render(repo)
+    assert code == 0 and "No file changed." in output
+    # a run of the same day that stops before reaching the id (in the second request) keeps it as unknown
+    code, output = run(repo, "--date", "2026-11-01", "--max-requests", "1", session=FakeSession(FakeApi(universe())))
+    assert code == 0 and "No file changed." in output
+    assert {name: (repo / name).read_bytes() for name in files} == before
+
+
+def test_a_wrong_address_stops_at_the_first_404(repo):
+    session = FakeSession(status=404, error_body={"message": "Cannot GET /tracks"})
+    env = {"SPOTIFY_API_KEY": KEY, "SPOTIFY_API_BASE": "https://spotify-proxy.checkleaked.cc"}
+    code, output = run(repo, env=env, session=session)
+    assert code == 1 and len(session.requests) == 1
+    assert "Stopped early: the API has no GET /tracks at this address (HTTP 404" in output
+    assert "Check SPOTIFY_API_BASE" in output and KEY not in output
+    assert not (repo / "data").exists()
+
+
+def test_refused_requests_stop_the_run_when_none_got_play_counts(tmp_path):
+    (tmp_path / "tracks.txt").write_text("\n".join(fake_id(i) for i in range(1000)) + "\n", encoding="utf-8")
+    session = FakeSession(status=400, error_body={"code": "INVALID_PARAMETER", "message": "include", "param": "include"})
+    code, output = run(tmp_path, session=session)
+    assert code == 1 and len(session.requests) == 2
+    assert "Stopped early: the API refused 2 requests in a row and returned no play count" in output
+    assert "No play counts were fetched with 2 request(s), so nothing was written." in output
+
+
+def test_a_large_history_file_warns(repo, monkeypatch):
+    monkeypatch.setattr(cli, "HISTORY_WARN_BYTES", 1_000)
+    code, output = run(repo, "--date", "2026-11-01", session=FakeSession(FakeApi(universe())))
+    assert code == 0
+    assert "GitHub refuses files over 100 MB, so split the history into one file per year" in output
+
+
+def test_titles_the_console_cannot_show_do_not_end_the_run(monkeypatch):
+    stdout = io.TextIOWrapper(io.BytesIO(), encoding="cp1252")
+    monkeypatch.setattr(sys, "stdout", stdout)
+    cli._print("Pájaros -> 你好")
+    stdout.flush()
+    assert stdout.buffer.getvalue().decode("cp1252").splitlines() == ["Pájaros -> ??"]
 
 
 def test_a_refused_key_fails_without_writing(repo):
@@ -238,7 +351,8 @@ def render(repo, *args):
 
 def test_render_rebuilds_the_same_files(repo):
     run(repo, "--date", "2026-11-01", session=FakeSession(FakeApi(universe())))
-    run(repo, "--date", "2026-11-02", session=FakeSession(FakeApi(universe(bump=10, step=3))))
+    api = FakeApi(universe(bump=10, step=3), relinked={fake_id(5): fake_id(500)})
+    run(repo, "--date", "2026-11-02", session=FakeSession(api))
     leaderboard = repo / "LEADERBOARD.md"
     latest = repo / "data" / "latest.json"
     before = leaderboard.read_bytes(), latest.read_bytes()

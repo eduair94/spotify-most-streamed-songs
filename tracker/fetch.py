@@ -5,11 +5,16 @@ budget, so on a busy day a few tracks come back with ``playcount: null``: they a
 again, together with the tracks of failed requests, in up to ``retry_passes`` extra passes.
 After a pass that got no play counts at all, the next pass goes on only if its first request
 gets some, so an outage costs one request per 50 tracks plus one. Tracks the API lists as
-``missing`` are unknown to Spotify and are not retried.
+``missing`` are unknown to Spotify and are not retried. A 404 stops the run at once (the
+address in SPOTIFY_API_BASE is wrong), and so do two refused requests in a row before any play
+count came back: the settings are wrong, and every other request would be refused too.
 
-Spotify can answer a track id with another one (track relinking: the same recording under the
-id that is playable in the API's market). Such a track carries ``linked_from`` with the id that
-was asked for, and the play count is recorded under that requested id, the one in tracks.txt.
+Spotify can answer a track id with another one (track relinking: another release of the same
+song, the one playable in the API's market). Such a track carries ``linked_from`` with the id
+that was asked for. Its play count is the other release's, and releases of one song can differ
+by billions of plays, so it is recorded under the requested id (the one in tracks.txt) together
+with the id that answered (``TrackPlays.answered_id``): the history can then tell when the
+answering release changes, and gives no daily figure across that change.
 
 Every HTTP request counts towards the run's :class:`RequestBudget`, the SDK's automatic retries
 included, so the limit holds on a quota with a hard cap.
@@ -24,6 +29,8 @@ from urllib.parse import urlsplit
 
 #: The most track ids GET /tracks accepts per request.
 BATCH_SIZE = 50
+#: Refused requests in a row, before any play count came back, that stop the run.
+REFUSALS_BEFORE_STOP = 2
 RAPIDAPI_BASE = "https://spotify81.p.rapidapi.com"
 DIRECT_BASE = "https://spotify-proxy.checkleaked.cc/spotify-data"
 USER_AGENT = "spotify-most-streamed-songs-tracker/1.0 (+https://github.com/eduair94/spotify-most-streamed-songs)"
@@ -42,6 +49,17 @@ class TrackPlays:
     artists: List[str]
     #: Lifetime plays. Spotify shows 0 until a track passes 1,000 plays.
     playcount: int
+    #: The track that answered: another release of the song when Spotify relinked ``id`` (the
+    #: play count is then that release's), else ``id`` itself.
+    answered_id: str = ""
+
+    def __post_init__(self) -> None:
+        if not self.answered_id:
+            self.answered_id = self.id
+
+    @property
+    def relinked(self) -> bool:
+        return self.answered_id != self.id
 
 
 class FatalFetchError(Exception):
@@ -159,9 +177,9 @@ class BatchResult:
 def parse_tracks_response(body: Any, requested: Sequence[str]) -> BatchResult:
     """Read one GET /tracks?include=playcount response.
 
-    A track is recorded under the id that was asked for (see :func:`requested_id`) when its
-    ``playcount`` is a whole number, 0 included. A track whose ``playcount`` is null, or that
-    is not in the response at all, is retried.
+    A track is recorded under the id that was asked for (see :func:`requested_id`), with the id
+    that answered, when its ``playcount`` is a whole number, 0 included. A track whose
+    ``playcount`` is null, or that is not in the response at all, is retried.
     """
 
     if not isinstance(body, dict) or not isinstance(body.get("tracks"), list):
@@ -177,11 +195,13 @@ def parse_tracks_response(body: Any, requested: Sequence[str]) -> BatchResult:
         playcount = _count(track.get("playcount"))
         if playcount is None:
             continue
+        answered = track.get("id")
         plays[track_id] = TrackPlays(
             id=track_id,
             name=_text(track.get("name")),
             artists=_artist_names(track.get("artists")),
             playcount=playcount,
+            answered_id=answered if isinstance(answered, str) and answered else track_id,
         )
     missing = [i for i in dict.fromkeys(_id_list(body.get("missing"))) if i in wanted and i not in plays]
     retry = [i for i in dict.fromkeys(requested) if i not in plays and i not in missing]
@@ -243,7 +263,8 @@ def fetch_plays(
     worth retrying in the next pass. ``budget`` caps the requests of the whole run, retry passes
     included (no cap without one). No request is started once ``time_limit`` seconds have
     passed. After a pass without any play counts, the next pass stops at its first request that
-    gets none either.
+    gets none either. The run stops after REFUSALS_BEFORE_STOP refused requests in a row while
+    it has no play count at all.
     """
 
     budget = RequestBudget() if budget is None else budget
@@ -253,6 +274,7 @@ def fetch_plays(
     rejected: List[str] = []
     dry = False  # the last pass got no play counts at all
     given_up = False
+    refused = 0  # requests refused in a row
     for pass_number in range(max(0, retry_passes) + 1):
         if not pending or report.stopped or given_up:
             break
@@ -287,14 +309,29 @@ def fetch_plays(
             except BatchRejected as error:
                 outcome = f"refused ({error}); these tracks are skipped this run"
                 rejected.extend(batch)
+                refused += 1
+                if refused >= REFUSALS_BEFORE_STOP and not report.plays:
+                    # Every request so far was refused: the settings are wrong, not the tracks.
+                    report.stopped = (
+                        f"the API refused {refused} requests in a row and returned no play count, so the settings "
+                        f"are most likely wrong. Check SPOTIFY_API_BASE: leave it unset for RapidAPI; for a direct "
+                        f"key it must be {DIRECT_BASE}"
+                    )
+                    for rest in batches[index + 1 :]:
+                        pending.extend(rest)
             except Exception as error:  # network trouble, 5xx, odd body
                 outcome = f"failed ({_describe(error)})"
                 pending.extend(batch)
+                refused = 0
             else:
+                refused = 0
                 report.plays.update(result.plays)
                 report.missing.extend(result.missing)
                 pending.extend(result.retry)
                 notes = [f"play counts for {len(result.plays)}"]
+                relinked = sum(1 for item in result.plays.values() if item.relinked)
+                if relinked:
+                    notes.append(f"{relinked} answered by another track id (relinked)")
                 if result.retry:
                     notes.append(f"{len(result.retry)} to ask again")
                 if result.missing:
@@ -396,6 +433,13 @@ def sdk_fetcher(client: Any) -> FetchBatch:
                 ) from None
             if status == 402 or error.code == "QUOTA_EXCEEDED" or (status == 429 and not error.retryable):
                 raise FatalFetchError(f"the plan's request quota is used up ({_describe(error)})") from None
+            if status == 404:
+                # GET /tracks answers unknown ids in its body ("missing"), never with a 404: the
+                # address is wrong, and every other request would get the same answer.
+                raise FatalFetchError(
+                    f"the API has no GET /tracks at this address ({_describe(error)}). Check SPOTIFY_API_BASE: "
+                    f"leave it unset for RapidAPI; for a direct key it must be {DIRECT_BASE}"
+                ) from None
             if 400 <= status < 500 and status not in (408, 429):
                 raise BatchRejected(_describe(error)) from None
             raise
