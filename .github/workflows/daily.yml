@@ -1,4 +1,5 @@
 name: Daily update
+# Records the daily play counts at 10:07 UTC and commits data/ and LEADERBOARD.md back to main.
 # Runs the tracker once a day and commits data/, LEADERBOARD.md and README.md back to main.
 
 on:
