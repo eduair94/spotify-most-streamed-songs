@@ -30,9 +30,10 @@ Top 10 of the tracked songs by total streams on **2026-11-01** (UTC). Top 100, a
 | 10 | [Die With A Smile](https://open.spotify.com/track/7so0lgd0zP2Sbgs2d7a1SZ) | Lady Gaga, Bruno Mars | 4,109,539,832 | — |
 <!-- leaderboard:end -->
 
-Daily streams are the difference between two days' play counts, so they start with the second
-day of tracking: the first snapshot is from 2026-11-01, and the first daily figures come with the
-update of 2026-11-02.
+Daily streams are the difference between the play counts of two consecutive days, so they start
+with the second day of tracking: the first snapshot is from 2026-11-01, read at about 10:03 UTC,
+and the daily run is scheduled for that time of day. The first figures can still be irregular,
+since Spotify refreshes the counts on a schedule of its own (see "Good to know" below).
 
 ## What is in this repository
 
@@ -40,12 +41,13 @@ update of 2026-11-02.
 | --- | --- |
 | [`data/history.csv`](data/history.csv) | One row per song per day (UTC) since tracking started. New days are appended. |
 | [`data/latest.json`](data/latest.json) | The latest day for every tracked song, with its daily and 7-day streams. |
+| [`data/relinks.csv`](data/relinks.csv) | The days on which Spotify answered a listed track id with another release of the song (see "Good to know"). Only a header until that happens. |
 | [`LEADERBOARD.md`](LEADERBOARD.md) | Top 100 by total streams, and the top 50 by daily streams with the change from the day before. |
 | [`tracks.txt`](tracks.txt) | The tracked songs. Edit it in your fork. |
 | [`tracker/`](tracker) | The Python code: fetch, merge into the history, render. |
 | [`.github/workflows/daily.yml`](.github/workflows/daily.yml) | Runs the tracker once a day and commits the result. |
 
-Once a day (scheduled for 07:47 UTC; GitHub sometimes starts it later) a GitHub Actions workflow
+Once a day (scheduled for 10:07 UTC; GitHub sometimes starts it later) a GitHub Actions workflow
 asks the API for the current play count of every song in `tracks.txt`, adds one row per song to
 `data/history.csv` and regenerates the other files.
 
@@ -59,10 +61,13 @@ import pandas as pd
 url = "https://raw.githubusercontent.com/eduair94/spotify-most-streamed-songs/main/data/history.csv"
 history = pd.read_csv(url, parse_dates=["date"])
 
-# Total streams of Blinding Lights over time, and the streams it gained each day
+# Total streams of Blinding Lights over time, and the change of its count each day
 plays = history[history.track_id == "0VjIjW4GlUZAMYd2vXMi3b"].set_index("date")["playcount"].asfreq("D")
 daily = plays.diff()  # NaN where a day is missing
 ```
+
+`plays.diff()` is the plain difference. The daily figures in `LEADERBOARD.md` and
+`data/latest.json` leave out a few days that it keeps: see "Good to know" below.
 
 ```bash
 curl -s https://raw.githubusercontent.com/eduair94/spotify-most-streamed-songs/main/data/latest.json \
@@ -71,8 +76,13 @@ curl -s https://raw.githubusercontent.com/eduair94/spotify-most-streamed-songs/m
 
 `data/latest.json` lists every tracked song of the latest day by total streams (`position` 1 has
 the most) with `playcount`, `daily_streams`, `daily_streams_change` and `daily_streams_change_pct`
-(compared with the streams gained the day before) and `streams_7d`; a figure is `null` until there
-is an earlier count to compare with. Songs the API could not read that day are in `not_updated`.
+(compared with the streams gained the day before) and `streams_7d`. A figure is `null` when there
+is no earlier count it can be compared with, and `no_daily_reason` says why `daily_streams` is:
+`no_earlier_count` (no count from the day before), `below_1000` (a count of 0, which is what
+Spotify shows below 1,000 plays), `version_changed` (another release of the song answered than the
+day before) or `implausible_jump` (a change that streams do not explain). `answered_id` is the
+track whose count was read: the same as `id` unless Spotify relinked it. Songs the API could not
+read that day are in `not_updated`, and ids Spotify does not know are in `unknown_ids`.
 
 ### Columns of history.csv
 
@@ -96,16 +106,30 @@ Good to know:
   is computed from a count of 0, since the real count is then anywhere below 1,000.
 - If a song has no row for a day, the API could not read its count in that run. Nothing is
   estimated or carried forward.
-- When Spotify answers a track id with another one (track relinking), the count is recorded
-  under the id in `tracks.txt`.
-- `data/history.csv` grows by about 80 KB a day.
+- Spotify can answer a track id with another release of the same song (track relinking), and two
+  releases of one song can differ by billions of plays. The count read is then that release's: it
+  is recorded under the id in `tracks.txt`, the release that answered goes to `data/relinks.csv`
+  (and to `answered_id` in `data/latest.json`), and the run's log warns about it. Counts of two
+  different releases are never compared: a day on which another release answered than the day
+  before has no daily figure, and a week with different releases at its two ends has no 7-day
+  figure.
+- A count that moves by more than 5% of the song's play count in one day, and by more than
+  1,000,000 plays, is not taken as streams: most likely Spotify replaced or corrected the count,
+  or switched releases without saying so. That day has no daily figure, the weeks that include it
+  have no 7-day figure, and `LEADERBOARD.md` names the song with the change. Every song in this
+  list had 577.6 million plays or more when it was picked, so 5% is at least 28.9 million plays in
+  a day. In a fork that tracks new releases, a hit can grow faster than that in its first weeks:
+  raise `JUMP_SHARE` in `tracker/history.py` if it does.
+- `data/history.csv` grows by about 80 KB a day, about 29 MB a year. GitHub refuses files over
+  100 MB, which this file would reach in about three and a half years, so before then the history
+  will be split into one file per year. From 50 MB on, every run warns about it.
 
 ## Track your own songs
 
 1. **Fork** this repository.
 2. **Edit `tracks.txt`**: one song per line, as a Spotify track id, a `spotify:track:` URI or an
    `open.spotify.com/track/` link (`#` starts a comment). To start your own history from
-   scratch, also delete `data/history.csv` and `data/latest.json`.
+   scratch, also delete `data/history.csv`, `data/relinks.csv` and `data/latest.json`.
 3. **Get an API key** (see below).
 4. **Add the key as a repository secret**: Settings → Secrets and variables → Actions → New
    repository secret, named `SPOTIFY_API_KEY`. With a direct key (not RapidAPI), also add a secret
@@ -153,8 +177,10 @@ whose counts were not ready. `python -m tracker check` prints the count for your
 ```bash
 python -m pip install -r requirements.txt
 export SPOTIFY_API_KEY=your-key          # PowerShell: $env:SPOTIFY_API_KEY = "your-key"
+# Only with a direct key (not RapidAPI):
+export SPOTIFY_API_BASE=https://spotify-proxy.checkleaked.cc/spotify-data
 python -m tracker run                    # fetch today's play counts and update the files
-python -m tracker render                 # rebuild the generated files from data/history.csv only
+python -m tracker render                 # rebuild the generated files from the data files only
 python -m tracker check                  # validate tracks.txt
 
 python -m pip install -r requirements-dev.txt
@@ -172,12 +198,15 @@ For each group of 50 songs the tracker sends one request,
 answer has each song's title, artists and lifetime play count. Songs whose count was not ready in
 time, and those of a request that failed, are asked for again in up to two more passes. If a whole
 pass gets no counts at all, for example while the API is down, the next pass sends one request and
-goes on only if that one gets counts, so an outage costs one request per 50 songs, plus one. Every
-request counts towards the run's limit, and no new request starts after 20 minutes. Ids that
-Spotify does not know are reported so you can remove them. The day's rows are then merged into
-`data/history.csv`: running again on the same day replaces that day's rows instead of adding
-duplicates. Finally `LEADERBOARD.md`, `data/latest.json` and the table at the top of this file are
-regenerated.
+goes on only if that one gets counts, so an outage costs one request per 50 songs, plus one. A
+404 ends the run at once, and so do two refused requests in a row before any count came back: both
+mean that the address in `SPOTIFY_API_BASE` or another setting is wrong, and every other request
+would fail the same way. Every request counts towards the run's limit, and no new request starts
+after 20 minutes. Ids that Spotify does not know are reported so you can remove them, and songs
+answered by another release are logged. The day's rows are then merged into `data/history.csv`
+(and the relinked ids into `data/relinks.csv`): running again on the same day replaces that day's
+rows instead of adding duplicates. Finally `LEADERBOARD.md`, `data/latest.json` and the table at
+the top of this file are regenerated.
 
 You can get the same numbers for any song from the API directly. The
 [Spotify play count API guide](https://spotify.checkleaked.cc/spotify-play-count-api) has the
@@ -210,7 +239,10 @@ On 2026-11-01, from two sources read through the API:
 
 The 1,000 songs with the most plays were kept: 577.6 million plays and up on that day, 632 of them
 above one billion. A song listed under several track ids with the same title and artists counts
-once, with the id that has the most plays.
+once, with the id that has the most plays. When Spotify answered a looked-up top track with
+another release of the song (track relinking: 119 of the 899 top tracks looked up), the id of the
+release that answered was kept, since that is the one the API serves; 86 of the 1,000 listed ids
+are such ids. The first snapshot had no relinked song.
 
 So this is not the complete top 1,000 of Spotify: a song that was in none of those charts and is
 not a top track of those 155 artists is missing however many plays it has. The leaderboard ranks
