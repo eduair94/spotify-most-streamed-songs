@@ -7,3 +7,7 @@ addopts = "-q"
 [tool.ruff]
 line-length = 130
 target-version = "py39"
+
+[tool.ruff.lint]
+# Pinned, so that a newer ruff with more rules on by default checks the same things.
+select = ["E", "F", "W", "I"]
