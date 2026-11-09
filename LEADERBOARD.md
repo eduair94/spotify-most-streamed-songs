@@ -1,6 +1,6 @@
 # Most-streamed songs on Spotify
 
-Total and daily Spotify streams on **2026-11-08** (UTC) of the 1,000 songs in [`tracks.txt`](tracks.txt). Updated once a day. Only the tracked songs are ranked: this is not a ranking of every song on Spotify.
+Total and daily Spotify streams on **2026-11-09** (UTC) of the 1,000 songs in [`tracks.txt`](tracks.txt). Updated once a day. Only the tracked songs are ranked: this is not a ranking of every song on Spotify.
 
 Total streams is the play count Spotify shows for the song, counted since its release. Daily streams is that count minus the same song's count one day earlier, and 7-day streams the same over seven days; — means there is no figure: no earlier count to compare with yet, a count below 1,000 plays (which Spotify shows as 0), or a change that is not streams, such as the counts of two different releases of the song (the notes under the daily table say which). Spotify refreshes play counts roughly once a day, not at the moment this tracker reads them: if a count was not refreshed in between, that day shows 0 and the next day covers two days.
 
@@ -10,165 +10,167 @@ Total streams is the play count Spotify shows for the song, counted since its re
 
 | # | Song | Artist | Total streams | Daily streams | 7-day streams |
 |--:|:--|:--|--:|--:|--:|
-| 1 | [Blinding Lights](https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b) | The Weeknd | 5,671,825,846 | 1,658,040 | 12,173,192 |
-| 2 | [Shape of You](https://open.spotify.com/track/7qiZfU4dY1lWllzX7mPBI3) | Ed Sheeran | 5,177,971,714 | 1,861,691 | 11,002,171 |
-| 3 | [Sweater Weather](https://open.spotify.com/track/0cQVqPuHQP4KEwc7ZUQmj6) | The Neighbourhood | 5,014,255,148 | 2,614,733 | 17,624,620 |
-| 4 | [Starboy](https://open.spotify.com/track/7MXVkk9YMctZqd1Srtv4MB) | The Weeknd, Daft Punk | 4,854,992,846 | 2,062,498 | 13,105,993 |
-| 5 | [As It Was](https://open.spotify.com/track/4Dvkj6JhhA12EX05fT7y2e) | Harry Styles | 4,705,640,904 | 1,526,234 | 10,204,971 |
-| 6 | [One Dance](https://open.spotify.com/track/1zi7xx7UVEFkmKfv06H8x0) | Drake, Wizkid, Kyla | 4,555,148,473 | 1,786,850 | 11,192,054 |
-| 7 | [Sunflower - Spider-Man: Into the Spider-Verse](https://open.spotify.com/track/0RiRZpuVRbi7oqRdSMwhQY) | Post Malone, Swae Lee | 4,548,282,985 | 1,479,549 | 10,280,487 |
-| 8 | [Perfect](https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v) | Ed Sheeran | 4,177,096,242 | 1,343,816 | 8,651,234 |
-| 9 | [STAY (with Justin Bieber)](https://open.spotify.com/track/567e29TDzLwZwfDuEpGTwo) | The Kid LAROI, Justin Bieber | 4,130,375,672 | 1,192,327 | 7,200,559 |
-| 10 | [Die With A Smile](https://open.spotify.com/track/7so0lgd0zP2Sbgs2d7a1SZ) | Lady Gaga, Bruno Mars | 4,127,812,214 | 2,637,710 | 18,272,382 |
-| 11 | [I Wanna Be Yours](https://open.spotify.com/track/5XeFesFbtLpXzIVDNQP22n) | Arctic Monkeys | 4,098,842,519 | 1,947,642 | 13,318,631 |
-| 12 | [BIRDS OF A FEATHER](https://open.spotify.com/track/6dOtVTDdiauQNBQEDOtlAB) | Billie Eilish | 4,092,458,309 | 2,154,547 | 14,642,098 |
-| 13 | [Yellow](https://open.spotify.com/track/3AJwUDP919kvQ9QcozQPxg) | Coldplay | 4,078,198,361 | 1,880,180 | 12,550,771 |
-| 14 | [The Night We Met](https://open.spotify.com/track/5yJaXWIErrrsjQ3J0eR5aK) | Lord Huron | 4,026,328,952 | 1,740,818 | 11,932,682 |
-| 15 | [Riptide](https://open.spotify.com/track/2uXlHCUbq9OMUwx3hrk06o) | Vance Joy | 4,001,046,469 | 1,709,103 | 11,117,792 |
-| 16 | [Closer](https://open.spotify.com/track/7BKLCZ1jbUBVqRi2FVlTVw) | The Chainsmokers, Halsey | 3,950,733,440 | 1,615,467 | 10,016,099 |
-| 17 | [lovely (with Khalid)](https://open.spotify.com/track/0u2P5u6lvoDfwTYjAADbn4) | Billie Eilish, Khalid | 3,931,090,411 | 1,086,674 | 7,040,657 |
-| 18 | [Every Breath You Take](https://open.spotify.com/track/1JSTJqkT5qHq8MDJnJbRE1) | The Police | 3,863,812,019 | 2,321,044 | 14,500,787 |
-| 19 | [Iris](https://open.spotify.com/track/6Qyc6fS4DsZjB2mRW9DsQs) | The Goo Goo Dolls | 3,848,504,094 | 2,610,221 | 18,195,696 |
-| 20 | [Something Just Like This](https://open.spotify.com/track/6RUKPb4LETWmmr3iAEQktW) | The Chainsmokers, Coldplay | 3,831,071,338 | 1,316,309 | 7,820,219 |
-| 21 | [Another Love](https://open.spotify.com/track/7jtQIBanIiJOMS6RyCx6jZ) | Tom Odell | 3,764,158,562 | 1,374,515 | 8,986,257 |
-| 22 | [Counting Stars](https://open.spotify.com/track/2tpWsVSb9UEmDRxAl1zhX1) | OneRepublic | 3,719,029,672 | 1,600,878 | 10,026,669 |
-| 23 | [Take Me To Church](https://open.spotify.com/track/3dYD57lRAUcMHufyqn9GcI) | Hozier | 3,645,415,403 | 1,343,976 | 7,775,184 |
-| 24 | [Photograph](https://open.spotify.com/track/6fxVffaTuwjgEk5h9QyRjy) | Ed Sheeran | 3,608,298,162 | 1,085,197 | 7,598,040 |
-| 25 | [Viva La Vida](https://open.spotify.com/track/1mea3bSkSGXuIRvnydlB5b) | Coldplay | 3,601,237,009 | 1,646,401 | 10,681,303 |
-| 26 | [Locked out of Heaven](https://open.spotify.com/track/5g7sDjBhZ4I3gcFIpkrLuI) | Bruno Mars | 3,596,436,549 | 1,890,319 | 12,008,101 |
-| 27 | [Mr. Brightside](https://open.spotify.com/track/003vvx7Niy0yvhvHt4a68B) | The Killers | 3,586,887,635 | 2,391,070 | 15,249,236 |
-| 28 | [Can't Hold Us (feat. Ray Dalton)](https://open.spotify.com/track/22skzmqfdWrjJylampe0kt) | Macklemore, Ryan Lewis, Macklemore & Ryan Lewis, Ray Dalton | 3,584,001,521 | 1,122,403 | 7,739,580 |
-| 29 | [Just the Way You Are](https://open.spotify.com/track/7BqBn9nzAq8spo5e7cZ0dJ) | Bruno Mars | 3,557,197,414 | 1,552,113 | 10,500,978 |
-| 30 | [Cruel Summer](https://open.spotify.com/track/1BxfuPKGuaTgP7aM0Bbdwr) | Taylor Swift | 3,531,529,351 | 814,493 | 5,895,540 |
-| 31 | [Die For You](https://open.spotify.com/track/2LBqCSwhJGcFQeTHMVGwy3) | The Weeknd | 3,494,310,719 | 1,532,085 | 10,584,639 |
-| 32 | [rockstar (feat. 21 Savage)](https://open.spotify.com/track/0e7ipj03S05BNilyu5bRzt) | Post Malone, 21 Savage | 3,482,626,735 | 571,372 | 3,692,872 |
-| 33 | [That's What I Like](https://open.spotify.com/track/0KKkJNfGyhkQ5aFogxQAPU) | Bruno Mars | 3,466,198,015 | 1,260,150 | 8,561,235 |
-| 34 | [Señorita](https://open.spotify.com/track/6v3KW9xbzN5yKLt9YKDYA2) | Shawn Mendes, Camila Cabello | 3,466,152,418 | 934,567 | 5,982,030 |
-| 35 | [In the End](https://open.spotify.com/track/60a0Rd6pjrkxjPbaKzXjfq) | Linkin Park | 3,454,991,709 | 1,858,960 | 11,510,980 |
-| 36 | [Watermelon Sugar](https://open.spotify.com/track/6UelLqGlWMcVH1E5c4H7lY) | Harry Styles | 3,436,692,278 | 755,458 | 4,976,379 |
-| 37 | [Love Yourself](https://open.spotify.com/track/50kpGaPAhYJ3sGmk6vplg0) | Justin Bieber | 3,418,018,406 | 1,207,587 | 7,518,416 |
-| 38 | [Billie Jean](https://open.spotify.com/track/7J1uxwnxfQLu4APicE5Rnj) | Michael Jackson | 3,361,251,361 | 2,245,077 | 15,932,510 |
-| 39 | [Don't Start Now](https://open.spotify.com/track/3PfIrDoz19wz7qK7tYeu62) | Dua Lipa | 3,360,947,532 | 719,566 | 5,008,559 |
-| 40 | [When I Was Your Man](https://open.spotify.com/track/0B7wvvmu9EISAwZnOpjhNI) | Bruno Mars | 3,358,176,761 | 1,339,505 | 8,584,930 |
-| 41 | [Circles](https://open.spotify.com/track/21jGcNKet2qwijlDFuPiPb) | Post Malone | 3,332,395,789 | 1,227,663 | 7,361,599 |
-| 42 | [Without Me](https://open.spotify.com/track/7lQ8MOhq6IN2w8EYcFNSUk) | Eminem | 3,291,737,309 | 1,218,143 | 7,734,878 |
-| 43 | [Let Me Love You](https://open.spotify.com/track/0lYBSQXN6rCTvUZvg9S0lU) | DJ Snake, Justin Bieber | 3,291,237,450 | 1,458,314 | 9,303,710 |
-| 44 | [Wake Me Up](https://open.spotify.com/track/3B0irDyS69y5eAz15xV2Ee) | Avicii | 3,282,658,558 | 965,108 | 6,208,088 |
-| 45 | [Thinking out Loud](https://open.spotify.com/track/1Slwb6dOYkBlWal1PGtnNg) | Ed Sheeran | 3,264,968,042 | 1,047,172 | 6,616,578 |
-| 46 | [Espresso](https://open.spotify.com/track/2HRqTpkrJO5ggZyyK6NPWz) | Sabrina Carpenter | 3,246,511,621 | 1,279,335 | 8,490,883 |
-| 47 | [All The Stars (with SZA) - From "Black Panther: The Album"](https://open.spotify.com/track/3GCdLUSnKSMJhs4Tj6CV3s) | Kendrick Lamar, SZA | 3,243,459,582 | 1,367,472 | 8,976,972 |
-| 48 | [Treat You Better](https://open.spotify.com/track/3QGsuHI8jO1Rx4JWLUh9jd) | Shawn Mendes | 3,242,568,070 | 2,151,621 | 14,638,845 |
-| 49 | [Beautiful Things](https://open.spotify.com/track/3xkHsmpQCBMytMJNiDf3Ii) | Benson Boone | 3,240,499,401 | 1,554,395 | 10,587,811 |
-| 50 | [Creep](https://open.spotify.com/track/70LcF31zb1H0PyJoS1Sx1r) | Radiohead | 3,238,905,734 | 2,136,464 | 14,740,988 |
-| 51 | [All of Me](https://open.spotify.com/track/3U4isOIWM3VvDubwSI3y7a) | John Legend | 3,238,728,202 | 1,212,604 | 7,200,490 |
-| 52 | [God's Plan](https://open.spotify.com/track/6DCZcSspjsKoFjzjrWoCdn) | Drake | 3,225,115,198 | 1,069,740 | 6,680,529 |
-| 53 | [The Hills](https://open.spotify.com/track/7fBv7CLKzipRk6EC6TWHOB) | The Weeknd | 3,210,201,802 | 1,078,399 | 7,128,559 |
-| 54 | [Do I Wanna Know?](https://open.spotify.com/track/5FVd6KXrgO9B3JPmC8OPst) | Arctic Monkeys | 3,209,718,138 | 1,518,695 | 10,646,171 |
-| 55 | [Shallow](https://open.spotify.com/track/2VxeLyX666F8uXCJ0dZF8B) | Lady Gaga, Bradley Cooper | 3,209,102,968 | 809,524 | 5,035,368 |
-| 56 | [See You Again (feat. Kali Uchis)](https://open.spotify.com/track/7KA4W4McWYRpgf0fWsJZWB) | Tyler, The Creator, Kali Uchis | 3,186,165,846 | 1,345,752 | 9,285,990 |
-| 57 | [Wonderwall - Remastered](https://open.spotify.com/track/5qqabIl2vWzo9ApSC317sa) | Oasis | 3,183,756,284 | 1,758,521 | 12,252,336 |
-| 58 | [Smells Like Teen Spirit - Remastered](https://open.spotify.com/track/0gucTLf7trAf37Ua1uAyAu) | Nirvana | 3,166,159,761 | 1,554,102 | 9,994,499 |
-| 59 | [Seven (feat. Latto) (Explicit Ver.)](https://open.spotify.com/track/2HRgqmZQC0MC7GeNuDIXHN) | Jung Kook, Latto | 3,137,404,193 | 1,082,389 | 4,086,142 |
-| 60 | [Unforgettable](https://open.spotify.com/track/3B54sVLJ402zGa6Xm4YGNe) | French Montana, Swae Lee | 3,136,335,986 | 1,271,631 | 8,527,018 |
-| 61 | [Sorry](https://open.spotify.com/track/09CtPGIpYB4BrO8qb1RGsF) | Justin Bieber | 3,132,628,965 | 1,262,441 | 7,895,118 |
-| 62 | [505](https://open.spotify.com/track/58ge6dfP91o9oXMzq3XkIS) | Arctic Monkeys | 3,122,502,468 | 1,764,953 | 11,834,770 |
-| 63 | [Clean Baby Sleep White Noise (Loopable)](https://open.spotify.com/track/4yVBarJHjhhzP1q7fU4p0W) | Dream Supplier | 3,118,215,057 | 1,307,729 | 9,153,243 |
-| 64 | [No Role Modelz](https://open.spotify.com/track/68Dni7IE4VyPkTOH9mRWHr) | J. Cole | 3,092,182,425 | 1,136,304 | 7,081,286 |
-| 65 | [Lose Yourself](https://open.spotify.com/track/1v7L65Lzy0j0vdpRjJewt1) | Eminem | 3,069,255,465 | 1,006,851 | 6,462,444 |
-| 66 | [The Scientist](https://open.spotify.com/track/75JFxkI2RXiU7L9VXzMkle) | Coldplay | 3,060,985,381 | 1,361,705 | 8,683,604 |
-| 67 | [Don't Stop Believin' (2022 Remaster)](https://open.spotify.com/track/5RKQ5NdjSh2QzD4MaunT91) | Journey | 3,059,517,114 | 1,097,397 | 7,783,534 |
-| 68 | [End of Beginning](https://open.spotify.com/track/3qhlB30KknSejmIvZZLjOD) | Djo | 3,057,545,292 | 2,163,224 | 16,041,125 |
-| 69 | [There's Nothing Holdin' Me Back](https://open.spotify.com/track/7JJmb5XwzOO8jgpou264Ml) | Shawn Mendes | 3,057,492,024 | 1,417,464 | 9,225,342 |
-| 70 | [Dreams - 2001 Remaster](https://open.spotify.com/track/53qkszfgztIvkFyF31GfdQ) | Fleetwood Mac | 3,019,511,292 | 1,488,555 | 9,778,861 |
-| 71 | [HUMBLE.](https://open.spotify.com/track/7KXjTSCq5nL1LoYtL7XAwS) | Kendrick Lamar | 3,018,692,151 | 608,210 | 3,852,934 |
-| 72 | [drivers license](https://open.spotify.com/track/5wANPM4fQCJwkGd4rN57mH) | Olivia Rodrigo | 3,005,177,545 | 1,007,592 | 6,879,438 |
-| 73 | [bad guy](https://open.spotify.com/track/2Fxmhks0bxGSBdJ92vM42m) | Billie Eilish | 3,002,643,880 | 439,924 | 4,297,912 |
-| 74 | [Take on Me - 2015 Remaster](https://open.spotify.com/track/04aigH9HRGebQZu1JAN6X1) | a-ha | 2,992,103,579 | 1,732,120 | 9,957,212 |
-| 75 | [Numb](https://open.spotify.com/track/2nLtzopw4rPReszdYBJU6h) | Linkin Park | 2,985,432,410 | 1,525,723 | 9,834,949 |
-| 76 | [7 rings](https://open.spotify.com/track/6ocbgoVGwYJhOv1GgI9NsF) | Ariana Grande | 2,966,643,990 | 751,161 | 5,404,438 |
-| 77 | [Sweet Child O' Mine](https://open.spotify.com/track/7snQQk1zcKl8gZ92AnueZW) | Guns N' Roses | 2,954,472,003 | 1,360,781 | 9,335,764 |
-| 78 | [One Of The Girls (with JENNIE, Lily Rose Depp)](https://open.spotify.com/track/7CyPwkp0oE8Ro9Dd5CUDjW) | The Weeknd, JENNIE, Lily-Rose Depp | 2,947,440,554 | 2,084,166 | 14,405,388 |
-| 79 | [Payphone](https://open.spotify.com/track/1XGmzt0PVuFgQYYnV2It7A) | Maroon 5, Wiz Khalifa | 2,938,521,334 | 1,443,324 | 10,253,178 |
-| 80 | [Kill Bill](https://open.spotify.com/track/1Qrg8KqiBpW07V7PNxwwwL) | SZA | 2,937,537,000 | 814,404 | 6,133,218 |
-| 81 | [Save Your Tears](https://open.spotify.com/track/5QO79kh1waicV47BqGRL3g) | The Weeknd | 2,895,214,469 | 1,219,131 | 7,357,826 |
-| 82 | [Cold Heart - PNAU Remix](https://open.spotify.com/track/6JIC3hbC28JZKZ8AlAqX8h) | Elton John, Dua Lipa, PNAU | 2,852,524,220 | 781,891 | 4,805,616 |
-| 83 | [Lean On](https://open.spotify.com/track/4WxU1gDVmoH6gstgR0MT78) | Major Lazer, DJ Snake, MØ | 2,846,240,141 | 812,699 | 5,308,748 |
-| 84 | [Uptown Funk (feat. Bruno Mars)](https://open.spotify.com/track/32OlwWuMpZ6b0aN2RZOeMS) | Mark Ronson, Bruno Mars | 2,840,902,663 | 998,635 | 6,682,693 |
-| 85 | [Danza Kuduro](https://open.spotify.com/track/2a1o6ZejUi8U3wzzOtCOYw) | Don Omar, Lucenzo | 2,832,958,888 | 1,427,929 | 9,413,597 |
-| 86 | [One Kiss (with Dua Lipa)](https://open.spotify.com/track/76dIZzTdrNO15mGBrU3MHi) | Calvin Harris, Dua Lipa | 2,827,752,727 | 734,133 | 4,928,322 |
-| 87 | [Africa](https://open.spotify.com/track/2374M0fQpWi3dLnB54qaLX) | TOTO | 2,820,797,226 | 1,364,602 | 8,381,909 |
-| 88 | [We Don't Talk Anymore (feat. Selena Gomez)](https://open.spotify.com/track/54PbBpquVfhfrwRwvjSXbI) | Charlie Puth, Selena Gomez | 2,809,455,168 | 1,279,922 | 8,386,632 |
-| 89 | [Night Changes](https://open.spotify.com/track/5O2P9iiztwhomNh8xkR9lJ) | One Direction | 2,780,612,813 | 1,108,433 | 7,530,085 |
-| 90 | [Somewhere Only We Know](https://open.spotify.com/track/0ll8uFnc0nANY35E0Lfxvg) | Keane | 2,778,420,137 | 1,493,636 | 9,556,851 |
-| 91 | [LA CANCIÓN](https://open.spotify.com/track/0fea68AdmYNygeTGI4RC18) | J Balvin, Bad Bunny | 2,771,545,833 | 1,124,311 | 7,263,666 |
-| 92 | [Everybody Wants To Rule The World](https://open.spotify.com/track/2YiCMmONQcoMPX2bV1LxE0) | Tears For Fears | 2,765,787,556 | 1,399,138 | 9,350,062 |
-| 93 | [Hips Don't Lie (feat. Wyclef Jean)](https://open.spotify.com/track/3d0WouFnFmr0K3kjeza3fF) | Shakira, Wyclef Jean | 2,758,149,528 | 1,213,619 | 9,048,187 |
-| 94 | [We Found Love](https://open.spotify.com/track/1zv3WFUbZ5vPxFq9I2jAU1) | Rihanna, Calvin Harris | 2,738,050,363 | 1,431,173 | 9,151,434 |
-| 95 | [Lose Control](https://open.spotify.com/track/17phhZDn6oGtzMe56NuWvj) | Teddy Swims | 2,719,548,315 | 1,315,515 | 8,525,719 |
-| 96 | [Levitating (feat. DaBaby)](https://open.spotify.com/track/5nujrmhLynf4yMoMtj8AQF) | Dua Lipa, DaBaby | 2,708,311,595 | 638,364 | 4,279,252 |
-| 97 | [Gangsta's Paradise](https://open.spotify.com/track/1DIXPcTDzTj8ZMHt3PDt8p) | Coolio, L.V. | 2,701,918,377 | 1,095,862 | 7,046,659 |
-| 98 | [APT.](https://open.spotify.com/track/4wJ5Qq0jBN4ajy7ouZIV1c) | ROSÉ, Bruno Mars | 2,700,869,627 | 1,227,700 | 9,121,184 |
-| 99 | [Lush Life](https://open.spotify.com/track/1rIKgCH4H52lrvDcz50hS8) | Zara Larsson | 2,682,943,391 | 1,357,130 | 9,629,974 |
-| 100 | [Attention](https://open.spotify.com/track/5cF0dROlMOK5uNZtivgu50) | Charlie Puth | 2,681,512,466 | 1,111,480 | 7,179,564 |
+| 1 | [Blinding Lights](https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b) | The Weeknd | 5,673,424,558 | 1,598,712 | 11,189,250 |
+| 2 | [Shape of You](https://open.spotify.com/track/7qiZfU4dY1lWllzX7mPBI3) | Ed Sheeran | 5,179,780,111 | 1,808,397 | 11,333,232 |
+| 3 | [Sweater Weather](https://open.spotify.com/track/0cQVqPuHQP4KEwc7ZUQmj6) | The Neighbourhood | 5,016,738,322 | 2,483,174 | 17,642,611 |
+| 4 | [Starboy](https://open.spotify.com/track/7MXVkk9YMctZqd1Srtv4MB) | The Weeknd, Daft Punk | 4,856,946,952 | 1,954,106 | 13,151,829 |
+| 5 | [As It Was](https://open.spotify.com/track/4Dvkj6JhhA12EX05fT7y2e) | Harry Styles | 4,707,106,423 | 1,465,519 | 10,204,061 |
+| 6 | [One Dance](https://open.spotify.com/track/1zi7xx7UVEFkmKfv06H8x0) | Drake, Wizkid, Kyla | 4,556,880,736 | 1,732,263 | 11,273,138 |
+| 7 | [Sunflower - Spider-Man: Into the Spider-Verse](https://open.spotify.com/track/0RiRZpuVRbi7oqRdSMwhQY) | Post Malone, Swae Lee | 4,549,739,732 | 1,456,747 | 10,183,053 |
+| 8 | [Perfect](https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v) | Ed Sheeran | 4,178,392,456 | 1,296,214 | 8,752,381 |
+| 9 | [STAY (with Justin Bieber)](https://open.spotify.com/track/567e29TDzLwZwfDuEpGTwo) | The Kid LAROI, Justin Bieber | 4,131,518,466 | 1,142,794 | 7,369,262 |
+| 10 | [Die With A Smile](https://open.spotify.com/track/7so0lgd0zP2Sbgs2d7a1SZ) | Lady Gaga, Bruno Mars | 4,130,410,803 | 2,598,589 | 18,188,687 |
+| 11 | [I Wanna Be Yours](https://open.spotify.com/track/5XeFesFbtLpXzIVDNQP22n) | Arctic Monkeys | 4,100,731,677 | 1,889,158 | 13,415,492 |
+| 12 | [BIRDS OF A FEATHER](https://open.spotify.com/track/6dOtVTDdiauQNBQEDOtlAB) | Billie Eilish | 4,094,523,570 | 2,065,261 | 14,697,929 |
+| 13 | [Yellow](https://open.spotify.com/track/3AJwUDP919kvQ9QcozQPxg) | Coldplay | 4,079,960,188 | 1,761,827 | 12,582,863 |
+| 14 | [The Night We Met](https://open.spotify.com/track/5yJaXWIErrrsjQ3J0eR5aK) | Lord Huron | 4,027,970,465 | 1,641,513 | 11,987,273 |
+| 15 | [Riptide](https://open.spotify.com/track/2uXlHCUbq9OMUwx3hrk06o) | Vance Joy | 4,002,670,883 | 1,624,414 | 11,166,811 |
+| 16 | [Closer](https://open.spotify.com/track/7BKLCZ1jbUBVqRi2FVlTVw) | The Chainsmokers, Halsey | 3,952,227,215 | 1,493,775 | 10,133,522 |
+| 17 | [lovely (with Khalid)](https://open.spotify.com/track/0u2P5u6lvoDfwTYjAADbn4) | Billie Eilish, Khalid | 3,932,128,664 | 1,038,253 | 7,143,774 |
+| 18 | [Every Breath You Take](https://open.spotify.com/track/1JSTJqkT5qHq8MDJnJbRE1) | The Police | 3,866,070,968 | 2,258,949 | 14,752,284 |
+| 19 | [Iris](https://open.spotify.com/track/6Qyc6fS4DsZjB2mRW9DsQs) | The Goo Goo Dolls | 3,850,949,555 | 2,445,461 | 17,991,456 |
+| 20 | [Something Just Like This](https://open.spotify.com/track/6RUKPb4LETWmmr3iAEQktW) | The Chainsmokers, Coldplay | 3,832,310,519 | 1,239,181 | 8,055,079 |
+| 21 | [Another Love](https://open.spotify.com/track/7jtQIBanIiJOMS6RyCx6jZ) | Tom Odell | 3,765,434,805 | 1,276,243 | 9,047,730 |
+| 22 | [Counting Stars](https://open.spotify.com/track/2tpWsVSb9UEmDRxAl1zhX1) | OneRepublic | 3,720,555,964 | 1,526,292 | 10,157,752 |
+| 23 | [Take Me To Church](https://open.spotify.com/track/3dYD57lRAUcMHufyqn9GcI) | Hozier | 3,646,635,336 | 1,219,933 | 8,058,935 |
+| 24 | [Photograph](https://open.spotify.com/track/6fxVffaTuwjgEk5h9QyRjy) | Ed Sheeran | 3,609,298,878 | 1,000,716 | 7,516,548 |
+| 25 | [Viva La Vida](https://open.spotify.com/track/1mea3bSkSGXuIRvnydlB5b) | Coldplay | 3,602,811,310 | 1,574,301 | 10,753,706 |
+| 26 | [Locked out of Heaven](https://open.spotify.com/track/5g7sDjBhZ4I3gcFIpkrLuI) | Bruno Mars | 3,598,226,009 | 1,789,460 | 12,099,633 |
+| 27 | [Mr. Brightside](https://open.spotify.com/track/003vvx7Niy0yvhvHt4a68B) | The Killers | 3,589,188,262 | 2,300,627 | 15,286,187 |
+| 28 | [Can't Hold Us (feat. Ray Dalton)](https://open.spotify.com/track/22skzmqfdWrjJylampe0kt) | Macklemore, Ryan Lewis, Macklemore & Ryan Lewis, Ray Dalton | 3,585,043,760 | 1,042,239 | 7,259,951 |
+| 29 | [Just the Way You Are](https://open.spotify.com/track/7BqBn9nzAq8spo5e7cZ0dJ) | Bruno Mars | 3,558,677,011 | 1,479,597 | 10,478,188 |
+| 30 | [Cruel Summer](https://open.spotify.com/track/1BxfuPKGuaTgP7aM0Bbdwr) | Taylor Swift | 3,532,323,243 | 793,892 | 5,785,974 |
+| 31 | [Die For You](https://open.spotify.com/track/2LBqCSwhJGcFQeTHMVGwy3) | The Weeknd | 3,495,805,929 | 1,495,210 | 10,382,914 |
+| 32 | [rockstar (feat. 21 Savage)](https://open.spotify.com/track/0e7ipj03S05BNilyu5bRzt) | Post Malone, 21 Savage | 3,483,160,967 | 534,232 | 3,705,232 |
+| 33 | [That's What I Like](https://open.spotify.com/track/0KKkJNfGyhkQ5aFogxQAPU) | Bruno Mars | 3,467,435,225 | 1,237,210 | 8,490,325 |
+| 34 | [Señorita](https://open.spotify.com/track/6v3KW9xbzN5yKLt9YKDYA2) | Shawn Mendes, Camila Cabello | 3,467,104,550 | 952,132 | 6,080,894 |
+| 35 | [In the End](https://open.spotify.com/track/60a0Rd6pjrkxjPbaKzXjfq) | Linkin Park | 3,456,696,823 | 1,705,114 | 11,649,439 |
+| 36 | [Watermelon Sugar](https://open.spotify.com/track/6UelLqGlWMcVH1E5c4H7lY) | Harry Styles | 3,437,389,810 | 697,532 | 4,930,605 |
+| 37 | [Love Yourself](https://open.spotify.com/track/50kpGaPAhYJ3sGmk6vplg0) | Justin Bieber | 3,419,200,610 | 1,182,204 | 7,699,967 |
+| 38 | [Billie Jean](https://open.spotify.com/track/7J1uxwnxfQLu4APicE5Rnj) | Michael Jackson | 3,363,597,075 | 2,345,714 | 15,292,753 |
+| 39 | [Don't Start Now](https://open.spotify.com/track/3PfIrDoz19wz7qK7tYeu62) | Dua Lipa | 3,361,625,409 | 677,877 | 4,919,827 |
+| 40 | [When I Was Your Man](https://open.spotify.com/track/0B7wvvmu9EISAwZnOpjhNI) | Bruno Mars | 3,359,423,788 | 1,247,027 | 8,694,422 |
+| 41 | [Circles](https://open.spotify.com/track/21jGcNKet2qwijlDFuPiPb) | Post Malone | 3,333,531,290 | 1,135,501 | 7,552,504 |
+| 42 | [Without Me](https://open.spotify.com/track/7lQ8MOhq6IN2w8EYcFNSUk) | Eminem | 3,292,882,009 | 1,144,700 | 7,746,111 |
+| 43 | [Let Me Love You](https://open.spotify.com/track/0lYBSQXN6rCTvUZvg9S0lU) | DJ Snake, Justin Bieber | 3,292,635,326 | 1,397,876 | 9,387,299 |
+| 44 | [Wake Me Up](https://open.spotify.com/track/3B0irDyS69y5eAz15xV2Ee) | Avicii | 3,283,570,108 | 911,550 | 6,206,106 |
+| 45 | [Thinking out Loud](https://open.spotify.com/track/1Slwb6dOYkBlWal1PGtnNg) | Ed Sheeran | 3,265,976,960 | 1,008,918 | 6,745,393 |
+| 46 | [Espresso](https://open.spotify.com/track/2HRqTpkrJO5ggZyyK6NPWz) | Sabrina Carpenter | 3,247,745,255 | 1,233,634 | 8,459,698 |
+| 47 | [All The Stars (with SZA) - From "Black Panther: The Album"](https://open.spotify.com/track/3GCdLUSnKSMJhs4Tj6CV3s) | Kendrick Lamar, SZA | 3,244,743,459 | 1,283,877 | 8,983,923 |
+| 48 | [Treat You Better](https://open.spotify.com/track/3QGsuHI8jO1Rx4JWLUh9jd) | Shawn Mendes | 3,244,693,710 | 2,125,640 | 14,656,239 |
+| 49 | [Beautiful Things](https://open.spotify.com/track/3xkHsmpQCBMytMJNiDf3Ii) | Benson Boone | 3,242,008,309 | 1,508,908 | 10,525,080 |
+| 50 | [Creep](https://open.spotify.com/track/70LcF31zb1H0PyJoS1Sx1r) | Radiohead | 3,240,931,958 | 2,026,224 | 14,531,580 |
+| 51 | [All of Me](https://open.spotify.com/track/3U4isOIWM3VvDubwSI3y7a) | John Legend | 3,239,904,877 | 1,176,675 | 7,504,004 |
+| 52 | [God's Plan](https://open.spotify.com/track/6DCZcSspjsKoFjzjrWoCdn) | Drake | 3,226,182,082 | 1,066,884 | 6,776,460 |
+| 53 | [The Hills](https://open.spotify.com/track/7fBv7CLKzipRk6EC6TWHOB) | The Weeknd | 3,211,229,290 | 1,027,488 | 7,128,077 |
+| 54 | [Do I Wanna Know?](https://open.spotify.com/track/5FVd6KXrgO9B3JPmC8OPst) | Arctic Monkeys | 3,211,103,681 | 1,385,543 | 10,516,172 |
+| 55 | [Shallow](https://open.spotify.com/track/2VxeLyX666F8uXCJ0dZF8B) | Lady Gaga, Bradley Cooper | 3,209,873,624 | 770,656 | 5,104,501 |
+| 56 | [See You Again (feat. Kali Uchis)](https://open.spotify.com/track/7KA4W4McWYRpgf0fWsJZWB) | Tyler, The Creator, Kali Uchis | 3,187,495,309 | 1,329,463 | 9,282,621 |
+| 57 | [Wonderwall - Remastered](https://open.spotify.com/track/5qqabIl2vWzo9ApSC317sa) | Oasis | 3,185,433,713 | 1,677,429 | 11,878,579 |
+| 58 | [Smells Like Teen Spirit - Remastered](https://open.spotify.com/track/0gucTLf7trAf37Ua1uAyAu) | Nirvana | 3,167,611,511 | 1,451,750 | 10,013,366 |
+| 59 | [Seven (feat. Latto) (Explicit Ver.)](https://open.spotify.com/track/2HRgqmZQC0MC7GeNuDIXHN) | Jung Kook, Latto | 3,138,451,212 | 1,047,019 | 4,232,656 |
+| 60 | [Unforgettable](https://open.spotify.com/track/3B54sVLJ402zGa6Xm4YGNe) | French Montana, Swae Lee | 3,137,531,438 | 1,195,452 | 8,424,618 |
+| 61 | [Sorry](https://open.spotify.com/track/09CtPGIpYB4BrO8qb1RGsF) | Justin Bieber | 3,133,852,032 | 1,223,067 | 7,982,390 |
+| 62 | [505](https://open.spotify.com/track/58ge6dfP91o9oXMzq3XkIS) | Arctic Monkeys | 3,124,182,269 | 1,679,801 | 11,899,111 |
+| 63 | [Clean Baby Sleep White Noise (Loopable)](https://open.spotify.com/track/4yVBarJHjhhzP1q7fU4p0W) | Dream Supplier | 3,119,632,977 | 1,417,920 | 9,218,214 |
+| 64 | [No Role Modelz](https://open.spotify.com/track/68Dni7IE4VyPkTOH9mRWHr) | J. Cole | 3,093,240,246 | 1,057,821 | 7,155,694 |
+| 65 | [Lose Yourself](https://open.spotify.com/track/1v7L65Lzy0j0vdpRjJewt1) | Eminem | 3,070,196,689 | 941,224 | 6,507,627 |
+| 66 | [The Scientist](https://open.spotify.com/track/75JFxkI2RXiU7L9VXzMkle) | Coldplay | 3,062,238,806 | 1,253,425 | 8,802,593 |
+| 67 | [Don't Stop Believin' (2022 Remaster)](https://open.spotify.com/track/5RKQ5NdjSh2QzD4MaunT91) | Journey | 3,060,580,802 | 1,063,688 | 7,237,739 |
+| 68 | [End of Beginning](https://open.spotify.com/track/3qhlB30KknSejmIvZZLjOD) | Djo | 3,059,584,364 | 2,039,072 | 15,691,145 |
+| 69 | [There's Nothing Holdin' Me Back](https://open.spotify.com/track/7JJmb5XwzOO8jgpou264Ml) | Shawn Mendes | 3,058,874,006 | 1,381,982 | 9,315,568 |
+| 70 | [Dreams - 2001 Remaster](https://open.spotify.com/track/53qkszfgztIvkFyF31GfdQ) | Fleetwood Mac | 3,020,978,980 | 1,467,688 | 9,793,191 |
+| 71 | [HUMBLE.](https://open.spotify.com/track/7KXjTSCq5nL1LoYtL7XAwS) | Kendrick Lamar | 3,019,257,077 | 564,926 | 3,878,621 |
+| 72 | [drivers license](https://open.spotify.com/track/5wANPM4fQCJwkGd4rN57mH) | Olivia Rodrigo | 3,006,126,971 | 949,426 | 6,872,836 |
+| 73 | [bad guy](https://open.spotify.com/track/2Fxmhks0bxGSBdJ92vM42m) | Billie Eilish | 3,003,080,064 | 436,184 | 3,458,062 |
+| 74 | [Take on Me - 2015 Remaster](https://open.spotify.com/track/04aigH9HRGebQZu1JAN6X1) | a-ha | 2,993,785,903 | 1,682,324 | 10,209,786 |
+| 75 | [Numb](https://open.spotify.com/track/2nLtzopw4rPReszdYBJU6h) | Linkin Park | 2,986,812,339 | 1,379,929 | 9,846,161 |
+| 76 | [7 rings](https://open.spotify.com/track/6ocbgoVGwYJhOv1GgI9NsF) | Ariana Grande | 2,967,370,286 | 726,296 | 5,269,488 |
+| 77 | [Sweet Child O' Mine](https://open.spotify.com/track/7snQQk1zcKl8gZ92AnueZW) | Guns N' Roses | 2,955,770,080 | 1,298,077 | 9,189,884 |
+| 78 | [One Of The Girls (with JENNIE, Lily Rose Depp)](https://open.spotify.com/track/7CyPwkp0oE8Ro9Dd5CUDjW) | The Weeknd, JENNIE, Lily-Rose Depp | 2,949,444,009 | 2,003,455 | 14,235,039 |
+| 79 | [Payphone](https://open.spotify.com/track/1XGmzt0PVuFgQYYnV2It7A) | Maroon 5, Wiz Khalifa | 2,939,963,949 | 1,442,615 | 10,109,485 |
+| 80 | [Kill Bill](https://open.spotify.com/track/1Qrg8KqiBpW07V7PNxwwwL) | SZA | 2,938,326,310 | 789,310 | 5,710,146 |
+| 81 | [Save Your Tears](https://open.spotify.com/track/5QO79kh1waicV47BqGRL3g) | The Weeknd | 2,896,368,947 | 1,154,478 | 7,533,111 |
+| 82 | [Cold Heart - PNAU Remix](https://open.spotify.com/track/6JIC3hbC28JZKZ8AlAqX8h) | Elton John, Dua Lipa, PNAU | 2,853,263,070 | 738,850 | 4,835,598 |
+| 83 | [Lean On](https://open.spotify.com/track/4WxU1gDVmoH6gstgR0MT78) | Major Lazer, DJ Snake, MØ | 2,847,012,625 | 772,484 | 5,239,030 |
+| 84 | [Uptown Funk (feat. Bruno Mars)](https://open.spotify.com/track/32OlwWuMpZ6b0aN2RZOeMS) | Mark Ronson, Bruno Mars | 2,841,900,855 | 998,192 | 6,617,812 |
+| 85 | [Danza Kuduro](https://open.spotify.com/track/2a1o6ZejUi8U3wzzOtCOYw) | Don Omar, Lucenzo | 2,834,405,021 | 1,446,133 | 9,290,940 |
+| 86 | [One Kiss (with Dua Lipa)](https://open.spotify.com/track/76dIZzTdrNO15mGBrU3MHi) | Calvin Harris, Dua Lipa | 2,828,441,863 | 689,136 | 4,815,457 |
+| 87 | [Africa](https://open.spotify.com/track/2374M0fQpWi3dLnB54qaLX) | TOTO | 2,822,146,210 | 1,348,984 | 8,514,307 |
+| 88 | [We Don't Talk Anymore (feat. Selena Gomez)](https://open.spotify.com/track/54PbBpquVfhfrwRwvjSXbI) | Charlie Puth, Selena Gomez | 2,810,684,833 | 1,229,665 | 8,477,711 |
+| 89 | [Night Changes](https://open.spotify.com/track/5O2P9iiztwhomNh8xkR9lJ) | One Direction | 2,781,670,124 | 1,057,311 | 7,537,213 |
+| 90 | [Somewhere Only We Know](https://open.spotify.com/track/0ll8uFnc0nANY35E0Lfxvg) | Keane | 2,779,818,448 | 1,398,311 | 9,716,198 |
+| 91 | [LA CANCIÓN](https://open.spotify.com/track/0fea68AdmYNygeTGI4RC18) | J Balvin, Bad Bunny | 2,772,657,164 | 1,111,331 | 7,288,795 |
+| 92 | [Everybody Wants To Rule The World](https://open.spotify.com/track/2YiCMmONQcoMPX2bV1LxE0) | Tears For Fears | 2,767,149,996 | 1,362,440 | 9,265,542 |
+| 93 | [Hips Don't Lie (feat. Wyclef Jean)](https://open.spotify.com/track/3d0WouFnFmr0K3kjeza3fF) | Shakira, Wyclef Jean | 2,759,387,062 | 1,237,534 | 8,624,883 |
+| 94 | [We Found Love](https://open.spotify.com/track/1zv3WFUbZ5vPxFq9I2jAU1) | Rihanna, Calvin Harris | 2,739,422,689 | 1,372,326 | 9,071,526 |
+| 95 | [Lose Control](https://open.spotify.com/track/17phhZDn6oGtzMe56NuWvj) | Teddy Swims | 2,720,772,854 | 1,224,539 | 8,495,778 |
+| 96 | [Levitating (feat. DaBaby)](https://open.spotify.com/track/5nujrmhLynf4yMoMtj8AQF) | Dua Lipa, DaBaby | 2,708,907,493 | 595,898 | 4,227,641 |
+| 97 | [Gangsta's Paradise](https://open.spotify.com/track/1DIXPcTDzTj8ZMHt3PDt8p) | Coolio, L.V. | 2,702,975,783 | 1,057,406 | 7,038,936 |
+| 98 | [APT.](https://open.spotify.com/track/4wJ5Qq0jBN4ajy7ouZIV1c) | ROSÉ, Bruno Mars | 2,702,148,916 | 1,279,289 | 8,832,683 |
+| 99 | [Lush Life](https://open.spotify.com/track/1rIKgCH4H52lrvDcz50hS8) | Zara Larsson | 2,684,318,199 | 1,374,808 | 9,398,403 |
+| 100 | [Attention](https://open.spotify.com/track/5cF0dROlMOK5uNZtivgu50) | Charlie Puth | 2,682,554,659 | 1,042,193 | 7,232,635 |
 
 ## Top 50 by daily streams
 
-Streams gained from 2026-11-07 to 2026-11-08, among all 1,000 tracked songs. The change compares them with the streams gained the day before.
+Streams gained from 2026-11-08 to 2026-11-09, among all 1,000 tracked songs. The change compares them with the streams gained the day before.
 
 | # | Song | Artist | Daily streams | Change from the day before | Total streams |
 |--:|:--|:--|--:|--:|--:|
-| 1 | [Clean Baby Sleep White Noise (Loopable no fade)](https://open.spotify.com/track/3BgK59BTBUs8iQtnegfMfz) | Dream Supplier | 3,072,467 | -18,007 (-0.58%) | 1,394,579,422 |
-| 2 | [back to friends](https://open.spotify.com/track/7qjZnBKE73H4Oxkopwulqe) | sombr | 2,955,035 | +62,392 (+2.16%) | 2,363,293,538 |
-| 3 | [Beauty And A Beat](https://open.spotify.com/track/6QFCMUUq1T2Vf5sFUXcuQ7) | Justin Bieber, Nicki Minaj | 2,766,957 | +147,674 (+5.64%) | 2,439,787,468 |
-| 4 | [The One That Got Away](https://open.spotify.com/track/2009X8GyWTqyxIdzAEYW6N) | Katy Perry | 2,727,039 | +92,791 (+3.52%) | 2,093,234,495 |
-| 5 | [Earrings](https://open.spotify.com/track/0eAuGrXyGFYwur9ARUe7LJ) | Malcolm Todd | 2,713,657 | -54,007 (-1.95%) | 835,798,328 |
-| 6 | [SWIM](https://open.spotify.com/track/68lbSrXDORS51pmyjZv712) | BTS | 2,667,273 | -40,662 (-1.50%) | 1,038,367,444 |
-| 7 | [Die With A Smile](https://open.spotify.com/track/7so0lgd0zP2Sbgs2d7a1SZ) | Lady Gaga, Bruno Mars | 2,637,710 | +75,833 (+2.96%) | 4,127,812,214 |
-| 8 | [Sweater Weather](https://open.spotify.com/track/0cQVqPuHQP4KEwc7ZUQmj6) | The Neighbourhood | 2,614,733 | +35,874 (+1.39%) | 5,014,255,148 |
-| 9 | [Iris](https://open.spotify.com/track/6Qyc6fS4DsZjB2mRW9DsQs) | The Goo Goo Dolls | 2,610,221 | +12,584 (+0.48%) | 3,848,504,094 |
-| 10 | [Just Give Me a Reason (feat. Nate Ruess)](https://open.spotify.com/track/1mKXFLRA179hdOWQBwUk9e) | P!nk, Nate Ruess | 2,601,482 | +116,567 (+4.69%) | 2,183,816,524 |
-| 11 | [Choosin' Texas](https://open.spotify.com/track/7scFxt9VhL4FJwuPSfRlfN) | Ella Langley | 2,546,228 | +151,630 (+6.33%) | 824,696,090 |
-| 12 | [Man I Need](https://open.spotify.com/track/1qbmS6ep2hbBRaEZFpn7BX) | Olivia Dean | 2,500,306 | +90,857 (+3.77%) | 1,544,188,260 |
-| 13 | [Love Me Not](https://open.spotify.com/track/4WFgvKVfEhb3IUAFGrutTR) | Ravyn Lenae | 2,419,712 | +26,852 (+1.12%) | 1,587,716,965 |
-| 14 | [Mr. Brightside](https://open.spotify.com/track/003vvx7Niy0yvhvHt4a68B) | The Killers | 2,391,070 | +113,412 (+4.98%) | 3,586,887,635 |
-| 15 | [Every Breath You Take](https://open.spotify.com/track/1JSTJqkT5qHq8MDJnJbRE1) | The Police | 2,321,044 | +51,908 (+2.29%) | 3,863,812,019 |
-| 16 | [Self Aware](https://open.spotify.com/track/4qW3BbQAwZsrnu8a3ZRdyT) | Temper City | 2,274,870 | +51,874 (+2.33%) | 631,320,828 |
-| 17 | [Billie Jean](https://open.spotify.com/track/7J1uxwnxfQLu4APicE5Rnj) | Michael Jackson | 2,245,077 | +94,885 (+4.41%) | 3,361,251,361 |
-| 18 | [Sailor Song](https://open.spotify.com/track/21IYMdzTrzSe191Cy5eMap) | Gigi Perez | 2,187,856 | -4,077 (-0.19%) | 2,316,181,151 |
-| 19 | [End of Beginning](https://open.spotify.com/track/3qhlB30KknSejmIvZZLjOD) | Djo | 2,163,224 | -5,645 (-0.26%) | 3,057,545,292 |
-| 20 | [Babydoll](https://open.spotify.com/track/7yNf9YjeO5JXUE3JEBgnYc) | Dominic Fike | 2,157,259 | +1,039 (+0.05%) | 1,937,350,672 |
-| 21 | [BIRDS OF A FEATHER](https://open.spotify.com/track/6dOtVTDdiauQNBQEDOtlAB) | Billie Eilish | 2,154,547 | +17,226 (+0.81%) | 4,092,458,309 |
-| 22 | [Treat You Better](https://open.spotify.com/track/3QGsuHI8jO1Rx4JWLUh9jd) | Shawn Mendes | 2,151,621 | +3,109 (+0.14%) | 3,242,568,070 |
-| 23 | [Creep](https://open.spotify.com/track/70LcF31zb1H0PyJoS1Sx1r) | Radiohead | 2,136,464 | +19,075 (+0.90%) | 3,238,905,734 |
-| 24 | [One Of The Girls (with JENNIE, Lily Rose Depp)](https://open.spotify.com/track/7CyPwkp0oE8Ro9Dd5CUDjW) | The Weeknd, JENNIE, Lily-Rose Depp | 2,084,166 | +4,920 (+0.24%) | 2,947,440,554 |
-| 25 | [Starboy](https://open.spotify.com/track/7MXVkk9YMctZqd1Srtv4MB) | The Weeknd, Daft Punk | 2,062,498 | +24,362 (+1.20%) | 4,854,992,846 |
-| 26 | [Sign of the Times](https://open.spotify.com/track/5Ohxk2dO5COHF1krpoPigN) | Harry Styles | 2,051,616 | -36,172 (-1.73%) | 2,540,438,818 |
-| 27 | [hate that i made you love me](https://open.spotify.com/track/3iy2QuCtCzpWnR6tia39AB) | Ariana Grande | 2,004,656 | +33,044 (+1.68%) | 606,484,456 |
-| 28 | [I Wanna Be Yours](https://open.spotify.com/track/5XeFesFbtLpXzIVDNQP22n) | Arctic Monkeys | 1,947,642 | -38,436 (-1.94%) | 4,098,842,519 |
-| 29 | [Ordinary](https://open.spotify.com/track/2RkZ5LkEzeHGRsmDqKwmaJ) | Alex Warren | 1,933,694 | +32,612 (+1.72%) | 2,283,697,829 |
-| 30 | [Cinderella (feat. Ty Dolla \$ign)](https://open.spotify.com/track/2lpygKqzPFtItQ4ss3cgfb) | Mac Miller, Ty Dolla \$ign | 1,909,963 | -67,986 (-3.44%) | 649,737,226 |
-| 31 | [Dracula (with JENNIE)](https://open.spotify.com/track/5yvVYFDUpbnjcnRBgjwTzM) | Tame Impala, JENNIE | 1,907,449 | +109,554 (+6.09%) | 589,769,914 |
-| 32 | [Sure Thing](https://open.spotify.com/track/0JXXNGljqupsJaZsgSbMZV) | Miguel | 1,904,424 | +41,865 (+2.25%) | 2,335,145,040 |
-| 33 | [Locked out of Heaven](https://open.spotify.com/track/5g7sDjBhZ4I3gcFIpkrLuI) | Bruno Mars | 1,890,319 | +56,338 (+3.07%) | 3,596,436,549 |
-| 34 | [Yellow](https://open.spotify.com/track/3AJwUDP919kvQ9QcozQPxg) | Coldplay | 1,880,180 | -15,843 (-0.84%) | 4,078,198,361 |
-| 35 | [Shape of You](https://open.spotify.com/track/7qiZfU4dY1lWllzX7mPBI3) | Ed Sheeran | 1,861,691 | +23,505 (+1.28%) | 5,177,971,714 |
-| 36 | [All I Want for Christmas Is You](https://open.spotify.com/track/0bYg9bo50gSsH3LtXe2SQn) | Mariah Carey | 1,859,497 | +155,774 (+9.14%) | 2,553,455,465 |
-| 37 | [In the End](https://open.spotify.com/track/60a0Rd6pjrkxjPbaKzXjfq) | Linkin Park | 1,858,960 | +23,910 (+1.30%) | 3,454,991,709 |
-| 38 | [WILDFLOWER](https://open.spotify.com/track/3QaPy1KgI7nu9FJEQUgn6h) | Billie Eilish | 1,842,322 | -1,317 (-0.07%) | 2,350,152,107 |
-| 39 | [Bring Me To Life](https://open.spotify.com/track/0COqiPhxzoWICwFCS4eZcp) | Evanescence | 1,823,420 | +34,104 (+1.91%) | 2,257,425,801 |
-| 40 | [The Fate of Ophelia](https://open.spotify.com/track/53iuhJlwXhSER5J2IYYv1W) | Taylor Swift | 1,805,461 | +31,396 (+1.77%) | 1,775,443,183 |
-| 41 | [One Dance](https://open.spotify.com/track/1zi7xx7UVEFkmKfv06H8x0) | Drake, Wizkid, Kyla | 1,786,850 | +86,809 (+5.11%) | 4,555,148,473 |
-| 42 | [Training Season](https://open.spotify.com/track/5b5cPscqVEMChvDqscVw26) | Dua Lipa | 1,784,516 | -2,761 (-0.15%) | 1,102,884,809 |
-| 43 | [505](https://open.spotify.com/track/58ge6dfP91o9oXMzq3XkIS) | Arctic Monkeys | 1,764,953 | +4,831 (+0.27%) | 3,122,502,468 |
-| 44 | [Wonderwall - Remastered](https://open.spotify.com/track/5qqabIl2vWzo9ApSC317sa) | Oasis | 1,758,521 | +36,936 (+2.15%) | 3,183,756,284 |
-| 45 | [drop dead](https://open.spotify.com/track/3fRCAPMMZ8l8P9YKI6OCzD) | Olivia Rodrigo | 1,741,328 | -10,097 (-0.58%) | 609,424,833 |
-| 46 | [The Night We Met](https://open.spotify.com/track/5yJaXWIErrrsjQ3J0eR5aK) | Lord Huron | 1,740,818 | -67,573 (-3.74%) | 4,026,328,952 |
-| 47 | [Take on Me - 2015 Remaster](https://open.spotify.com/track/04aigH9HRGebQZu1JAN6X1) | a-ha | 1,732,120 | +96,625 (+5.91%) | 2,992,103,579 |
-| 48 | [Die On This Hill](https://open.spotify.com/track/7gkZNvBHfI30qG7hA0eopT) | SIENNA SPIRO | 1,728,430 | +55,902 (+3.34%) | 702,652,919 |
-| 49 | [Beat It](https://open.spotify.com/track/3BovdzfaX4jb5KFQwoPfAw) | Michael Jackson | 1,721,856 | +79,687 (+4.85%) | 2,232,330,778 |
-| 50 | [Risk It All](https://open.spotify.com/track/5y2ijHECwFYWqcAHKTZgzD) | Bruno Mars | 1,716,582 | +87,313 (+5.36%) | 719,635,698 |
+| 1 | [Clean Baby Sleep White Noise (Loopable no fade)](https://open.spotify.com/track/3BgK59BTBUs8iQtnegfMfz) | Dream Supplier | 3,197,244 | +124,777 (+4.06%) | 1,397,776,666 |
+| 2 | [Beauty And A Beat](https://open.spotify.com/track/6QFCMUUq1T2Vf5sFUXcuQ7) | Justin Bieber, Nicki Minaj | 2,761,566 | -5,391 (-0.19%) | 2,442,549,034 |
+| 3 | [back to friends](https://open.spotify.com/track/7qjZnBKE73H4Oxkopwulqe) | sombr | 2,753,236 | -201,799 (-6.83%) | 2,366,046,774 |
+| 4 | [Earrings](https://open.spotify.com/track/0eAuGrXyGFYwur9ARUe7LJ) | Malcolm Todd | 2,681,225 | -32,432 (-1.20%) | 838,479,553 |
+| 5 | [The One That Got Away](https://open.spotify.com/track/2009X8GyWTqyxIdzAEYW6N) | Katy Perry | 2,670,106 | -56,933 (-2.09%) | 2,095,904,601 |
+| 6 | [Die With A Smile](https://open.spotify.com/track/7so0lgd0zP2Sbgs2d7a1SZ) | Lady Gaga, Bruno Mars | 2,598,589 | -39,121 (-1.48%) | 4,130,410,803 |
+| 7 | [Choosin' Texas](https://open.spotify.com/track/7scFxt9VhL4FJwuPSfRlfN) | Ella Langley | 2,505,790 | -40,438 (-1.59%) | 827,201,880 |
+| 8 | [SWIM](https://open.spotify.com/track/68lbSrXDORS51pmyjZv712) | BTS | 2,505,467 | -161,806 (-6.07%) | 1,040,872,911 |
+| 9 | [Sweater Weather](https://open.spotify.com/track/0cQVqPuHQP4KEwc7ZUQmj6) | The Neighbourhood | 2,483,174 | -131,559 (-5.03%) | 5,016,738,322 |
+| 10 | [Just Give Me a Reason (feat. Nate Ruess)](https://open.spotify.com/track/1mKXFLRA179hdOWQBwUk9e) | P!nk, Nate Ruess | 2,456,173 | -145,309 (-5.59%) | 2,186,272,697 |
+| 11 | [Man I Need](https://open.spotify.com/track/1qbmS6ep2hbBRaEZFpn7BX) | Olivia Dean | 2,455,374 | -44,932 (-1.80%) | 1,546,643,634 |
+| 12 | [Iris](https://open.spotify.com/track/6Qyc6fS4DsZjB2mRW9DsQs) | The Goo Goo Dolls | 2,445,461 | -164,760 (-6.31%) | 3,850,949,555 |
+| 13 | [Billie Jean](https://open.spotify.com/track/7J1uxwnxfQLu4APicE5Rnj) | Michael Jackson | 2,345,714 | +100,637 (+4.48%) | 3,363,597,075 |
+| 14 | [Love Me Not](https://open.spotify.com/track/4WFgvKVfEhb3IUAFGrutTR) | Ravyn Lenae | 2,344,209 | -75,503 (-3.12%) | 1,590,061,174 |
+| 15 | [Mr. Brightside](https://open.spotify.com/track/003vvx7Niy0yvhvHt4a68B) | The Killers | 2,300,627 | -90,443 (-3.78%) | 3,589,188,262 |
+| 16 | [Every Breath You Take](https://open.spotify.com/track/1JSTJqkT5qHq8MDJnJbRE1) | The Police | 2,258,949 | -62,095 (-2.68%) | 3,866,070,968 |
+| 17 | [All I Want for Christmas Is You](https://open.spotify.com/track/0bYg9bo50gSsH3LtXe2SQn) | Mariah Carey | 2,202,087 | +342,590 (+18.42%) | 2,555,657,552 |
+| 18 | [Self Aware](https://open.spotify.com/track/4qW3BbQAwZsrnu8a3ZRdyT) | Temper City | 2,160,827 | -114,043 (-5.01%) | 633,481,655 |
+| 19 | [Treat You Better](https://open.spotify.com/track/3QGsuHI8jO1Rx4JWLUh9jd) | Shawn Mendes | 2,125,640 | -25,981 (-1.21%) | 3,244,693,710 |
+| 20 | [Babydoll](https://open.spotify.com/track/7yNf9YjeO5JXUE3JEBgnYc) | Dominic Fike | 2,103,208 | -54,051 (-2.51%) | 1,939,453,880 |
+| 21 | [Sailor Song](https://open.spotify.com/track/21IYMdzTrzSe191Cy5eMap) | Gigi Perez | 2,093,364 | -94,492 (-4.32%) | 2,318,274,515 |
+| 22 | [BIRDS OF A FEATHER](https://open.spotify.com/track/6dOtVTDdiauQNBQEDOtlAB) | Billie Eilish | 2,065,261 | -89,286 (-4.14%) | 4,094,523,570 |
+| 23 | [End of Beginning](https://open.spotify.com/track/3qhlB30KknSejmIvZZLjOD) | Djo | 2,039,072 | -124,152 (-5.74%) | 3,059,584,364 |
+| 24 | [Creep](https://open.spotify.com/track/70LcF31zb1H0PyJoS1Sx1r) | Radiohead | 2,026,224 | -110,240 (-5.16%) | 3,240,931,958 |
+| 25 | [One Of The Girls (with JENNIE, Lily Rose Depp)](https://open.spotify.com/track/7CyPwkp0oE8Ro9Dd5CUDjW) | The Weeknd, JENNIE, Lily-Rose Depp | 2,003,455 | -80,711 (-3.87%) | 2,949,444,009 |
+| 26 | [Starboy](https://open.spotify.com/track/7MXVkk9YMctZqd1Srtv4MB) | The Weeknd, Daft Punk | 1,954,106 | -108,392 (-5.26%) | 4,856,946,952 |
+| 27 | [Sign of the Times](https://open.spotify.com/track/5Ohxk2dO5COHF1krpoPigN) | Harry Styles | 1,945,348 | -106,268 (-5.18%) | 2,542,384,166 |
+| 28 | [Cinderella (feat. Ty Dolla \$ign)](https://open.spotify.com/track/2lpygKqzPFtItQ4ss3cgfb) | Mac Miller, Ty Dolla \$ign | 1,905,334 | -4,629 (-0.24%) | 651,642,560 |
+| 29 | [hate that i made you love me](https://open.spotify.com/track/3iy2QuCtCzpWnR6tia39AB) | Ariana Grande | 1,902,466 | -102,190 (-5.10%) | 608,386,922 |
+| 30 | [I Wanna Be Yours](https://open.spotify.com/track/5XeFesFbtLpXzIVDNQP22n) | Arctic Monkeys | 1,889,158 | -58,484 (-3.00%) | 4,100,731,677 |
+| 31 | [Ordinary](https://open.spotify.com/track/2RkZ5LkEzeHGRsmDqKwmaJ) | Alex Warren | 1,858,679 | -75,015 (-3.88%) | 2,285,556,508 |
+| 32 | [Dracula (with JENNIE)](https://open.spotify.com/track/5yvVYFDUpbnjcnRBgjwTzM) | Tame Impala, JENNIE | 1,849,506 | -57,943 (-3.04%) | 591,619,420 |
+| 33 | [Shape of You](https://open.spotify.com/track/7qiZfU4dY1lWllzX7mPBI3) | Ed Sheeran | 1,808,397 | -53,294 (-2.86%) | 5,179,780,111 |
+| 34 | [Sure Thing](https://open.spotify.com/track/0JXXNGljqupsJaZsgSbMZV) | Miguel | 1,807,440 | -96,984 (-5.09%) | 2,336,952,480 |
+| 35 | [Beat It](https://open.spotify.com/track/3BovdzfaX4jb5KFQwoPfAw) | Michael Jackson | 1,797,992 | +76,136 (+4.42%) | 2,234,128,770 |
+| 36 | [Locked out of Heaven](https://open.spotify.com/track/5g7sDjBhZ4I3gcFIpkrLuI) | Bruno Mars | 1,789,460 | -100,859 (-5.34%) | 3,598,226,009 |
+| 37 | [Yellow](https://open.spotify.com/track/3AJwUDP919kvQ9QcozQPxg) | Coldplay | 1,761,827 | -118,353 (-6.29%) | 4,079,960,188 |
+| 38 | [WILDFLOWER](https://open.spotify.com/track/3QaPy1KgI7nu9FJEQUgn6h) | Billie Eilish | 1,754,096 | -88,226 (-4.79%) | 2,351,906,203 |
+| 39 | [One Dance](https://open.spotify.com/track/1zi7xx7UVEFkmKfv06H8x0) | Drake, Wizkid, Kyla | 1,732,263 | -54,587 (-3.05%) | 4,556,880,736 |
+| 40 | [The Fate of Ophelia](https://open.spotify.com/track/53iuhJlwXhSER5J2IYYv1W) | Taylor Swift | 1,712,788 | -92,673 (-5.13%) | 1,777,155,971 |
+| 41 | [In the End](https://open.spotify.com/track/60a0Rd6pjrkxjPbaKzXjfq) | Linkin Park | 1,705,114 | -153,846 (-8.28%) | 3,456,696,823 |
+| 42 | [Take on Me - 2015 Remaster](https://open.spotify.com/track/04aigH9HRGebQZu1JAN6X1) | a-ha | 1,682,324 | -49,796 (-2.87%) | 2,993,785,903 |
+| 43 | [505](https://open.spotify.com/track/58ge6dfP91o9oXMzq3XkIS) | Arctic Monkeys | 1,679,801 | -85,152 (-4.82%) | 3,124,182,269 |
+| 44 | [drop dead](https://open.spotify.com/track/3fRCAPMMZ8l8P9YKI6OCzD) | Olivia Rodrigo | 1,678,729 | -62,599 (-3.59%) | 611,103,562 |
+| 45 | [Wonderwall - Remastered](https://open.spotify.com/track/5qqabIl2vWzo9ApSC317sa) | Oasis | 1,677,429 | -81,092 (-4.61%) | 3,185,433,713 |
+| 46 | [Bring Me To Life](https://open.spotify.com/track/0COqiPhxzoWICwFCS4eZcp) | Evanescence | 1,672,497 | -150,923 (-8.28%) | 2,259,098,298 |
+| 47 | [Training Season](https://open.spotify.com/track/5b5cPscqVEMChvDqscVw26) | Dua Lipa | 1,671,056 | -113,460 (-6.36%) | 1,104,555,865 |
+| 48 | [So Easy (To Fall In Love)](https://open.spotify.com/track/6sGIMrtIzQjdzNndVxe397) | Olivia Dean | 1,644,970 | -45,078 (-2.67%) | 1,156,136,220 |
+| 49 | [The Night We Met](https://open.spotify.com/track/5yJaXWIErrrsjQ3J0eR5aK) | Lord Huron | 1,641,513 | -99,305 (-5.70%) | 4,027,970,465 |
+| 50 | [Apocalypse](https://open.spotify.com/track/1oAwsWBovWRIp7qLMGPIet) | Cigarettes After Sex | 1,635,974 | -79,095 (-4.61%) | 2,661,337,696 |
 
-4 songs have a lower play count than the day before: Spotify occasionally lowers a count.
+3 songs have a lower play count than the day before: Spotify occasionally lowers a count.
+
+1 song was answered with another release of the song than on 2026-11-08 (Spotify relinked the track id), so the two counts belong to different releases and give no daily figure: [Cry](https://open.spotify.com/track/3p4hRhMcb6ch8OLtATMaLw).
 
 ## Data
 
