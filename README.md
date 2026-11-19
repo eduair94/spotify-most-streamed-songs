@@ -14,20 +14,20 @@ Unofficial: not affiliated with, endorsed by or sponsored by Spotify.
 ## Top 10 today
 
 <!-- leaderboard:start -->
-Top 10 of the tracked songs by total streams on **2026-11-18** (UTC). Top 100, and the top 50 by daily streams: [LEADERBOARD.md](LEADERBOARD.md).
+Top 10 of the tracked songs by total streams on **2026-11-19** (UTC). Top 100, and the top 50 by daily streams: [LEADERBOARD.md](LEADERBOARD.md).
 
 | # | Song | Artist | Total streams | Daily streams |
 |--:|:--|:--|--:|--:|
-| 1 | [Blinding Lights](https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b) | The Weeknd | 5,685,849,470 | 1,280,187 |
-| 2 | [Shape of You](https://open.spotify.com/track/7qiZfU4dY1lWllzX7mPBI3) | Ed Sheeran | 5,193,257,243 | 1,367,055 |
-| 3 | [Sweater Weather](https://open.spotify.com/track/0cQVqPuHQP4KEwc7ZUQmj6) | The Neighbourhood | 5,038,850,930 | 2,423,839 |
-| 4 | [Starboy](https://open.spotify.com/track/7MXVkk9YMctZqd1Srtv4MB) | The Weeknd, Daft Punk | 4,873,490,293 | 1,751,203 |
-| 5 | [As It Was](https://open.spotify.com/track/4Dvkj6JhhA12EX05fT7y2e) | Harry Styles | 4,719,568,967 | 1,338,361 |
-| 6 | [One Dance](https://open.spotify.com/track/1zi7xx7UVEFkmKfv06H8x0) | Drake, Wizkid, Kyla | 4,571,307,553 | 1,547,403 |
-| 7 | [Sunflower - Spider-Man: Into the Spider-Verse](https://open.spotify.com/track/0RiRZpuVRbi7oqRdSMwhQY) | Post Malone, Swae Lee | 4,562,163,449 | 1,304,267 |
-| 8 | [Perfect](https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v) | Ed Sheeran | 4,189,509,081 | 1,224,371 |
-| 9 | [Die With A Smile](https://open.spotify.com/track/7so0lgd0zP2Sbgs2d7a1SZ) | Lady Gaga, Bruno Mars | 4,152,540,592 | 2,375,298 |
-| 10 | [STAY (with Justin Bieber)](https://open.spotify.com/track/567e29TDzLwZwfDuEpGTwo) | The Kid LAROI, Justin Bieber | 4,140,305,504 | 913,484 |
+| 1 | [Blinding Lights](https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b) | The Weeknd | 5,687,188,275 | 1,338,805 |
+| 2 | [Shape of You](https://open.spotify.com/track/7qiZfU4dY1lWllzX7mPBI3) | Ed Sheeran | 5,194,650,580 | 1,393,337 |
+| 3 | [Sweater Weather](https://open.spotify.com/track/0cQVqPuHQP4KEwc7ZUQmj6) | The Neighbourhood | 5,041,359,598 | 2,508,668 |
+| 4 | [Starboy](https://open.spotify.com/track/7MXVkk9YMctZqd1Srtv4MB) | The Weeknd, Daft Punk | 4,875,315,864 | 1,825,571 |
+| 5 | [As It Was](https://open.spotify.com/track/4Dvkj6JhhA12EX05fT7y2e) | Harry Styles | 4,720,949,392 | 1,380,425 |
+| 6 | [One Dance](https://open.spotify.com/track/1zi7xx7UVEFkmKfv06H8x0) | Drake, Wizkid, Kyla | 4,572,909,151 | 1,601,598 |
+| 7 | [Sunflower - Spider-Man: Into the Spider-Verse](https://open.spotify.com/track/0RiRZpuVRbi7oqRdSMwhQY) | Post Malone, Swae Lee | 4,563,510,360 | 1,346,911 |
+| 8 | [Perfect](https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v) | Ed Sheeran | 4,190,771,726 | 1,262,645 |
+| 9 | [Die With A Smile](https://open.spotify.com/track/7so0lgd0zP2Sbgs2d7a1SZ) | Lady Gaga, Bruno Mars | 4,155,016,445 | 2,475,853 |
+| 10 | [STAY (with Justin Bieber)](https://open.spotify.com/track/567e29TDzLwZwfDuEpGTwo) | The Kid LAROI, Justin Bieber | 4,141,242,551 | 937,047 |
 <!-- leaderboard:end -->
 
 Daily streams are the difference between the play counts of two consecutive days, so they start
